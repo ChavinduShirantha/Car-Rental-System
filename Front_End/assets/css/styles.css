@@ -62,6 +62,29 @@
     color: #140073;
 }
 
+.social_media a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    color: #021a4f;
+    border: .2rem solid #02105b;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social_media a:hover {
+    background: #0AD9F5;
+    color: #323946;
+    box-shadow: 0 0 1rem #0AD9F5;
+    transform: scale(1.3);
+}
+
 /*About Section*/
 
 #aboutSection{
