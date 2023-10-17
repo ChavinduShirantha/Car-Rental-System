@@ -1,0 +1,31 @@
+
+.Register-customer-new{
+    height: 120vh;
+}
+
+.section-header > h2{
+    text-align: center;
+}
+
+.Register-customer-new .register-img {
+    min-height: 500px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.Register-customer-new .register-form-bg {
+    background: linear-gradient(to right, #f5f4f4, #dcdde1);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.Register-customer-new .reg-customer-form {
+    padding: 40px;
+}
+
+#btnSaveCustomer{
+    width: 10em;
+    height: 3em;
+}
