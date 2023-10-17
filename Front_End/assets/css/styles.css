@@ -67,14 +67,14 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     background: transparent;
     color: #021a4f;
-    border: .2rem solid #02105b;
+    border: .2rem solid #021a4f;
     border-radius: 50%;
     font-size: 2rem;
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 4rem 1.5rem 3rem 1rem;
     transition: .5s ease;
 }
 
