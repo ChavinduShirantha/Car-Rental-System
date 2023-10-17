@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/aos/aos.css">
 
 </head>
 <body>
 <!-- ---------------------------Header------------------------------------- -->
-<header>
+<header class="header fixed-top" id="header">
     <nav class="navbar navbar-expand-lg bg-transparent border-bottom shadow-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -37,7 +38,7 @@
                         <a class="nav-link active" aria-current="page" href="#"> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"> About</a>
+                        <a class="nav-link" aria-current="page" href="#aboutSection"> About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#"> Cars</a>
@@ -119,7 +120,7 @@
         <div class="row justify-content-between gy-5">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
                 <h2 data-aos="fade-up">Welcome <br><span>Easy Car Rental</span><br> Pvt Ltd.</h2>
-                <h4><span id="content"></span></h4>
+                <h4 data-aos="fade-up" data-aos-delay="100"><span id="content"></span></h4>
                 <p data-aos="fade-up" data-aos-delay="100">Looking for a vehicle? You’re at the right place.</p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                     <a class="btn-Register-customer" href="pages/RegisterForm.html">Register</a>
@@ -134,9 +135,40 @@
     </div>
 </section>
 
+<!-- ----------------------------------About Section-------------------------------------------------- -->
+
+<section class="aboutSection" id="aboutSection">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>About Us</h2>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-7 position-relative about-img"
+                 data-aos="fade-up" data-aos-delay="150">
+                <div class="position-relative mt-4">
+                    <img alt="" class="img-fluid" id="about_img" src="assets/img/aboutImg.jpg">
+                </div>
+            </div>
+            <div class="col-lg-5 d-flex mt-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="content ps-0 ps-lg-5">
+                    <h3 id="aboutHeader">We Provide Everything You Need To A Car</h3>
+                    <p id="aboutPara">
+                        Easy car rental private limited is a car rental service with 5 years of history. This company has about
+                        50 cars and 40 drivers working for them in regular shifts. Our company is located at No. 200, Galle
+                        Road, Panadura, and well known for our services. Usually, people who don’t own a car, people who
+                        are waiting for their car to be repaired and, travelers or tourists seek their services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <script src="assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/myScript.js"></script>
+<script src="assets/aos/aos.js"></script>
 
 </body>
 </html>

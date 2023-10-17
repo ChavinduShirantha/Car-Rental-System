@@ -3,12 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@700&display=swap');
 
+
+/*Home Section*/
+
 .homeSection {
     width: 100%;
     background-size: cover;
     position: relative;
-    background: linear-gradient(to right, #d9d9d9, #f5f5f5);;
-    min-height: 90vh;
+    background: linear-gradient(to right, #d9d9d9, #f5f5f5);
+    min-height: 95vh;
     padding: 160px 0 60px 0;
 }
 
@@ -57,4 +60,48 @@
     font-size: 36px;
     font-weight: bold;
     color: #140073;
+}
+
+/*About Section*/
+
+#aboutSection{
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.section-header h2{
+    position: relative;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bolder;
+    font-size: 42px;
+}
+
+#about_img {
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 4rem;
+}
+
+#aboutHeader{
+    text-align: center;
+    margin-top: 6rem;
+    font-family: 'Gowun Batang', serif;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#aboutPara{
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Cambria', serif;
+    font-weight: normal;
+    font-size: 24px;
 }
