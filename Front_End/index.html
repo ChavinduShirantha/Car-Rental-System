@@ -52,8 +52,8 @@
                             Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-right-from-bracket"></i>
-                            Log Out</a>
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#login"><i class="fa-solid fa-right-to-bracket"></i>
+                            Login</a>
                     </li>
                 </ul>
             </div>
@@ -61,6 +61,54 @@
     </nav>
 </header>
 
+<!-- -------------------------Login Form--------------------------------------------------- -->
+
+<main class="container-fluid">
+    <div class="modal fade" id="login" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary-subtle">
+                    <h5 class="modal-title">Login Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="ubFt">
+                        <div class="form-group ms-3 me-3">
+                            <select class="form-select" id="role_Type" name="role_Type" style="border-radius: 20px;">
+                                <option selected value="RoleType">Choose Role</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                <option value="DRIVER">DRIVER</option>
+                            </select>
+                        </div>
+                        <div class="ms-3 me-3">
+                            <label for="user_name" class="col-form-label">User Name:</label>
+                            <input type="text" class="form-control" id="user_name" placeholder="Enter User Name...">
+                            <small class="control-error text-danger" id="lbl_user_name"></small>
+                        </div>
+                        <div class="ms-3 me-3 mb-4">
+                            <label for="user_password" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="user_password" placeholder="Enter User Password...">
+                            <small class="control-error text-danger" id="lbl_user_password"></small>
+                        </div>
+
+                    </form>
+                    <div class="text-center">
+                        <a class="small" href="">Forgot Password?</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="small" href="index.html">Create an Account!</a>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
 <script src="assets/js/bootstrap.min.js"></script>
 
