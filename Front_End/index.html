@@ -13,7 +13,7 @@
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/all.css">
-
+    <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
 <body>
@@ -48,11 +48,13 @@
                 </ul>
                 <ul class="navbar-nav me-6 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="pages/RegisterForm.html" ><i class="fa-solid fa-user-plus"></i> Sign
+                        <a class="nav-link" aria-current="page" href="pages/RegisterForm.html"><i
+                                class="fa-solid fa-user-plus"></i> Sign
                             Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#login"><i class="fa-solid fa-right-to-bracket"></i>
+                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#login"><i
+                                class="fa-solid fa-right-to-bracket"></i>
                             Login</a>
                     </li>
                 </ul>
@@ -88,7 +90,8 @@
                         </div>
                         <div class="ms-3 me-3 mb-4">
                             <label for="user_password" class="col-form-label">Password:</label>
-                            <input type="password" class="form-control" id="user_password" placeholder="Enter User Password...">
+                            <input type="password" class="form-control" id="user_password"
+                                   placeholder="Enter User Password...">
                             <small class="control-error text-danger" id="lbl_user_password"></small>
                         </div>
 
@@ -110,9 +113,30 @@
     </div>
 </main>
 
+<!-- ------------------------------------Home Section--------------------------------------- -->
+<section class="homeSection" id="homeSection">
+    <div class="container">
+        <div class="row justify-content-between gy-5">
+            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+                <h2 data-aos="fade-up">Welcome <br><span>Easy Car Rental</span><br> Pvt Ltd.</h2>
+                <h4><span id="content"></span></h4>
+                <p data-aos="fade-up" data-aos-delay="100">Looking for a vehicle? You’re at the right place.</p>
+                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <a class="btn-Register-customer" href="pages/RegisterForm.html">Register</a>
+                </div>
 
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+                <img alt="" class="img-fluid img-size" data-aos="zoom-out" data-aos-delay="300"
+                     src="assets/img/homeImg.png">
+            </div>
+        </div>
+    </div>
+</section>
 
+<script src="assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/myScript.js"></script>
 
 </body>
 </html>
