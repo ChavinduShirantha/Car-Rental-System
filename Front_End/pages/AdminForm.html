@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="../favicon.png" alt="Logo" width="40px" height="40px"
-                     class="d-inline-block align-text-top">     Easy Car Rental
+                     class="d-inline-block align-text-top"> Easy Car Rental
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,6 +36,92 @@
         </div>
     </nav>
 </header>
+
+
+<!-- ----------------------------------------Menu Side------------------------------------------------- -->
+<div class="container-fluid">
+<div class="row gy-4">
+    <div class="col-2 position-relative">
+        <div class="position-relative mt-4">
+            <div id="sidebar" class="sidebar col-2">
+                <ul class="sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">
+                            <i class="fas fa-chart-line"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                            <i class="fas fa-tasks"></i>Manage
+                        </a>
+                        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-users"></i>Customer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-user-alt"></i>Driver
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-car"></i>Car
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                            <i class="fas fa-info-circle"></i>Details
+                        </a>
+                        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-money-bill-wave"></i>Payment Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-exchange-alt"></i>Rent Details
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" id="myDetailsSection">
+                            <i class="fas fa-retweet"></i>Rent Request
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" id="incomeDetails">
+                            <i class="fas fa-chart-bar"></i>Income Details
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../index.html">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>LogOut</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 d-flex mt-5 position-relative" >
+        <div class="content ps-0 ps-lg-5" id="dashboardContents">
+            <h3 id="dashboardHeader">Admin Dashboard</h3>
+            <p id="dashboardNav">Home > Dashboard</p>
+        </div>
+    </div>
+</div>
+</div>
 
 
 <script src="../assets/js/jquery-3.7.0.min.js"></script>
