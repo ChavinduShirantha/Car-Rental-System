@@ -7,6 +7,11 @@
     text-align: center;
 }
 
+.Register-customer-new{
+    position: relative;
+    top: 5rem;
+}
+
 .Register-customer-new .register-img {
     min-height: 500px;
     border-top-left-radius: 20px;
