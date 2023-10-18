@@ -21,11 +21,11 @@
     margin-bottom: 20px;
 }
 
-.homeSection h2 span{
+.homeSection h2 span {
     color: red;
 }
 
-.homeSection p{
+.homeSection p {
     font-size: 20px;
     font-weight: 700;
     margin-top: 20px;
@@ -87,14 +87,14 @@
 
 /*About Section*/
 
-#aboutSection{
+#aboutSection {
     width: 100%;
     background-size: cover;
     position: relative;
     min-height: 100vh;
 }
 
-.section-header h2{
+.section-header h2 {
     position: relative;
     top: 5rem;
     left: 0;
@@ -113,7 +113,7 @@
     margin-top: 4rem;
 }
 
-#aboutHeader{
+#aboutHeader {
     text-align: center;
     margin-top: 6rem;
     font-family: 'Gowun Batang', serif;
@@ -121,10 +121,115 @@
     font-weight: bolder;
 }
 
-#aboutPara{
+#aboutPara {
     margin-top: 2rem;
     text-align: center;
     font-family: 'Cambria', serif;
     font-weight: normal;
     font-size: 24px;
+}
+
+/*Contact Section*/
+
+#contactSection {
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.contactSection .section-header > p {
+    position: relative;
+    top: 7rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.contactSection .email-form {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px 0 black;
+}
+
+.contactSection .email-form .form-group {
+    padding-bottom: 20px;
+}
+
+.contactSection .email-form input,
+.contactSection .email-form textarea {
+    border-radius: 1rem;
+    box-shadow: none;
+    font-size: 14px;
+    font-style: oblique;
+    font-weight: bold
+}
+
+.contactSection .email-form input:focus,
+.contactSection .email-form textarea:focus {
+    border-color: #86b7fe;
+}
+
+.contactSection .email-form input {
+    height: 48px;
+}
+
+.contactSection .email-form textarea {
+    padding: 10px 12px;
+}
+
+.contactSection .email-form button {
+    background: #2626a4;
+    border: 0;
+    padding: 12px 40px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.contactSection .email-form button[type=submit]:hover {
+    background: rgba(61, 61, 185, 0.73);
+}
+
+.contactSection .details{
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px 0 black;
+}
+
+.contactSection .contact-detail-container{
+    margin-top: 10rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.contactSection .details>h3{
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.contactSection .details>p{
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+.contactSection .details>h2{
+    text-align: center;
+    font-style: oblique;
+    font-family: 'Gowun Batang', serif;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }

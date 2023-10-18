@@ -44,7 +44,7 @@
                         <a class="nav-link" aria-current="page" href="#"> Cars</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"> Contact</a>
+                        <a class="nav-link" aria-current="page" href="#contactSection"> Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-6 mb-2 mb-lg-0">
@@ -135,7 +135,7 @@
                     <a href="#"><i class='bx bxl-gmail'></i></a>
                     <a href="#"><i class='bx bxl-twitter'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-telegram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
                 </div>
             </div>
         </div>
@@ -161,8 +161,10 @@
                 <div class="content ps-0 ps-lg-5">
                     <h3 id="aboutHeader">We Provide Everything You Need To A Car</h3>
                     <p id="aboutPara">
-                        Easy car rental private limited is a car rental service with 5 years of history. This company has about
-                        50 cars and 40 drivers working for them in regular shifts. Our company is located at No. 200, Galle
+                        Easy car rental private limited is a car rental service with 5 years of history. This company
+                        has about
+                        50 cars and 40 drivers working for them in regular shifts. Our company is located at No. 200,
+                        Galle
                         Road, Panadura, and well known for our services. Usually, people who don’t own a car, people who
                         are waiting for their car to be repaired and, travelers or tourists seek their services.
                     </p>
@@ -171,6 +173,57 @@
         </div>
     </div>
 </section>
+
+
+<!-- -----------------------------------------------Contact Section------------------------------------------------ -->
+
+<section class="contactSection" id="contactSection">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>How can we help you? We'll be glad to answer your questions</p>
+        </div>
+
+        <div class="row column-gap-5 contact-detail-container">
+            <div class="details col-4">
+                <h2>Need help Contact Us</h2>
+                <h3><i class="fa-sharp fa-solid fa-location-dot" style="color: #2626a4;"></i> Address:</h3>
+                <p>No. 200,Galle Road,Panadura.</p>
+
+                <h3><i class="fa-solid fa-envelope" style="color: #2626a4;"></i> Email:</h3>
+                <p>easycarrentalpvt@gmail.com</p>
+
+                <h3><i class="fa-sharp fa-solid fa-phone" style="color: #2626a4;"></i> Phone Number:</h3>
+                <p>+94 11 811 0192</p>
+            </div>
+
+            <form action="message" class="email-form p-3 p-md-4 col-7" method="post" role="form">
+                <div class="row">
+                    <div class="col-xl-6 form-group">
+                        <input class="form-control" id="contactName" name="contact_name" placeholder="Your Name"
+                               required type="text">
+                    </div>
+                    <div class="col-xl-6 form-group">
+                        <input class="form-control" id="contactEmail" name="contact_email" placeholder="Your Email"
+                               required type="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="contactSubject" name="contact_subject" placeholder="Subject"
+                           required type="text">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="contact_message" placeholder="Message" required
+                              rows="5 "></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btnSendForm" type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 
 <script src="assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
