@@ -5,7 +5,7 @@
     margin-right: 2rem;
 }
 
-#date{
+#date {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
     text-align: right;
@@ -123,26 +123,62 @@
     background-color: #2626a4;
 }
 
-#forms-nav>li>a{
+#forms-nav > li > a {
     text-decoration: none;
 }
 
-#components-nav>li>a{
+#components-nav > li > a {
     text-decoration: none;
 }
 
-#dashboardContents{
+#dashboardContents {
     position: relative;
     top: 3rem;
     left: 2rem;
+    width: 25rem;
 }
 
-#dashboardHeader{
+#dashboardHeader {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
 }
 
-#dashboardNav{
+#dashboardNav {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
+}
+
+.section-dashboard {
+    position: relative;
+    top: 10rem;
+}
+
+.detailBox {
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.detailBox-title {
+    text-align: center;
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2626a4;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.detailBox-body {
+    padding: 0 20px 20px 20px;
+}
+
+.detailBox-icon {
+    font-size: 2em;
+    color: #2626a4;
+}
+
+.detailBox-count > h6 {
+    margin-left: 6rem;
+    font-size: 2em;
 }

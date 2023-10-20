@@ -40,87 +40,231 @@
 
 <!-- ----------------------------------------Menu Side------------------------------------------------- -->
 <div class="container-fluid">
-<div class="row gy-4">
-    <div class="col-2 position-relative">
-        <div class="position-relative mt-4">
-            <div id="sidebar" class="sidebar col-2">
-                <ul class="sidebar-nav" id="sidebar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">
-                            <i class="fas fa-chart-line"></i>Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                            <i class="fas fa-tasks"></i>Manage
-                        </a>
-                        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                            <li>
-                                <a href="adminSubPages/ManageCustomers.html">
-                                    <i class="fas fa-users"></i>Customer
-                                </a>
-                            </li>
-                            <li>
-                                <a href="adminSubPages/ManageDriver.html">
-                                    <i class="fas fa-user-alt"></i>Driver
-                                </a>
-                            </li>
-                            <li>
-                                <a href="adminSubPages/ManageCars.html">
-                                    <i class="fas fa-car"></i>Car
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+    <div class="row gy-4">
+        <div class="col-2 position-relative">
+            <div class="position-relative mt-4">
+                <div id="sidebar" class="sidebar col-2">
+                    <ul class="sidebar-nav" id="sidebar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">
+                                <i class="fas fa-chart-line"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
+                               href="#">
+                                <i class="fas fa-tasks"></i>Manage
+                            </a>
+                            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                                <li>
+                                    <a href="adminSubPages/ManageCustomers.html">
+                                        <i class="fas fa-users"></i>Customer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="adminSubPages/ManageDriver.html">
+                                        <i class="fas fa-user-alt"></i>Driver
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="adminSubPages/ManageCars.html">
+                                        <i class="fas fa-car"></i>Car
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                            <i class="fas fa-info-circle"></i>Details
-                        </a>
-                        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                            <li>
-                                <a href="adminSubPages/PaymentDetails.html">
-                                    <i class="fas fa-money-bill-wave"></i>Payment Details
-                                </a>
-                            </li>
-                            <li>
-                                <a href="adminSubPages/RentDetails.html">
-                                    <i class="fas fa-exchange-alt"></i>Rent Details
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                               href="#">
+                                <i class="fas fa-info-circle"></i>Details
+                            </a>
+                            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                                <li>
+                                    <a href="adminSubPages/PaymentDetails.html">
+                                        <i class="fas fa-money-bill-wave"></i>Payment Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="adminSubPages/RentDetails.html">
+                                        <i class="fas fa-exchange-alt"></i>Rent Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="adminSubPages/RentRequest.html" id="myDetailsSection">
-                            <i class="fas fa-retweet"></i>Rent Request
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="adminSubPages/RentRequest.html" id="myDetailsSection">
+                                <i class="fas fa-retweet"></i>Rent Request
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="adminSubPages/IncomeDetails.html" id="incomeDetails">
-                            <i class="fas fa-chart-bar"></i>Income Details
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="adminSubPages/IncomeDetails.html" id="incomeDetails">
+                                <i class="fas fa-chart-bar"></i>Income Details
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="../index.html">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <span>LogOut</span>
-                        </a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="../index.html">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>LogOut</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-10 d-flex mt-5 position-relative" >
-        <div class="content ps-0 ps-lg-5" id="dashboardContents">
-            <h3 id="dashboardHeader">Admin Dashboard</h3>
-            <p id="dashboardNav">Home > Dashboard</p>
+        <div class="col-10 d-flex mt-5 position-relative">
+            <div class="content ps-0 ps-lg-5" id="dashboardContents">
+                <h3 id="dashboardHeader">Admin Dashboard</h3>
+                <p id="dashboardNav">Home > Dashboard</p>
+            </div>
+            <section class="section-dashboard">
+                <div class="row">
+
+                    <div class="col-10">
+                        <div class="row">
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Cars </h5>
+                                        <div class="d-flex">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="carCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Available Cars</h5>
+                                        <div class="d-flex ">
+                                            <div class="detailBox-icon ">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="availableCarCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Reserved Cars </h5>
+                                        <div class="d-flex ">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="reservedCarCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Driver </h5>
+                                        <div class="d-flex ">
+                                            <div class="detailBox-icon ">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="driverCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Available Driver </h5>
+                                        <div class="d-flex ">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="availableDriverCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">UnAvailable Driver</h5>
+                                        <div class="d-flex">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="unAvailableDriverCount">0</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Registered Customers </h5>
+                                        <div class="d-flex">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-user-friends"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="customerCount">0</h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="detailBox">
+                                    <div class="detailBox-body">
+                                        <h5 class="detailBox-title">Today Bookings </h5>
+                                        <div class="d-flex">
+                                            <div class="detailBox-icon">
+                                                <i class="fas fa-user-friends"></i>
+                                            </div>
+                                            <div class="ps-3 detailBox-count">
+                                                <h6 id="BookingCount">0</h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
     </div>
-</div>
 </div>
 
 
