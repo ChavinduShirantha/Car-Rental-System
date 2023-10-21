@@ -1,0 +1,51 @@
+#driverContents {
+    position: relative;
+    top: 3rem;
+    left: 2rem;
+    width: 27rem;
+}
+
+#driverHeader {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+}
+
+#driverNav {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+}
+
+.driverSection {
+    position: relative;
+    left: -10rem;
+}
+
+.driverDetails {
+    position: relative;
+    top: 8rem;
+    margin-bottom: 30px;
+    border: none;
+}
+
+#search_Id{
+    font-size: 1em;
+    color: #012970;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    width: 15rem;
+    height: 2.5rem;
+    margin-left: 18rem;
+}
+
+.search-form input:focus{
+    outline: none;
+}
+
+.search-form input:hover{
+    outline: 1px solid #0b5ed7;
+}
+
+.driverTableDetails{
+    position: relative;
+    top: 5rem;
+}
