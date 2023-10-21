@@ -1,33 +1,33 @@
-#driverContents {
+#carContents {
     position: relative;
     top: 3rem;
     left: 2rem;
     width: 27rem;
 }
 
-#driverHeader {
+#carHeader {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
 }
 
-#driverNav {
+#carNav {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
 }
 
-.driverSection {
+.carSection {
     position: relative;
-    left: -10rem;
+    left: -6.25rem;
 }
 
-.driverDetails {
+.carDetails {
     position: relative;
     top: 8rem;
     margin-bottom: 30px;
     border: none;
 }
 
-#driver_search_Id{
+#car_search_Id{
     font-size: 1em;
     color: #012970;
     border: 1px solid lightsteelblue;
@@ -45,7 +45,7 @@
     outline: 1px solid #0b5ed7;
 }
 
-.driverTableDetails{
+.carTableDetails{
     position: relative;
     top: 5rem;
 }

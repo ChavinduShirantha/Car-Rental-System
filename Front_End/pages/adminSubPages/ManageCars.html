@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/ManageCars.css">
 </head>
 <body>
 <header class="header fixed-top" id="header">
@@ -48,7 +49,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
+                               href="#">
                                 <i class="fas fa-tasks"></i>Manage
                             </a>
                             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -72,7 +74,8 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                               href="#">
                                 <i class="fas fa-info-circle"></i>Details
                             </a>
                             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -111,11 +114,209 @@
                 </div>
             </div>
         </div>
-        <div class="col-10 d-flex mt-5 position-relative" >
+        <div class="col-10 d-flex mt-5 position-relative">
             <div class="content ps-0 ps-lg-5" id="dashboardContents">
                 <h3 id="dashboardHeader">Manage Cars</h3>
                 <p id="dashboardNav">Home > Manage > Cars</p>
             </div>
+            <section class="carSection">
+                <div class="row mt-3">
+                    <div class="carDetails">
+                        <div class="search-bar mt-4">
+                            <div class="search-form d-flex align-items-center">
+                                <input type="search" class="me-md-1" name="car_Id" id="car_search_Id" placeholder="Search">
+                                <button type="button" class="btn btn-outline-primary me-md-1 col-1"
+                                        id="btnSearchCar">Search
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 m-3 p-1">
+                            <form class="row" id="carForm">
+                                <section id="sec1Car" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label class="form-label" for="car_Id">Car Id</label>
+                                        <input type="text" name="car_Id" class="form-control" id="car_Id"
+                                               placeholder="CAR-001">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="brand">Brand</label>
+                                        <input type="text" name="brand" class="form-control" id="brand"
+                                               placeholder="Brand">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="model">Model</label>
+                                        <input type="text" name="model" class="form-control" id="model"
+                                               placeholder="Model">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="type" class="form-label">Type</label>
+                                        <select class="form-control" id="type" name="type">
+                                            <option value="GENERAL">GENERAL</option>
+                                            <option value="LUXURY">LUXURY</option>
+                                            <option value="PREMIUM">PREMIUM</option>
+                                        </select>
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="transmission_type" class="form-label">Transmission Type</label>
+                                        <select class="form-control" id="transmission_type" name="transmission_type">
+                                            <option value="AUTO">AUTO</option>
+                                            <option value="MANUAL">MANUAL</option>
+                                        </select>
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="fuel_type" class="form-label">Fuel Type</label>
+                                        <select class="form-control" id="fuel_type" name="fuel_type">
+                                            <option value="PETROL">PETROL</option>
+                                            <option value="DIESEL">DIESEL</option>
+                                        </select>
+                                        <span class="control-error"></span>
+                                    </div>
+                                </section>
+
+                                <section id="sec2Car" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label class="form-label" for="front_view">Front View Image</label>
+                                        <input type="file" name="front_view" class="form-control" id="front_view">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="back_view">Back View Image</label>
+                                        <input type="file" name="back_view" class="form-control" id="back_view">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="side_view">Side View Image</label>
+                                        <input type="file" name="side_view" class="form-control" id="side_view">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="interior_view">Interior View Image</label>
+                                        <input type="file" name="interior_view" class="form-control" id="interior_view">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="noOfPassengers">No. of Passengers</label>
+                                        <input type="text" name="noOfPassengers" class="form-control" id="noOfPassengers"
+                                               placeholder="No. of Passengers">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="regNumber">Registration Number</label>
+                                        <input type="text" name="regNumber" class="form-control" id="regNumber"
+                                               placeholder="Registration Number">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </section>
+
+                                <section id="sec3Car" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label for="daily_Rate" class="form-label">Daily Rate</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="daily_Rate" class="form-control" id="daily_Rate"
+                                                   placeholder="Daily Rate">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="monthly_Rate" class="form-label">Monthly Rate</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="monthly_Rate" class="form-control" id="monthly_Rate"
+                                                   placeholder="Monthly Rate">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="priceExtraKM" class="form-label">Price Extra KM</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="priceExtraKM" class="form-control" id="priceExtraKM"
+                                                   placeholder="Price Extra KM">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="freeMileage" class="form-label">Free Mileage</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="freeMileage" class="form-control" id="freeMileage"
+                                                   placeholder="Free Mileage">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="color" class="form-label">Color</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="color" class="form-control" id="color"
+                                                   placeholder="Color">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="vehicleAvailabilityType" class="form-label">Vehicle Availability Type</label>
+                                        <select class="form-control" id="vehicleAvailabilityType" name="vehicleAvailabilityType">
+                                            <option value="PETROL">AVAILABLE</option>
+                                            <option value="DIESEL">UNDER MAINTAIN</option>
+                                        </select>
+                                        <span class="control-error"></span>
+                                    </div>
+
+                                    <div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                        <button class="btn btn-outline-success me-md-1 col-4" id="btnSaveCar"
+                                                type="button">
+                                            Save
+                                        </button>
+                                        <button class="btn btn-outline-warning me-md-1 col-4" id="btnUpdateCar"
+                                                type="button">
+                                            Update
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger me-md-1 col-4"
+                                                id="btnDeleteCar">Delete
+                                        </button>
+                                        <button class="btn btn-outline-info me-md-1 col-4" id="btnGetAllCar"
+                                                type="button">Get All
+                                        </button>
+                                    </div>
+                                </section>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="carTableDetails">
+                        <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 200px;">
+                            <div class="col-11 justify-content-around sectionBorder"
+                                 style="height: 250px; background: white">
+                                <div class="table-responsive overflow-auto " style="height: 200px;width:fit-content">
+                                    <table class="table table-light table-striped table-bordered table-hover">
+                                        <thead class="text-dark table-info text-center  table-bordered sticky-top">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Transmission Type</th>
+                                            <th scope="col">Fuel Type</th>
+                                            <th scope="col">No. of Passengers</th>
+                                            <th scope="col">Registration Number</th>
+                                            <th scope="col">Daily Rate</th>
+                                            <th scope="col">Monthly Rate</th>
+                                            <th scope="col">Price Extra KM</th>
+                                            <th scope="col">Free Mileage</th>
+                                            <th scope="col">Color</th>
+                                            <th scope="col">Availability</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="carTable"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>
