@@ -1,3 +1,20 @@
+#customerContents {
+    position: relative;
+    top: 3rem;
+    left: 2rem;
+    width: 27rem;
+}
+
+#customerHeader {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+}
+
+#customerNav {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+}
+
 .customerSection {
     position: relative;
     left: -10rem;
@@ -22,6 +39,10 @@
 
 .search-form input:focus{
     outline: none;
+}
+
+.search-form input:hover{
+    outline: 1px solid #0b5ed7;
 }
 
 .customerTableDetails{
