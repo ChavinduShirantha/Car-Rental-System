@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../assets/aos/aos.css">
     <link rel="stylesheet" href="../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../assets/css/ManageCustomers.css">
+    <link rel="stylesheet" href="../assets/css/CustomerForm.css">
 
 </head>
 <body>
@@ -47,7 +49,7 @@
                     <ul class="sidebar-nav" id="sidebar-nav">
                         <li class="nav-item">
                             <a class="nav-link " href="#">
-                                <i class="fas fa-chart-line"></i>Dashboard
+                                <i class="fas fa-chart-line"></i>Profile
                             </a>
                         </li>
                         <li class="nav-item">
@@ -73,10 +75,123 @@
             </div>
         </div>
         <div class="col-10 d-flex mt-5 position-relative" >
-            <div class="content ps-0 ps-lg-5" id="dashboardContents">
-                <h3 id="dashboardHeader">Customer Dashboard</h3>
-                <p id="dashboardNav">Home > Dashboard</p>
+            <div class="content ps-0 ps-lg-5" id="customerFormContents">
+                <h3 id="customerFormHeader">Customer Profile</h3>
+                <p id="customerFormNav">Home > Profile</p>
             </div>
+            <section class="customerFormSection">
+                <div class="row mt-3">
+                    <div class="customerFormDetails">
+                        <div class="col-12 m-3 p-1">
+                            <form class="row" id="customerFormDetails">
+                                <section id="sec1Customer" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label class="form-label" for="user_Id">User Id</label>
+                                        <input type="text" name="user_Id" class="form-control" id="user_Id"
+                                               placeholder="C00-001">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="firstName">First Name</label>
+                                        <input type="text" name="firstName" class="form-control" id="firstName"
+                                               placeholder="First Name">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="lastName">Last Name</label>
+                                        <input type="text" name="lastName" class="form-control" id="lastName"
+                                               placeholder="Last Name">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="contact_No">Contact Number</label>
+                                        <input type="text" name="contact_No" class="form-control" id="contact_No"
+                                               placeholder="Contact Number">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="address">Address</label>
+                                        <input type="text" name="address" class="form-control" id="address"
+                                               placeholder="Address">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </section>
+
+                                <section id="sec2Customer" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="text" name="email" class="form-control" id="email"
+                                               placeholder="Email Address">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="nic">NIC NUmber</label>
+                                        <input type="text" name="nic" class="form-control" id="nic"
+                                               placeholder="National ID">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="license_Img">NIC Image</label>
+                                        <input type="file" name="nic_Img" class="form-control" id="nic_Img">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="license_No">Driving License ID</label>
+                                        <input type="text" name="license_No" class="form-control" id="license_No"
+                                               placeholder="Driving License">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="license_Img">Driving License Image</label>
+                                        <input type="file" name="license_Img" class="form-control" id="license_Img">
+                                        <span class="control-error"></span>
+                                    </div>
+                                </section>
+
+                                <section id="sec3" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <label for="role_Type" class="form-label">Role type</label>
+                                        <select class="form-control" id="role_Type" name="role_Type">
+                                            <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                        </select>
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="user_Name" class="form-label">User Name</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" name="user_Name" class="form-control" id="user_Name"
+                                                   placeholder="User Name">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" name="password" class="form-control" id="password"
+                                               placeholder="Enter Password">
+                                        <span class="control-error"></span>
+                                    </div>
+                                    <div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                        <button class="btn btn-outline-success me-md-1 col-4" id="btnSaveCustomer"
+                                                type="button">
+                                            Save
+                                        </button>
+                                        <button class="btn btn-outline-warning me-md-1 col-4" id="btnUpdateCustomer"
+                                                type="button">
+                                            Update
+                                        </button>
+                                    </div>
+                                    <div class="mt-2 mb-auto d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                        <button type="button" class="btn btn-outline-danger me-md-1 col-4"
+                                                id="btnDeleteCustomer">Delete
+                                        </button>
+                                    </div>
+                                </section>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

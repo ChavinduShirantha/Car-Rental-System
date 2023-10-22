@@ -1,0 +1,28 @@
+#customerFormContents {
+    position: relative;
+    top: 3rem;
+    left: 2rem;
+    width: 27rem;
+}
+
+#customerFormHeader {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+}
+
+#customerFormNav {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+}
+
+.customerFormSection {
+    position: relative;
+    left: -14rem;
+}
+
+.customerFormDetails {
+    position: relative;
+    top: 8rem;
+    margin-bottom: 30px;
+    border: none;
+}
