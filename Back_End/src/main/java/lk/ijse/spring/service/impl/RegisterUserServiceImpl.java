@@ -101,4 +101,12 @@ public class RegisterUserServiceImpl implements RegisterUserService {
         System.out.println(regUser);
         repo.save(regUser);
     }
+
+    @Override
+    public void deleteRegisterUser(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException(id+ " User is not available, please check the ID before delete.!");
+        }
+        repo.deleteById(id);
+    }
 }

@@ -43,4 +43,10 @@ public class RegisterUserController {
         service.updateRegisterUser(dto);
         return new ResponseUtil("Ok","Successfully Updated",null);
     }
+
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteCustomer(String id){
+        service.deleteRegisterUser(id);
+        return new ResponseUtil("Ok","Successfully Deleted",null);
+    }
 }

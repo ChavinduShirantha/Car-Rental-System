@@ -105,9 +105,9 @@ $("#btnSearchCustomer").click(function () {
             let address = res.data.address;
             let email = res.data.email;
             let nic = res.data.nic;
-            let nic_img=res.data.nic_Img;
+            let nic_img = res.data.nic_Img;
             let licenseNo = res.data.license_No;
-            let license_img=res.data.license_Img;
+            let license_img = res.data.license_Img;
             let roleType = res.data.user.role_Type;
             let userName = res.data.user.user_Name;
             let password = res.data.user.password;
@@ -147,8 +147,24 @@ $("#btnUpdateCustomer").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
+            getAllRegisterUsers();
         },
         error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
+
+$("#btnDeleteCustomer").click(function () {
+    let userId = $("#user_Id").val();
+    $.ajax({
+        url: baseURL + "registerUser?id=" + userId,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            getAllRegisterUsers();
+        }, error: function (error) {
             alert(error.responseJSON.message);
         }
     });

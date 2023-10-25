@@ -14,4 +14,5 @@ public interface RegisterUserService {
     List<RegisterUserDTO> getAllRegisterUsers();
     RegisterUserDTO findRegisterUser(String id);
     void updateRegisterUser(RegisterUserDTO dto);
+    void deleteRegisterUser(String id);
 }
