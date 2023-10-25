@@ -63,4 +63,13 @@ public class RegisterUserServiceImpl implements RegisterUserService {
         return mapper.map(all, new TypeToken<List<RegisterUserDTO>>() {
         }.getType());
     }
+
+    @Override
+    public RegisterUserDTO findRegisterUser(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException(id+ " User is not available, please check the ID.!");
+        }
+        RegisterUser registerUser = repo.findById(id).get();
+        return mapper.map(registerUser,RegisterUserDTO.class);
+    }
 }

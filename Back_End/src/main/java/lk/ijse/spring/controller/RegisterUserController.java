@@ -31,4 +31,9 @@ public class RegisterUserController {
     public ResponseUtil getAllRegisterUsers(){
         return new ResponseUtil("Ok","Successfully Loaded",service.getAllRegisterUsers());
     }
+
+    @GetMapping(params = {"id"})
+    public ResponseUtil findRegisterUser(String id){
+        return new ResponseUtil("Ok","Successfully Loaded", service.findRegisterUser(id));
+    }
 }
