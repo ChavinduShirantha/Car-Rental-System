@@ -26,4 +26,9 @@ public class RegisterUserController {
         service.saveRegisterUser(dto);
         return new ResponseUtil("Ok","Successfully Added",null);
     }
+
+    @GetMapping
+    public ResponseUtil getAllRegisterUsers(){
+        return new ResponseUtil("Ok","Successfully Loaded",service.getAllRegisterUsers());
+    }
 }

@@ -2,6 +2,8 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.RegisterUserDTO;
 
+import java.util.List;
+
 /**
  * @author : Chavindu
  * created : 10/24/2023-2:36 PM
@@ -9,4 +11,5 @@ import lk.ijse.spring.dto.RegisterUserDTO;
 
 public interface RegisterUserService {
     void saveRegisterUser(RegisterUserDTO dto);
+    List<RegisterUserDTO> getAllRegisterUsers();
 }

@@ -6,6 +6,7 @@ import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.RegisterUserRepo;
 import lk.ijse.spring.service.RegisterUserService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 
 /**
@@ -53,5 +55,12 @@ public class RegisterUserServiceImpl implements RegisterUserService {
 
         System.out.println(regUser);
         repo.save(regUser);
+    }
+
+    @Override
+    public List<RegisterUserDTO> getAllRegisterUsers() {
+        List<RegisterUser> all = repo.findAll();
+        return mapper.map(all, new TypeToken<List<RegisterUserDTO>>() {
+        }.getType());
     }
 }
