@@ -17,7 +17,7 @@
 
 .customerFormSection {
     position: relative;
-    left: -14rem;
+    left: -10rem;
 }
 
 .customerFormDetails {
@@ -25,4 +25,9 @@
     top: 8rem;
     margin-bottom: 30px;
     border: none;
+}
+
+#nicImageHeader,#licenseImageHeader{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
 }
