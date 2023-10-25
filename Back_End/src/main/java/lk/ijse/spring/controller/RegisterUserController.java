@@ -36,4 +36,11 @@ public class RegisterUserController {
     public ResponseUtil findRegisterUser(String id){
         return new ResponseUtil("Ok","Successfully Loaded", service.findRegisterUser(id));
     }
+
+    @PostMapping(path = {"update"})
+    public ResponseUtil updateUser(@ModelAttribute RegisterUserDTO dto, @ModelAttribute UserDTO userDTO){
+        dto.setUser(userDTO);
+        service.updateRegisterUser(dto);
+        return new ResponseUtil("Ok","Successfully Updated",null);
+    }
 }

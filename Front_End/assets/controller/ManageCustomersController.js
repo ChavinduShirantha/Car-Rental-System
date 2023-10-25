@@ -136,3 +136,20 @@ $("#btnSearchCustomer").click(function () {
         }
     })
 });
+
+$("#btnUpdateCustomer").click(function () {
+    let customerFormData = new FormData($("#customerForm")[0]);
+    $.ajax({
+        url: baseURL + "registerUser/update",
+        method: "post",
+        data: customerFormData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message)
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

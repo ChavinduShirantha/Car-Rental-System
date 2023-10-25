@@ -12,6 +12,6 @@ import java.util.List;
 public interface RegisterUserService {
     void saveRegisterUser(RegisterUserDTO dto);
     List<RegisterUserDTO> getAllRegisterUsers();
-
     RegisterUserDTO findRegisterUser(String id);
+    void updateRegisterUser(RegisterUserDTO dto);
 }

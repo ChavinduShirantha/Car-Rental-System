@@ -72,4 +72,33 @@ public class RegisterUserServiceImpl implements RegisterUserService {
         RegisterUser registerUser = repo.findById(id).get();
         return mapper.map(registerUser,RegisterUserDTO.class);
     }
+
+    @Override
+    public void updateRegisterUser(RegisterUserDTO dto) {
+        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
+
+        if (!repo.existsById(dto.getUser_Id()))
+            throw new RuntimeException(dto.getUser_Id()+" is not available, please insert a valid ID");
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
+
+            regUser.setNic_Img("uploads/" + dto.getNic_Img().getOriginalFilename());
+            regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
+
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println(regUser);
+        repo.save(regUser);
+    }
 }
