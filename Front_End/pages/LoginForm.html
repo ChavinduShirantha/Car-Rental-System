@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Car Rental</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <meta name="view" content="width=device-width initial-scale=1 minimum-scale=1 maximum-scale=2">
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="../assets/fontAwesome/css/all.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <style>
+        @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+        .login-block {
+            background: #DE6262;
+            background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
+            background: linear-gradient(to bottom, #FFB88C, #DE6262);
+            float: left;
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .banner-sec {
+            background: url(/assets/img/login.jpg) no-repeat left bottom;
+            background-size: cover;
+            min-height: 86.4vh;
+            border-radius: 0 10px 10px 0;
+            padding: 0;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-sec {
+            padding: 50px 30px;
+            position: relative;
+        }
+
+        .login-sec .copy-text {
+            position: absolute;
+            width: 80%;
+            bottom: 20px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .login-sec .copy-text i {
+            color: #FEB58A;
+        }
+
+        .login-sec .copy-text a {
+            color: #E36262;
+        }
+
+        .login-sec h2 {
+            margin-bottom: 30px;
+            font-weight: 800;
+            font-size: 30px;
+            color: #DE6262;
+        }
+
+        .login-sec h2:after {
+            content: " ";
+            width: 100px;
+            height: 5px;
+            background: #FEB58A;
+            display: block;
+            margin-top: 20px;
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .banner-text h2 {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .banner-text h2:after {
+            content: " ";
+            width: 100px;
+            height: 5px;
+            background: #FFF;
+            display: block;
+            margin-top: 20px;
+            border-radius: 3px;
+        }
+
+        .banner-text p {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Login Now</h2>
+                <form class="login-form">
+                    <form class="ubFt">
+                        <div class="form-group ms-3 me-3">
+                            <select class="form-select" id="role_Type" name="role_Type" style="border-radius: 20px;">
+                                <option selected value="RoleType">Choose Role</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="REGISTERED_USER">REGISTERED_USER</option>
+                                <option value="DRIVER">DRIVER</option>
+                            </select>
+                        </div>
+                        <div class="ms-3 me-3">
+                            <label for="user_name" class="col-form-label">User Name:</label>
+                            <input type="text" class="form-control" id="user_name" placeholder="Enter User Name...">
+                            <small class="control-error text-danger" id="lbl_user_name"></small>
+                        </div>
+                        <div class="ms-3 me-3 mb-4">
+                            <label for="user_password" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="user_password"
+                                   placeholder="Enter User Password...">
+                            <small class="control-error text-danger" id="lbl_user_password"></small>
+                        </div>
+
+                    </form>
+                    <div class="text-center">
+                        <a class="small" href="">Forgot Password?</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="small" href="../index.html">Create an Account!</a>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" id="btnLogin">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 banner-sec">
+                <img class="d-block img-fluid" src=""
+                     alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/controller/UserLoginController.js"></script>
+
+</body>
+</html>
