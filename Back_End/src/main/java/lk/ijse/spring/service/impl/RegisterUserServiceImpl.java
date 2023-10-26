@@ -28,12 +28,12 @@ public class RegisterUserServiceImpl implements RegisterUserService {
     RegisterUserRepo repo;
     @Autowired
     ModelMapper mapper;
+
     @Override
     public void saveRegisterUser(RegisterUserDTO dto) {
-//        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
-        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(),"", dto.getLicense_No(),"", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), "", dto.getLicense_No(), "", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         if (repo.existsById(dto.getUser_Id()))
-            throw new RuntimeException(dto.getUser_Id()+" is already available, please insert a new ID");
+            throw new RuntimeException(dto.getUser_Id() + " is already available, please insert a new ID");
 
         try {
 
@@ -49,7 +49,9 @@ public class RegisterUserServiceImpl implements RegisterUserService {
             regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
 
@@ -67,23 +69,23 @@ public class RegisterUserServiceImpl implements RegisterUserService {
     @Override
     public RegisterUserDTO findRegisterUser(String id) {
         if (!repo.existsById(id)) {
-            throw new RuntimeException(id+ " User is not available, please check the ID.!");
+            throw new RuntimeException(id + " User is not available, please check the ID.!");
         }
         RegisterUser registerUser = repo.findById(id).get();
-        return mapper.map(registerUser,RegisterUserDTO.class);
+        return mapper.map(registerUser, RegisterUserDTO.class);
     }
 
     @Override
     public void updateRegisterUser(RegisterUserDTO dto) {
-//        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
-        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(),"", dto.getLicense_No(),"", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), "", dto.getLicense_No(), "", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
 
         if (!repo.existsById(dto.getUser_Id()))
-            throw new RuntimeException(dto.getUser_Id()+" is not available, please insert a valid ID");
+            throw new RuntimeException(dto.getUser_Id() + " is not available, please insert a valid ID");
 
         try {
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -106,7 +108,7 @@ public class RegisterUserServiceImpl implements RegisterUserService {
     @Override
     public void deleteRegisterUser(String id) {
         if (!repo.existsById(id)) {
-            throw new RuntimeException(id+ " User is not available, please check the ID before delete.!");
+            throw new RuntimeException(id + " User is not available, please check the ID before delete.!");
         }
         repo.deleteById(id);
     }

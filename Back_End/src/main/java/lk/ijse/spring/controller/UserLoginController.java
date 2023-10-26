@@ -1,5 +1,7 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CurrentUser;
+import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.service.UserService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,12 @@ public class UserLoginController {
 
     @GetMapping(params = {"username"})
     public ResponseUtil setUser(String username,String password){
-        service.getRegisterUser(username,password);
+        CurrentUser.user = service.getRegisterUser(username,password);
         return new ResponseUtil("OK","Successfully Loaded..!","");
+    }
+
+    @GetMapping(path = "current")
+    public ResponseUtil getCurrentUser(){
+        return new ResponseUtil("OK","Successfully Loaded..!",CurrentUser.user);
     }
 }
