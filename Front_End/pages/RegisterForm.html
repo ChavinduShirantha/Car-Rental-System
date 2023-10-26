@@ -82,8 +82,8 @@
                       method="post" role="form">
                     <div class="row gy-3">
                         <div class="col-lg-6 col-md-8">
-                            <label for="user_id" class="col-form-label">User ID:</label>
-                            <input type="text" class="form-control" id="user_id" placeholder="C00-001">
+                            <label for="user_Id" class="col-form-label">User ID:</label>
+                            <input type="text" class="form-control" id="user_Id" placeholder="C00-001">
                             <small class="control-error text-danger" id="lbl_user_id"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
@@ -97,8 +97,8 @@
                             <small class="control-error text-danger" id="lbl_lastName"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
-                            <label for="contact_no" class="col-form-label">Contact Number:</label>
-                            <input type="text" class="form-control" id="contact_no" placeholder="Contact Number">
+                            <label for="contact_No" class="col-form-label">Contact Number:</label>
+                            <input type="text" class="form-control" id="contact_No" placeholder="Contact Number">
                             <small class="control-error text-danger" id="lbl_contact_no"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
@@ -117,8 +117,8 @@
                             <small class="control-error text-danger" id="lbl_nic"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
-                            <label for="licenseId" class="col-form-label">Driving License Id:</label>
-                            <input type="text" class="form-control" id="licenseId" placeholder="Driving License Id:">
+                            <label for="license_No" class="col-form-label">Driving License Id:</label>
+                            <input type="text" class="form-control" id="license_No" placeholder="Driving License Id:">
                             <small class="control-error text-danger" id="lbl_licenseId"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
@@ -144,13 +144,13 @@
                             <label class="form-label" for="user_Name">User Name</label>
                             <input class="form-control" id="user_Name" name="user_Name" placeholder="User Name"
                                    type="text">
-                            <span class="control-error"></span>
+                            <small class="control-error text-danger" id="lbl_userNamr"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
                             <label class="form-label" for="password">Password</label>
                             <input class="form-control" id="password" name="password" placeholder="Enter Password"
                                    type="password">
-                            <span class="control-error"></span>
+                            <small class="control-error text-danger" id="lbl_pwd"></small>
                         </div>
                     </div>
                     <div class="text-center">
@@ -167,8 +167,9 @@
 </section>
 
 
-
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/controller/validations/RegisterFormValidations.js"></script>
 
 </body>
 </html>
