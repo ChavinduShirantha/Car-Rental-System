@@ -30,8 +30,8 @@ public class RegisterUserServiceImpl implements RegisterUserService {
     ModelMapper mapper;
     @Override
     public void saveRegisterUser(RegisterUserDTO dto) {
-        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
-        //RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(),"", dto.getLicense_No(),"", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
+//        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
+        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(),"", dto.getLicense_No(),"", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         if (repo.existsById(dto.getUser_Id()))
             throw new RuntimeException(dto.getUser_Id()+" is already available, please insert a new ID");
 
@@ -75,7 +75,8 @@ public class RegisterUserServiceImpl implements RegisterUserService {
 
     @Override
     public void updateRegisterUser(RegisterUserDTO dto) {
-        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
+//        RegisterUser regUser = mapper.map(dto, RegisterUser.class);
+        RegisterUser regUser = new RegisterUser(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(),"", dto.getLicense_No(),"", new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
 
         if (!repo.existsById(dto.getUser_Id()))
             throw new RuntimeException(dto.getUser_Id()+" is not available, please insert a valid ID");

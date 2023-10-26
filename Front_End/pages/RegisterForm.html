@@ -48,7 +48,7 @@
                             Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#login"><i
+                        <a class="nav-link" aria-current="page" href="LoginForm.html"><i
                                 class="fa-solid fa-right-to-bracket"></i>
                             Login</a>
                     </li>
@@ -57,7 +57,6 @@
         </div>
     </nav>
 </header>
-
 
 
 <!-- --------------------------------------SignUp Form---------------------------------------------- -->
@@ -78,12 +77,12 @@
 
             <div class="col-lg-8 d-flex align-items-center register-form-bg sectionBorder">
                 <form class="reg-customer-form" data-aos="fade-up" data-aos-delay="100"
-                      id="customerForm"
-                      method="post" role="form">
+                      id="registerForm">
                     <div class="row gy-3">
                         <div class="col-lg-6 col-md-8">
                             <label for="user_Id" class="col-form-label">User ID:</label>
-                            <input type="text" class="form-control" id="user_Id" placeholder="C00-001">
+                            <input type="text" class="form-control" name="user_Id" id="user_Id"
+                                   placeholder="C00-001 | D00-001 |A00-001">
                             <small class="control-error text-danger" id="lbl_user_id"></small>
                         </div>
                         <div class="col-lg-6 col-md-8">
@@ -154,8 +153,8 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="../index.html"><button class="btn btn-outline-success mt-3" id="btnSaveCustomer" type="button">Sign Up
-                        </button></a>
+                        <button class="btn btn-outline-success mt-3" id="btnRegisterCustomer" type="button">Sign Up
+                        </button>
                     </div>
                 </form>
             </div>
@@ -170,6 +169,7 @@
 <script src="../assets/js/jquery-3.7.0.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script src="../assets/controller/validations/RegisterFormValidations.js"></script>
+<script src="../assets/controller/RegisterFormController.js"></script>
 
 </body>
 </html>

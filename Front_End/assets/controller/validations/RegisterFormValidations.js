@@ -1,4 +1,5 @@
 let regCusID = /^[(A|C|D)][0-9]{2}-[0-9]{3}$/;
+// let regCusID = /^(C00-)[0-9]{3,4}$/;
 const regFirstName = /^[A-z ]{3,20}$/;
 const regLastName = /^[A-z ]{3,20}$/;
 const regContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
@@ -148,7 +149,7 @@ $("#user_Name").on('keydown', function (event) {
 $("#password").on('keydown', function (event) {
     if (event.key === "Enter" && check(regPassword, $("#password"))) {
         if (event.which === 13) {
-            $('#btnSaveCustomer').focus();
+            $('#btnRegisterCustomer').focus();
         }
     }
 });
@@ -168,9 +169,9 @@ function checkValidity() {
 
 function setButtonState(value) {
     if (value > 0) {
-        $("#btnSaveCustomer").attr('disabled', true);
+        $("#btnRegisterCustomer").attr('disabled', true);
     } else {
-        $("#btnSaveCustomer").attr('disabled', false);
+        $("#btnRegisterCustomer").attr('disabled', false);
     }
 }
 
