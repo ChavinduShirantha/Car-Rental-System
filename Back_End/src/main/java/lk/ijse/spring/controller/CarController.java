@@ -36,8 +36,14 @@ public class CarController {
     }
 
     @PostMapping(path = {"update"})
-    public ResponseUtil updateDriver(@ModelAttribute CarDTO dto){
+    public ResponseUtil updateCar(@ModelAttribute CarDTO dto){
         service.updateCar(dto);
         return new ResponseUtil("Ok","Successfully Updated",null);
+    }
+
+    @DeleteMapping(params = {"id"})
+    public ResponseUtil deleteCar(String id){
+        service.deleteCar(id);
+        return new ResponseUtil("Ok","Successfully Deleted",null);
     }
 }

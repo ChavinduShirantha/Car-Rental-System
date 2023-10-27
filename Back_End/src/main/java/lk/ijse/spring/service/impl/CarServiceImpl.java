@@ -109,6 +109,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void deleteCar(String id) {
-
+        if (!repo.existsById(id)) {
+            throw new RuntimeException(id + " Car is not available, please check the ID before delete.!");
+        }
+        repo.deleteById(id);
     }
 }

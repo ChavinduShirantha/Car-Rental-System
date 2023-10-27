@@ -161,3 +161,19 @@ $("#btnUpdateCar").click(function () {
         }
     });
 });
+
+$("#btnDeleteCar").click(function () {
+    let regNumber = $("#regNumber").val();
+    $.ajax({
+        url: baseURL + "registerCar?id=" + regNumber,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            getAllCars();
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
+
