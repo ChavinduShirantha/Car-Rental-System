@@ -1,0 +1,11 @@
+.driverFormSection {
+    position: relative;
+    left: -10rem;
+}
+
+.driverFormDetails {
+    position: relative;
+    top: 8rem;
+    margin-bottom: 30px;
+    border: none;
+}
