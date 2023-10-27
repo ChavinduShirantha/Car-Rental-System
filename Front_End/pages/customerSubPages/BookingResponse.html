@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Easy Car Rental |  Rent Car</title>
+    <title>Easy Car Rental | Rent Car</title>
     <meta name="theme-color" content="#2980b9">
     <meta name="view" content="width=device-width initial-scale=1 minimum-scale=1 maximum-scale=2">
     <link rel="icon" href="../../favicon.png">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/BookingResponse.css">
 
 </head>
 <body>
@@ -72,11 +73,53 @@
                 </div>
             </div>
         </div>
-        <div class="col-10 d-flex mt-5 position-relative" >
+        <div class="col-10 d-flex mt-5 position-relative">
             <div class="content ps-0 ps-lg-5" id="dashboardContents">
                 <h3 id="dashboardHeader"> Booking Response</h3>
                 <p id="dashboardNav">Home > Booking Response</p>
             </div>
+            <section class="container-fluid" id="booking_Response">
+
+                <div class="row mt-3">
+                    <div>
+                        <div class="search-bar mt-4">
+                            <div class="search-form d-flex align-items-center">
+                                <input type="search" class="me-md-1" name="car_Id" id="rent_search_Id"
+                                       placeholder="Search">
+                                <button type="button" class="btn btn-outline-primary me-md-1 col-1"
+                                        id="btnSearchRent">Search
+                                </button>
+                                <button type="button" class="btn btn-outline-danger me-md-1 col-1"
+                                        id="btnDeleteRent">Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                            <div class="col-11 justify-content-around sectionBorder"
+                                 style="height: 290px; background: white">
+                                <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                    <table class="table table-light table-striped table-bordered table-hover">
+                                        <thead class="text-dark table-info text-nowrap text-center  table-bordered">
+                                        <tr>
+                                            <th scope="col">Rent ID</th>
+                                            <th scope="col">User ID</th>
+                                            <th scope="col">Car ID</th>
+                                            <th scope="col">Pick-Up Date</th>
+                                            <th scope="col">Pick-Up Time</th>
+                                            <th scope="col">Return Date</th>
+                                            <th scope="col">Return Time</th>
+                                            <th scope="col">Driver or not</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblResponse"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>
