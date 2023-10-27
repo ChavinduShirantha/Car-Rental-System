@@ -152,10 +152,26 @@ $("#btnUpdateDriver").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
-            getAllRegisterUsers();
+            getAllDrivers();
         },
         error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 });
+
+$("#btnDeleteDriver").click(function () {
+    let userId = $("#user_Id").val();
+    $.ajax({
+        url: baseURL + "registerDriver?id=" + userId,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            getAllDrivers();
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
+
