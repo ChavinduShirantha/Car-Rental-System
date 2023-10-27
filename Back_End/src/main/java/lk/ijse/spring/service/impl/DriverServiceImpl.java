@@ -74,7 +74,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void updateDriver(DriverDTO dto) {
         Driver driver = new Driver(dto.getUser_Id(), dto.getFirstName(), dto.getLastName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic(), "", dto.getLicense_No(), "", dto.getAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
-        if (repo.existsById(dto.getUser_Id()))
+        if (!repo.existsById(dto.getUser_Id()))
             throw new RuntimeException(dto.getUser_Id() + " is not available, please insert a new ID");
 
         try {

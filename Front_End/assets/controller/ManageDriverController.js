@@ -141,3 +141,21 @@ $("#btnSearchDriver").click(function () {
         }
     })
 });
+
+$("#btnUpdateDriver").click(function () {
+    let driverFormData = new FormData($("#driverForm")[0]);
+    $.ajax({
+        url: baseURL + "registerDriver/update",
+        method: "post",
+        data: driverFormData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message)
+            getAllRegisterUsers();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
