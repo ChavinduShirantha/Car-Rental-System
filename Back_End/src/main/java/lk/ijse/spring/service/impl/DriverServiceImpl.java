@@ -1,9 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.DriverDTO;
-import lk.ijse.spring.dto.RegisterUserDTO;
 import lk.ijse.spring.entity.Driver;
-import lk.ijse.spring.entity.RegisterUser;
 import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
