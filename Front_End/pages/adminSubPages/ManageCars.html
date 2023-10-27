@@ -124,7 +124,8 @@
                     <div class="carDetails">
                         <div class="search-bar mt-4">
                             <div class="search-form d-flex align-items-center">
-                                <input type="search" class="me-md-1" name="car_Id" id="car_search_Id" placeholder="Search">
+                                <input type="search" class="me-md-1" name="car_Id" id="car_search_Id"
+                                       placeholder="Search">
                                 <button type="button" class="btn btn-outline-primary me-md-1 col-1"
                                         id="btnSearchCar">Search
                                 </button>
@@ -134,24 +135,27 @@
                         <div class="col-12 m-3 p-1">
                             <form class="row" id="carForm">
                                 <section id="sec1Car" class="col-4 mt-3">
-                                    <div class="mb-sm-0">
+                                    <!--<div class="mb-sm-0">
                                         <label class="form-label" for="car_Id">Car Id</label>
                                         <input type="text" name="car_Id" class="form-control" id="car_Id"
                                                placeholder="CAR-001">
                                         <span class="control-error"></span>
-                                    </div>
+                                    </div>-->
+                                    <div class="mb-sm-0">
+                                        <label class="form-label" for="regNumber">Registration Number</label>
+                                        <input type="text" name="regNumber" class="form-control" id="regNumber"
+                                               placeholder="Registration Number">
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="brand">Brand</label>
                                         <input type="text" name="brand" class="form-control" id="brand"
                                                placeholder="Brand">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="model">Model</label>
                                         <input type="text" name="model" class="form-control" id="model"
                                                placeholder="Model">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="type" class="form-label">Type</label>
                                         <select class="form-control" id="type" name="type">
@@ -159,112 +163,105 @@
                                             <option value="LUXURY">LUXURY</option>
                                             <option value="PREMIUM">PREMIUM</option>
                                         </select>
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="transmission_type" class="form-label">Transmission Type</label>
                                         <select class="form-control" id="transmission_type" name="transmission_type">
                                             <option value="AUTO">AUTO</option>
                                             <option value="MANUAL">MANUAL</option>
                                         </select>
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="fuel_type" class="form-label">Fuel Type</label>
                                         <select class="form-control" id="fuel_type" name="fuel_type">
                                             <option value="PETROL">PETROL</option>
                                             <option value="DIESEL">DIESEL</option>
                                         </select>
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                 </section>
 
                                 <section id="sec2Car" class="col-4 mt-3">
                                     <div class="mb-sm-0">
                                         <label class="form-label" for="front_view">Front View Image</label>
                                         <input type="file" name="front_view" class="form-control" id="front_view">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="back_view">Back View Image</label>
                                         <input type="file" name="back_view" class="form-control" id="back_view">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="side_view">Side View Image</label>
                                         <input type="file" name="side_view" class="form-control" id="side_view">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="interior_view">Interior View Image</label>
                                         <input type="file" name="interior_view" class="form-control" id="interior_view">
-                                        <span class="control-error"></span>
-                                    </div>
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="noOfPassengers">No. of Passengers</label>
-                                        <input type="text" name="noOfPassengers" class="form-control" id="noOfPassengers"
+                                        <input type="text" name="noOfPassengers" class="form-control"
+                                               id="noOfPassengers"
                                                placeholder="No. of Passengers">
-                                        <span class="control-error"></span>
-                                    </div>
-                                    <div class="mb-sm-0 mt-3">
+                                        <small class="control-error text-danger"></small></div>
+                                    <!--<div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="regNumber">Registration Number</label>
                                         <input type="text" name="regNumber" class="form-control" id="regNumber"
                                                placeholder="Registration Number">
                                         <span class="control-error"></span>
+                                    </div>-->
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="color" class="form-label">Color</label>
+                                        <input type="text" name="color" class="form-control" id="color"
+                                               placeholder="Color">
+                                        <small class="control-error text-danger"></small>
                                     </div>
                                 </section>
 
                                 <section id="sec3Car" class="col-4 mt-3">
                                     <div class="mb-sm-0">
                                         <label for="daily_Rate" class="form-label">Daily Rate</label>
-                                        <div class="input-group has-validation">
-                                            <input type="text" name="daily_Rate" class="form-control" id="daily_Rate"
-                                                   placeholder="Daily Rate">
-                                            <span class="control-error"></span>
-                                        </div>
-                                    </div>
+                                        <input type="text" name="daily_Rate" class="form-control" id="daily_Rate"
+                                               placeholder="Daily Rate">
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="monthly_Rate" class="form-label">Monthly Rate</label>
-                                        <div class="input-group has-validation">
-                                            <input type="text" name="monthly_Rate" class="form-control" id="monthly_Rate"
-                                                   placeholder="Monthly Rate">
-                                            <span class="control-error"></span>
-                                        </div>
-                                    </div>
+                                        <input type="text" name="monthly_Rate" class="form-control"
+                                               id="monthly_Rate"
+                                               placeholder="Monthly Rate">
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="priceExtraKM" class="form-label">Price Extra KM</label>
-                                        <div class="input-group has-validation">
-                                            <input type="text" name="priceExtraKM" class="form-control" id="priceExtraKM"
-                                                   placeholder="Price Extra KM">
-                                            <span class="control-error"></span>
-                                        </div>
+                                        <input type="text" name="priceExtraKM" class="form-control"
+                                               id="priceExtraKM"
+                                               placeholder="Price Extra KM">
+                                        <small class="control-error text-danger"></small>
                                     </div>
                                     <div class="mb-sm-0 mt-3">
                                         <label for="freeMileage" class="form-label">Free Mileage</label>
-                                        <div class="input-group has-validation">
-                                            <input type="text" name="freeMileage" class="form-control" id="freeMileage"
-                                                   placeholder="Free Mileage">
-                                            <span class="control-error"></span>
-                                        </div>
+                                        <input type="text" name="freeMileage" class="form-control" id="freeMileage"
+                                               placeholder="Free Mileage">
+                                        <small class="control-error text-danger"></small>
                                     </div>
-                                    <div class="mb-sm-0 mt-3">
+                                    <!--<div class="mb-sm-0 mt-3">
                                         <label for="color" class="form-label">Color</label>
                                         <div class="input-group has-validation">
                                             <input type="text" name="color" class="form-control" id="color"
                                                    placeholder="Color">
                                             <span class="control-error"></span>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="mb-sm-0 mt-3">
-                                        <label for="vehicleAvailabilityType" class="form-label">Vehicle Availability Type</label>
-                                        <select class="form-control" id="vehicleAvailabilityType" name="vehicleAvailabilityType">
+                                        <label for="vehicleAvailabilityType" class="form-label">Vehicle Availability
+                                            Type</label>
+                                        <select class="form-control" id="vehicleAvailabilityType"
+                                                name="vehicleAvailabilityType">
                                             <option value="PETROL">AVAILABLE</option>
                                             <option value="DIESEL">UNDER MAINTAIN</option>
                                         </select>
-                                        <span class="control-error"></span>
+                                        <small class="control-error text-danger"></small>
                                     </div>
 
-                                    <div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                    <!--<div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center ">
                                         <button class="btn btn-outline-success me-md-1 col-4" id="btnSaveCar"
                                                 type="button">
                                             Save
@@ -279,8 +276,25 @@
                                         <button class="btn btn-outline-info me-md-1 col-4" id="btnGetAllCar"
                                                 type="button">Get All
                                         </button>
-                                    </div>
+                                    </div>-->
                                 </section>
+                                <div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center col-4"
+                                     style="margin-left: 25rem">
+                                    <button class="btn btn-outline-success me-md-1 col-4" id="btnSaveCar"
+                                            type="button">
+                                        Save
+                                    </button>
+                                    <button class="btn btn-outline-warning me-md-1 col-4" id="btnUpdateCar"
+                                            type="button">
+                                        Update
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger me-md-1 col-4"
+                                            id="btnDeleteCar">Delete
+                                    </button>
+                                    <button class="btn btn-outline-info me-md-1 col-4" id="btnGetAllCar"
+                                            type="button">Get All
+                                    </button>
+                                </div>
 
                             </form>
                         </div>
@@ -326,6 +340,7 @@
 <script src="../../assets/js/bootstrap.min.js"></script>
 <script src="../../assets/aos/aos.js"></script>
 <script src="../../assets/js/adminFormJs.js"></script>
+<script src="../../assets/controller/validations/ManageCarsValidations.js"></script>
 
 </body>
 </html>
