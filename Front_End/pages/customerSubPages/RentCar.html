@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/RentCar.css">
 
 </head>
 <body>
@@ -77,6 +78,180 @@
                 <h3 id="dashboardHeader"> Car Rent</h3>
                 <p id="dashboardNav">Home > Car Rent</p>
             </div>
+            <section class="container-fluid" id="rentDetails">
+                <div class="row mt-3">
+                    <div class="">
+                        <div class="col col-lg-12">
+                            <div class="row col-12 m-2 p-2  justify-content-lg-center">
+                                <di class="row col-lg-6 gap-3 gap-lg-0 col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                    <div class="col-lg-6">
+                                        <label class="form-label" for="rent_Id">Rent Id</label>
+                                        <input type="text" name="rent_Id" class="form-control" id="rent_Id"
+                                               readonly placeholder="R00-001">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label" for="user_Id">User Id</label>
+                                        <input type="text" name="user_Id" class="form-control" id="user_Id"
+                                               readonly placeholder="C00-001">
+                                    </div>
+                                </di>
+                                <div class="row col-lg-6 gap-3 gap-lg-0 d-flex col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
+                                    <div class="col-lg-6">
+                                        <label class="form-label" for="type">Type</label>
+                                        <select class="form-control" id="type" name="type">
+                                            <option>Choose Type..</option>
+                                            <option value="GENERAL">GENERAL</option>
+                                            <option value="LUXURY">LUXURY</option>
+                                            <option value="PREMIUM">PREMIUM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                        <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                            <option>Choose Type..</option>
+                                            <option value="DIESEL">DIESEL</option>
+                                            <option value="PETROL">PETROL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6 p-2">
+                                        <div class="row mt-1 m-2 p-1">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="regNumber">Registration Number</label>
+                                                <select aria-label="Default select example" class="form-select border-dark"
+                                                        id="regNumber" name="regNumber"></select>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="name">Brand :</label>
+                                                <input class="form-control " id="name">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 m-2 p-1">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="brand">Model :</label>
+                                                <input class="form-control " id="brand">
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
+                                                <input class="form-control " id="number_Of_Passengers">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 m-2 p-1">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="pickUpDate">PickUp Date :</label>
+                                                <input class="form-control " id="pickUpDate" type="date">
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="pickUpTime">PickUp Time :</label>
+                                                <input class="form-control " id="pickUpTime" type="time">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 m-2 p-1">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="returnDate">Return Date :</label>
+                                                <input class="form-control " id="returnDate" type="date">
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="returnTime">Return Time :</label>
+                                                <input class="form-control " id="returnTime" type="time">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 m-2 p-1">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="requestType">Driver or not :</label>
+                                                <select class="form-control " id="requestType">
+                                                    <option value="YES">YES</option>
+                                                    <option value="NO">NO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                            <button class="btn btn-outline-primary me-md-1" id="btnAddCart" type="button">Add Cart
+                                            </button>
+                                            <button type="button" class="btn btn-outline-success me-md-1" id="btnReservation">
+                                                Reservation
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="carouselExampleDark" class="carousel carousel-dark slide col-lg-6">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" data-bs-interval="10000">
+                                                <img src="" class="d-block w-100" alt="">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>Front view</h5>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item" data-bs-interval="2000">
+                                                <img src="" class="d-block w-100" alt="">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>Back View</h5>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="" class="d-block w-100" alt="">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>Side View</h5>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="" class="d-block w-100" alt="">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>Interior View</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+
+                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                <table class="table table-light table-striped table-bordered table-hover">
+                                    <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                    <tr>
+                                        <th scope="col">Registration Number</th>
+                                        <th scope="col">PickUp Date</th>
+                                        <th scope="col">PickUp Time</th>
+                                        <th scope="col">Return Date</th>
+                                        <th scope="col">Return Time</th>
+                                        <th scope="col">Driver or not</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="rentCarTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>
