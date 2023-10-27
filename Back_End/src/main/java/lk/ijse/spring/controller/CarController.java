@@ -24,4 +24,10 @@ public class CarController {
         service.saveCar(dto);
         return new ResponseUtil("Ok","Successfully Added",null);
     }
+
+    @GetMapping
+    public ResponseUtil getAllCars(){
+        return new ResponseUtil("Ok","Successfully Loaded",service.getAllCars());
+    }
+
 }

@@ -2,11 +2,10 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.entity.Car;
-import lk.ijse.spring.entity.Driver;
-import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.service.CarService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,7 +61,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<CarDTO> getAllCars() {
-        return null;
+        List<Car> all = repo.findAll();
+        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        }.getType());
     }
 
     @Override
