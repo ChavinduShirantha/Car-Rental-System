@@ -12,6 +12,7 @@ $("#btnSaveCustomer").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
+            getAllRegisterUsers();
         },
         error: function (error) {
             alert(error.responseJSON.message);

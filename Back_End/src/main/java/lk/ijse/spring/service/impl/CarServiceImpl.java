@@ -68,7 +68,11 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDTO findCar(String id) {
-        return null;
+        if (!repo.existsById(id)) {
+            throw new RuntimeException(id + " Car is not available, please check the ID.!");
+        }
+        Car car = repo.findById(id).get();
+        return mapper.map(car, CarDTO.class);
     }
 
     @Override

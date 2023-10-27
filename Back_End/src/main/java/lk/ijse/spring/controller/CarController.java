@@ -30,4 +30,8 @@ public class CarController {
         return new ResponseUtil("Ok","Successfully Loaded",service.getAllCars());
     }
 
+    @GetMapping(params = {"id"})
+    public ResponseUtil findCar(String id){
+        return new ResponseUtil("Ok","Successfully Loaded", service.findCar(id));
+    }
 }

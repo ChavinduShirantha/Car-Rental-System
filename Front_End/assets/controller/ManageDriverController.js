@@ -12,6 +12,7 @@ $("#btnSaveDriver").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
+            getAllDrivers();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -24,7 +25,7 @@ $("#btnGetAllDriver").click(function () {
 });
 
 function getAllDrivers() {
-    $("#customerTable").empty();
+    $("#driverTable").empty();
 
     $.ajax({
         url: baseURL + 'registerDriver',

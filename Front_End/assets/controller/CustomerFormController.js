@@ -82,14 +82,14 @@ function loadUserDetails() {
                     $("#license_No").val(cus.license_No);
                     $("#user_Name").val(cus.user.user_Name);
                     $("#password").val(cus.user.password);
-                    let nicImg = cus.nic_Img;
+                    /*let nicImg = cus.nic_Img;
                     let licenseImg = cus.license_Img;
                     $("#NICImage").css({
                         "background": `url(${baseURL+ nicImg})`, "background-size": "cover"
                     });
                     $("#LicenseImage").css({
                         "background": `url(${baseURL +licenseImg})`, "background-size": "cover"
-                    });
+                    });*/
                 }
             }
         }
