@@ -143,3 +143,21 @@ $("#btnSearchCar").click(function () {
         }
     })
 });
+
+$("#btnUpdateCar").click(function () {
+    let carFormData = new FormData($("#carForm")[0]);
+    $.ajax({
+        url: baseURL + "registerCar/update",
+        method: "post",
+        data: carFormData,
+        contentType: false,
+        processData: false,
+        success: function (res) {
+            alert(res.message)
+            getAllCars();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

@@ -77,7 +77,34 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void updateCar(CarDTO dto) {
+        Car car = new Car(dto.getRegNumber(), dto.getBrand(), dto.getModel(), dto.getType(), dto.getTransmission_type(), dto.getFuel_type(), "", "", "", "", dto.getNoOfPassengers(), dto.getColor(), dto.getDaily_Rate(), dto.getMonthly_Rate(), dto.getPriceExtraKM(),dto.getFreeMileage(),dto.getVehicleAvailabilityType());
+        if (!repo.existsById(dto.getRegNumber()))
+            throw new RuntimeException(dto.getRegNumber() + " is not available, please insert a new ID");
 
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getFront_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFront_view().getOriginalFilename()));
+            dto.getBack_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBack_view().getOriginalFilename()));
+            dto.getSide_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSide_view().getOriginalFilename()));
+            dto.getInterior_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInterior_view().getOriginalFilename()));
+
+            car.setFront_view("uploads/" + dto.getFront_view().getOriginalFilename());
+            car.setBack_view("uploads/" + dto.getBack_view().getOriginalFilename());
+            car.setSide_view("uploads/" + dto.getSide_view().getOriginalFilename());
+            car.setInterior_view("uploads/" + dto.getInterior_view().getOriginalFilename());
+
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println(car);
+        repo.save(car);
     }
 
     @Override

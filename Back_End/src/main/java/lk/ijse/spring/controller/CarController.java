@@ -34,4 +34,10 @@ public class CarController {
     public ResponseUtil findCar(String id){
         return new ResponseUtil("Ok","Successfully Loaded", service.findCar(id));
     }
+
+    @PostMapping(path = {"update"})
+    public ResponseUtil updateDriver(@ModelAttribute CarDTO dto){
+        service.updateCar(dto);
+        return new ResponseUtil("Ok","Successfully Updated",null);
+    }
 }
