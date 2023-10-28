@@ -1,6 +1,6 @@
 let baseURL = "http://localhost:8080/Back_End_war/";
 
-
+loadDriverDetails();
 $("#btnUpdateDriverForm").click(function () {
     let driverFormData = new FormData($("#driverFormDetails")[0]);
     $.ajax({
@@ -11,9 +11,11 @@ $("#btnUpdateDriverForm").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
+            loadDriverDetails();
         },
         error: function (error) {
             alert(error.responseJSON.message);
+            loadDriverDetails();
         }
     });
 });
@@ -31,3 +33,43 @@ $("#btnDeleteDriverForm").click(function () {
         }
     });
 });
+
+
+function loadDriverDetails() {
+    let driver;
+
+    $.ajax({
+        url: baseURL + "login/current",
+        method: "get",
+        success: function (res) {
+            driver = res.data.user_Id;
+            console.log(res.data)
+            $("#user_Id").val(res.data.user_Id);
+        }
+    });
+
+    $.ajax({
+        url: baseURL + "registerDriver",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            for (var d of res.data) {
+                if (driver === d.user_Id) {
+                    $("#user_Id").val(d.user_Id);
+                    $("#firstName").val(d.firstName);
+                    $("#lastName").val(d.lastName);
+                    $("#contact_No").val(d.contact_No);
+                    $("#address").val(d.address);
+                    $("#email").val(d.email);
+                    $("#nic").val(d.nic);
+                    $("#license_No").val(d.license_No);
+                    $("#user_Name").val(d.user.user_Name);
+                    $("#password").val(d.user.password);
+                }
+            }
+        }
+    });
+
+}
+
