@@ -17,3 +17,17 @@ $("#btnUpdateDriverForm").click(function () {
         }
     });
 });
+
+$("#btnDeleteDriverForm").click(function () {
+    let userId = $("#user_Id").val();
+    $.ajax({
+        url: baseURL + "registerDriver?id=" + userId,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});
