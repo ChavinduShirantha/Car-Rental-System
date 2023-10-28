@@ -148,7 +148,7 @@ $("#user_Name").on('keydown', function (event) {
 $("#password").on('keydown', function (event) {
     if (event.key === "Enter" && check(regPassword, $("#password"))) {
         if (event.which === 13) {
-            $('#btnSaveCustomer').focus();
+            $('#btnSaveDriver').focus();
         }
     }
 });
@@ -168,9 +168,9 @@ function checkValidity() {
 
 function setButtonState(value) {
     if (value > 0) {
-        $("#btnSaveCustomer").attr('disabled', true);
+        $("#btnSaveDriver").attr('disabled', true);
     } else {
-        $("#btnSaveCustomer").attr('disabled', false);
+        $("#btnSaveDriver").attr('disabled', false);
     }
 }
 
