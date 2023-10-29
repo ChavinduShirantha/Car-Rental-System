@@ -125,4 +125,9 @@ public class CarServiceImpl implements CarService {
     public CustomDTO getSumOfAvailableCar() {
         return new CustomDTO(repo.getSumOfAvailableCar());
     }
+
+    @Override
+    public CustomDTO getSumOfUnAvailableCar() {
+        return new CustomDTO(repo.getSumOfUnAvailableCar());
+    }
 }

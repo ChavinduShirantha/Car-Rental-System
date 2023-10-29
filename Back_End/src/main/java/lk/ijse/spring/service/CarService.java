@@ -18,4 +18,5 @@ public interface CarService {
     void deleteCar(String id);
     CustomDTO getSumCar();
     CustomDTO getSumOfAvailableCar();
+    CustomDTO getSumOfUnAvailableCar();
 }

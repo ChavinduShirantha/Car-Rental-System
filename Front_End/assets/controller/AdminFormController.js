@@ -31,4 +31,19 @@ $.ajax({
     }
 });
 
+$("#reservedCarCount").val("0");
+$.ajax({
+    url: baseUrl + "registerCar/sumOfUnAvailableCarsCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#reservedCarCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
+
 

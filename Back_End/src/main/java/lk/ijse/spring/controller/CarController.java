@@ -57,4 +57,9 @@ public class CarController {
     public @ResponseBody CustomDTO getSumOfAvailableCar() {
         return service.getSumOfAvailableCar();
     }
+
+    @GetMapping(path = "/sumOfUnAvailableCarsCount")
+    public @ResponseBody CustomDTO getSumOfUnAvailableCar() {
+        return service.getSumOfUnAvailableCar();
+    }
 }
