@@ -173,25 +173,6 @@
                                         </select>
                                         <small class="control-error text-danger"></small>
                                     </div>
-                                </section>
-
-                                <section id="sec2Car" class="col-4 mt-3">
-                                    <div class="mb-sm-0">
-                                        <label class="form-label" for="front_view">Front View Image</label>
-                                        <input type="file" name="front_view" class="form-control" id="front_view">
-                                        <small class="control-error text-danger"></small></div>
-                                    <div class="mb-sm-0 mt-3">
-                                        <label class="form-label" for="back_view">Back View Image</label>
-                                        <input type="file" name="back_view" class="form-control" id="back_view">
-                                        <small class="control-error text-danger"></small></div>
-                                    <div class="mb-sm-0 mt-3">
-                                        <label class="form-label" for="side_view">Side View Image</label>
-                                        <input type="file" name="side_view" class="form-control" id="side_view">
-                                        <small class="control-error text-danger"></small></div>
-                                    <div class="mb-sm-0 mt-3">
-                                        <label class="form-label" for="interior_view">Interior View Image</label>
-                                        <input type="file" name="interior_view" class="form-control" id="interior_view">
-                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="noOfPassengers">No. of Passengers</label>
                                         <input type="text" name="noOfPassengers" class="form-control"
@@ -204,10 +185,31 @@
                                                placeholder="Color">
                                         <small class="control-error text-danger"></small>
                                     </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="vehicleAvailabilityType" class="form-label">Vehicle Availability
+                                            Type</label>
+                                        <select class="form-control" id="vehicleAvailabilityType"
+                                                name="vehicleAvailabilityType">
+                                            <option value="AVAILABLE">AVAILABLE</option>
+                                            <option value="UNDER MAINTAIN">UNDER MAINTAIN</option>
+                                            <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                        </select>
+                                        <small class="control-error text-danger"></small>
+                                    </div>
                                 </section>
 
-                                <section id="sec3Car" class="col-4 mt-3">
+                                <section id="sec2Car" class="col-4 mt-3">
                                     <div class="mb-sm-0">
+                                        <div class="image-context border border-2 rounded-3" id="front_viewImg"></div>
+                                        <label class="form-label" for="front_view">Front View Image</label>
+                                        <input type="file" name="front_view" class="form-control" id="front_view">
+                                        <small class="control-error text-danger"></small></div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <div class="image-context border border-2 rounded-3" id="back_viewImg"></div>
+                                        <label class="form-label" for="back_view">Back View Image</label>
+                                        <input type="file" name="back_view" class="form-control" id="back_view">
+                                        <small class="control-error text-danger"></small></div>
+                                    <div class="mb-sm-0 mt-5">
                                         <label for="daily_Rate" class="form-label">Daily Rate</label>
                                         <input type="text" name="daily_Rate" class="form-control" id="daily_Rate"
                                                placeholder="Daily Rate">
@@ -218,7 +220,20 @@
                                                id="monthly_Rate"
                                                placeholder="Monthly Rate">
                                         <small class="control-error text-danger"></small></div>
+                                </section>
+
+                                <section id="sec3Car" class="col-4 mt-3">
+                                    <div class="mb-sm-0">
+                                        <div class="image-context border border-2 rounded-3" id="side_viewImg"></div>
+                                        <label class="form-label" for="side_view">Side View Image</label>
+                                        <input type="file" name="side_view" class="form-control" id="side_view">
+                                        <small class="control-error text-danger"></small></div>
                                     <div class="mb-sm-0 mt-3">
+                                        <div class="image-context border border-2 rounded-3" id="interior_viewImg"></div>
+                                        <label class="form-label" for="interior_view">Interior View Image</label>
+                                        <input type="file" name="interior_view" class="form-control" id="interior_view">
+                                        <small class="control-error text-danger"></small></div>
+                                    <div class="mb-sm-0 mt-5">
                                         <label for="priceExtraKM" class="form-label">Price Extra KM</label>
                                         <input type="text" name="priceExtraKM" class="form-control"
                                                id="priceExtraKM"
@@ -229,17 +244,6 @@
                                         <label for="freeMileage" class="form-label">Free Mileage</label>
                                         <input type="text" name="freeMileage" class="form-control" id="freeMileage"
                                                placeholder="Free Mileage">
-                                        <small class="control-error text-danger"></small>
-                                    </div>
-                                    <div class="mb-sm-0 mt-3">
-                                        <label for="vehicleAvailabilityType" class="form-label">Vehicle Availability
-                                            Type</label>
-                                        <select class="form-control" id="vehicleAvailabilityType"
-                                                name="vehicleAvailabilityType">
-                                            <option value="AVAILABLE">AVAILABLE</option>
-                                            <option value="UNDER MAINTAIN">UNDER MAINTAIN</option>
-                                            <option value="UNAVAILABLE">UNAVAILABLE</option>
-                                        </select>
                                         <small class="control-error text-danger"></small>
                                     </div>
                                 </section>
