@@ -28,12 +28,11 @@ public class Rent {
     private LocalDate returnDate;
     private LocalTime returnTime;
     private String requestType;
-    private String rentType;
     private String location;
 
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
-    @JoinColumn(name = "userID", referencedColumnName = "user_Id", nullable = false)
-    private RegisterUser regUser;
+    @JoinColumn(name = "user_Id", referencedColumnName = "user_Id", nullable = false)
+    private RegisterUser user_Id;
 
     @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
     private List<RentDetails> rentDetails;

@@ -26,7 +26,7 @@ public class RentDetails {
     private String driverID;
 
     @ManyToOne
-    @JoinColumn(name = "rentID",referencedColumnName = "rent_Id",insertable = false,updatable = false)
+    @JoinColumn(name = "rent_Id",referencedColumnName = "rent_Id",insertable = false,updatable = false)
     private Rent rent;
 
     @ManyToOne

@@ -88,7 +88,7 @@ function bindTrEvents() {
         $("#monthly_Rate").val(monthlyRate);
         $("#priceExtraKM").val(priceExtraKM);
         $("#freeMileage").val(freeMileage);
-        $("#availability").val(availability);
+        $("#vehicleAvailabilityType").val(availability);
     });
 
     $("#btnSaveCar").attr('disabled', true);

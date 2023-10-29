@@ -84,34 +84,33 @@
                         <div class="col col-lg-12">
                             <div class="row col-12 m-2 p-2  justify-content-lg-center">
                                 <di class="row col-lg-6 gap-3 gap-lg-0 col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <label class="form-label" for="rent_Id">Rent Id</label>
                                         <input type="text" name="rent_Id" class="form-control" id="rent_Id"
-                                               readonly placeholder="R00-001">
+                                               placeholder="R00-001">
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <label class="form-label" for="user_Id">User Id</label>
                                         <input type="text" name="user_Id" class="form-control" id="user_Id"
                                                readonly placeholder="C00-001">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-label" for="driverId">Driver Id</label>
+                                        <select aria-label="Default select example" class="form-select"
+                                                id="driverId" name="driverId">
+                                            <option>NOT Available</option>
+                                        </select>
+
                                     </div>
                                 </di>
                                 <div class="row col-lg-6 gap-3 gap-lg-0 d-flex col-md-5 col-sm-6 col-xs-3 justify-content-md-around">
                                     <div class="col-lg-6">
                                         <label class="form-label" for="type">Type</label>
-                                        <select class="form-control" id="type" name="type">
-                                            <option>Choose Type..</option>
-                                            <option value="GENERAL">GENERAL</option>
-                                            <option value="LUXURY">LUXURY</option>
-                                            <option value="PREMIUM">PREMIUM</option>
-                                        </select>
+                                        <input class="form-control" name="type" id="type">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label" for="fuel_Type">Fuel Type</label>
-                                        <select class="form-control" id="fuel_Type" name="fuel_Type">
-                                            <option>Choose Type..</option>
-                                            <option value="DIESEL">DIESEL</option>
-                                            <option value="PETROL">PETROL</option>
-                                        </select>
+                                        <input class="form-control" name="fuel_Type" id="fuel_Type">
                                     </div>
                                 </div>
                             </div>
@@ -130,18 +129,18 @@
                                                         id="regNumber" name="regNumber"></select>
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6">
-                                                <label class="fw-bold" for="name">Brand :</label>
-                                                <input class="form-control " id="name">
+                                                <label class="fw-bold"  for="brand">Brand :</label>
+                                                <input class="form-control" name="brand" id="brand">
                                             </div>
                                         </div>
                                         <div class="row mt-1 m-2 p-1">
                                             <div class="col-12 col-md-6 col-lg-6">
-                                                <label class="fw-bold" for="brand">Model :</label>
-                                                <input class="form-control " id="brand">
+                                                <label class="fw-bold" for="model">Model :</label>
+                                                <input class="form-control " name="model" id="model">
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6">
                                                 <label class="fw-bold" for="number_Of_Passengers">No of Passengers :</label>
-                                                <input class="form-control " id="number_Of_Passengers">
+                                                <input class="form-control " name="number_Of_Passengers" id="number_Of_Passengers">
                                             </div>
                                         </div>
                                         <div class="row mt-1 m-2 p-1">
@@ -171,6 +170,10 @@
                                                     <option value="YES">YES</option>
                                                     <option value="NO">NO</option>
                                                 </select>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <label class="fw-bold" for="location">Location :</label>
+                                                <input class="form-control " name="location" id="location">
                                             </div>
                                         </div>
                                         <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
@@ -262,6 +265,7 @@
 <script src="../../assets/js/bootstrap.min.js"></script>
 <script src="../../assets/aos/aos.js"></script>
 <script src="../../assets/js/adminFormJs.js"></script>
+<script src="../../assets/controller/RentCarController.js"></script>
 
 </body>
 </html>

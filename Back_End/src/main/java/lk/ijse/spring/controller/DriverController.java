@@ -49,4 +49,9 @@ public class DriverController {
         service.deleteDriver(id);
         return new ResponseUtil("Ok","Successfully Deleted",null);
     }
+
+    @GetMapping(path = "/loadAvailableDrivers")
+    public ResponseUtil getAvailableDriver() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAvailableDrivers());
+    }
 }

@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -105,5 +106,11 @@ public class DriverServiceImpl implements DriverService {
             throw new RuntimeException(id + " Driver is not available, please check the ID before delete.!");
         }
         repo.deleteById(id);
+    }
+
+    @Override
+    public ArrayList<DriverDTO> getAvailableDrivers() {
+        return mapper.map(repo.availableDrivers(), new TypeToken<ArrayList<Driver>>() {
+        }.getType());
     }
 }
