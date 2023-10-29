@@ -54,3 +54,19 @@ $("#btnLogin").on('click', function () {
         }
     });
 });
+
+function focusText(txtField) {
+    txtField.focus();
+}
+
+$("#user_name,#user_password,#role_Type").on('keydown', function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#user_name").on('keydown', function (event) {
+    if (event.key === "Enter") {
+        focusText($("#user_password"));
+    }
+});
