@@ -17,4 +17,5 @@ public interface CarService {
     void updateCar(CarDTO dto);
     void deleteCar(String id);
     CustomDTO getSumCar();
+    CustomDTO getSumOfAvailableCar();
 }

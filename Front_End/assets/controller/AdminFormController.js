@@ -15,3 +15,20 @@ $.ajax({
         alert(error.responseJSON.message);
     }
 });
+
+$("#availableCarCount").val("0");
+$.ajax({
+    url: baseUrl + "registerCar/sumOfAvailableCarsCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#availableCarCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
+
+

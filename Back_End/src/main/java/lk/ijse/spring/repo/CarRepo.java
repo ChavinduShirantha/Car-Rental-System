@@ -12,4 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CarRepo extends JpaRepository<Car,String> {
     @Query(value = "SELECT COUNT(regNumber) FROM Car", nativeQuery = true)
     int getSumCar();
+
+    @Query(value = "SELECT COUNT(regNumber) FROM Car WHERE vehicleAvailabilityType='AVAILABLE';", nativeQuery = true)
+    int getSumOfAvailableCar();
 }
