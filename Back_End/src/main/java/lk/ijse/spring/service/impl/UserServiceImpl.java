@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.UserRepo;
@@ -35,5 +36,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getRegisterUser(String username, String password) {
         return mapper.map(repo.findUser(username, password), UserDTO.class);
+    }
+
+    @Override
+    public CustomDTO getSumCustomers() {
+        return new CustomDTO(repo.getSumCustomers());
     }
 }

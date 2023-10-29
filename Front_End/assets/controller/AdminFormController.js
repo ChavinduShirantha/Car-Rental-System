@@ -91,5 +91,18 @@ $.ajax({
     }
 });
 
-
+$("#customerCount").val("0");
+$.ajax({
+    url: baseUrl + "login/sumOfCustomersCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#customerCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
 
