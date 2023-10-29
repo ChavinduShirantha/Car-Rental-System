@@ -14,4 +14,5 @@ public interface RentService {
     void rentCars(RentDTO dto);
     CustomDTO getSumBookings();
     CustomDTO getSumOfPendingBookings();
+    CustomDTO getSumOfActiveBookings();
 }

@@ -33,4 +33,8 @@ public class RentController {
     public CustomDTO getSumOfPendingBookings() {
         return service.getSumOfPendingBookings();
     }
+    @GetMapping(path = "/sumOfActiveBookingCount")
+    public CustomDTO getSumOfActiveBookings() {
+        return service.getSumOfActiveBookings();
+    }
 }

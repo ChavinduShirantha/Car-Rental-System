@@ -136,3 +136,18 @@ $.ajax({
         alert(error.responseJSON.message);
     }
 });
+
+$("#ActiveBookingCount").val("0");
+$.ajax({
+    url: baseUrl + "rentCar/sumOfActiveBookingCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#ActiveBookingCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
