@@ -57,6 +57,7 @@ $("#btnReservation").click(function () {
         data: JSON.stringify(carRent),
         success: function (res) {
             alert(res.message)
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -140,3 +141,7 @@ $("#regNumber").change(function () {
         $("#type").val(res[0].type);
     }
 });
+
+function clearInputFields() {
+    $("#pickUpDate,#pickUpTime,#returnDate,#returnTime,#requestType,#location,#nic,#brand,#model,#number_Of_Passengers,#fuel_Type,#type").val("");
+}
