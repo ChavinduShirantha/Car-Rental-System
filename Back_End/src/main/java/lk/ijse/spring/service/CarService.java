@@ -3,6 +3,7 @@ package lk.ijse.spring.service;
 import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,4 +20,5 @@ public interface CarService {
     CustomDTO getSumCar();
     CustomDTO getSumOfAvailableCar();
     CustomDTO getSumOfUnAvailableCar();
+    ArrayList<CarDTO> getFilerCar(String type, String fuel_type);
 }

@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -129,5 +130,11 @@ public class CarServiceImpl implements CarService {
     @Override
     public CustomDTO getSumOfUnAvailableCar() {
         return new CustomDTO(repo.getSumOfUnAvailableCar());
+    }
+
+    @Override
+    public ArrayList<CarDTO> getFilerCar(String type, String fuel_type) {
+        return mapper.map(repo.filterCar(type,fuel_type), new TypeToken<ArrayList<Car>>() {
+        }.getType());
     }
 }

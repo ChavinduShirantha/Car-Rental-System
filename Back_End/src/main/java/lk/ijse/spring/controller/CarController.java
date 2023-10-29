@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Chavindu
  * created : 10/27/2023-12:25 PM
@@ -61,5 +63,10 @@ public class CarController {
     @GetMapping(path = "/sumOfUnAvailableCarsCount")
     public CustomDTO getSumOfUnAvailableCar() {
         return service.getSumOfUnAvailableCar();
+    }
+
+    @GetMapping(path = "/filterCars", params = {"type", "fuel_type"})
+    public ArrayList<CarDTO> getFilerCar(@RequestParam String type, @RequestParam String fuel_type) {
+        return service.getFilerCar(type, fuel_type);
     }
 }

@@ -80,7 +80,7 @@ function getRentDetails() {
     return array;
 }
 
-$.ajax({
+/*$.ajax({
     url: baseURL + 'registerCar',
     method: "get",
     dataType: "json",
@@ -96,7 +96,7 @@ $.ajax({
     error: function (error) {
         alert(error.responseJSON.message);
     }
-});
+});*/
 
 $.ajax({
     url: baseURL + 'registerDriver/loadAvailableDrivers',
@@ -116,7 +116,7 @@ $.ajax({
     }
 });
 
-function searchCar(regNumber) {
+/*function searchCar(regNumber) {
     let response = "";
     $.ajax({
         url: baseURL + 'registerCar',
@@ -139,11 +139,73 @@ $("#regNumber").change(function () {
         $("#brand").val(res[0].brand);
         $("#model").val(res[0].model);
         $("#number_Of_Passengers").val(res[0].noOfPassengers);
-        $("#fuel_Type").val(res[0].fuel_type);
-        $("#type").val(res[0].type);
     }
-});
+});*/
 
 function clearInputFields() {
     $("#pickUpDate,#pickUpTime,#returnDate,#returnTime,#requestType,#location,#nic,#brand,#model,#number_Of_Passengers,#fuel_Type,#type").val("");
 }
+
+$("#fuel_Type").click(function () {
+    let type = $("#type").val();
+    let fuel_Type = $("#fuel_Type").val();
+    console.log(type);
+    console.log(fuel_Type);
+    $("#regNumber").empty();
+    $.ajax({
+        url: baseURL + "registerCar/filterCars/?type=" + type + "&fuel_type=" + fuel_Type,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+
+            for (let i of res) {
+                let regNumber = i.regNumber;
+                $("#regNumber").append(`<option>${regNumber}</option>`);
+            }
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    })
+});
+
+$("#regNumber").click(function () {
+    var regNumber = $("#regNumber").val();
+    $.ajax({
+        url: baseURL + "registerCar/?id=" + regNumber,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            console.log(res);
+            let brand = res.data.brand;
+            let model = res.data.model;
+            let noOfPassengers = res.data.noOfPassengers;
+
+            $("#brand").val(brand);
+            $("#model").val(model);
+            $("#number_Of_Passengers").val(noOfPassengers);
+            let url1 = res.data.front_view;
+            let url2 = res.data.back_view;
+            let url3 = res.data.side_view;
+            let url4 = res.data.interior_view;
+            $("#image1").css({
+                "background": `url(${baseURL + url1})`, "background-size": "cover"
+            });
+            $("#image2").css({
+                "background": `url(${baseURL + url2})`, "background-size": "cover"
+            });
+            $("#image3").css({
+                "background": `url(${baseURL + url3})`, "background-size": "cover"
+            });
+            $("#image4").css({
+                "background": `url(${baseURL + url4})`, "background-size": "cover"
+            });
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    })
+});
