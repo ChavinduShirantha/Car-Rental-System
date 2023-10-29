@@ -13,6 +13,7 @@ $("#btnSaveDriver").click(function () {
         success: function (res) {
             alert(res.message)
             getAllDrivers();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -138,6 +139,7 @@ $("#btnSearchDriver").click(function () {
         },
         error: function (error) {
             getAllDrivers()
+            clearInputFields();
             alert(error.responseJSON.message);
         }
     })
@@ -154,6 +156,7 @@ $("#btnUpdateDriver").click(function () {
         success: function (res) {
             alert(res.message)
             getAllDrivers();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -170,9 +173,16 @@ $("#btnDeleteDriver").click(function () {
         success: function (res) {
             alert(res.message)
             getAllDrivers();
+            clearInputFields();
         }, error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 });
+
+function clearInputFields() {
+    $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").val("");
+    $("#user_Id").focus();
+}
+
 
