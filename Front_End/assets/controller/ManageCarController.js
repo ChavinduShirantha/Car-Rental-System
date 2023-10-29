@@ -13,6 +13,7 @@ $("#btnSaveCar").click(function () {
         success: function (res) {
             alert(res.message)
             getAllCars();
+            clearInputFields()
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -155,6 +156,7 @@ $("#btnUpdateCar").click(function () {
         success: function (res) {
             alert(res.message)
             getAllCars();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -171,9 +173,18 @@ $("#btnDeleteCar").click(function () {
         success: function (res) {
             alert(res.message)
             getAllCars();
+            clearInputFields();
         }, error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 });
+
+
+function clearInputFields() {
+    $("#regNumber,#brand,#model,#type,#transmission_type,#fuel_type,#noOfPassengers,#color,#daily_Rate,#monthly_Rate,#priceExtraKM,#freeMileage,#availability").val("");
+    $("#user_Id").focus();
+}
+
+
 
