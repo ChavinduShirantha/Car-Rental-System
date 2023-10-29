@@ -2,10 +2,12 @@ package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomDTO;
+import lk.ijse.spring.embeded.ImageDTO;
 import lk.ijse.spring.service.CarService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,31 +25,33 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping
-    public ResponseUtil saveCar(@ModelAttribute CarDTO dto){
+    public ResponseUtil saveCar(@ModelAttribute CarDTO dto, @ModelAttribute ImageDTO imageDTO) {
+        dto.setImage(imageDTO);
         service.saveCar(dto);
-        return new ResponseUtil("Ok","Successfully Added",null);
+        return new ResponseUtil("Ok", "Successfully Added", null);
     }
 
     @GetMapping
-    public ResponseUtil getAllCars(){
-        return new ResponseUtil("Ok","Successfully Loaded",service.getAllCars());
+    public ResponseUtil getAllCars() {
+        return new ResponseUtil("Ok", "Successfully Loaded", service.getAllCars());
     }
 
     @GetMapping(params = {"id"})
-    public ResponseUtil findCar(String id){
-        return new ResponseUtil("Ok","Successfully Loaded", service.findCar(id));
+    public ResponseUtil findCar(String id) {
+        return new ResponseUtil("Ok", "Successfully Loaded", service.findCar(id));
     }
 
     @PostMapping(path = {"update"})
-    public ResponseUtil updateCar(@ModelAttribute CarDTO dto){
+    public ResponseUtil updateCar(@ModelAttribute CarDTO dto, @ModelAttribute ImageDTO image) {
+        dto.setImage(image);
         service.updateCar(dto);
-        return new ResponseUtil("Ok","Successfully Updated",null);
+        return new ResponseUtil("Ok", "Successfully Updated", null);
     }
 
     @DeleteMapping(params = {"id"})
-    public ResponseUtil deleteCar(String id){
+    public ResponseUtil deleteCar(String id) {
         service.deleteCar(id);
-        return new ResponseUtil("Ok","Successfully Deleted",null);
+        return new ResponseUtil("Ok", "Successfully Deleted", null);
     }
 
     @GetMapping(path = "/sumOfCarsCount")

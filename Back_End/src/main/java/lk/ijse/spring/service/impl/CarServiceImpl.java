@@ -2,6 +2,8 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomDTO;
+import lk.ijse.spring.embeded.Image;
+import lk.ijse.spring.embeded.ImageDTO;
 import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.service.CarService;
@@ -31,7 +33,7 @@ public class CarServiceImpl implements CarService {
     ModelMapper mapper;
     @Override
     public void saveCar(CarDTO dto) {
-        Car car = new Car(dto.getRegNumber(), dto.getBrand(), dto.getModel(), dto.getType(), dto.getTransmission_type(), dto.getFuel_type(), "", "", "", "", dto.getNoOfPassengers(), dto.getColor(), dto.getDaily_Rate(), dto.getMonthly_Rate(), dto.getPriceExtraKM(),dto.getFreeMileage(),dto.getVehicleAvailabilityType());
+        Car car = new Car(dto.getRegNumber(), dto.getBrand(), dto.getModel(), dto.getType(), dto.getTransmission_type(), dto.getFuel_type(), new Image(), dto.getNoOfPassengers(), dto.getColor(), dto.getDaily_Rate(), dto.getMonthly_Rate(), dto.getPriceExtraKM(),dto.getFreeMileage(),dto.getVehicleAvailabilityType());
         if (repo.existsById(dto.getRegNumber()))
             throw new RuntimeException(dto.getRegNumber() + " is already available, please insert a new ID");
 
@@ -42,15 +44,15 @@ public class CarServiceImpl implements CarService {
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            dto.getFront_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFront_view().getOriginalFilename()));
-            dto.getBack_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBack_view().getOriginalFilename()));
-            dto.getSide_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSide_view().getOriginalFilename()));
-            dto.getInterior_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInterior_view().getOriginalFilename()));
+            dto.getImage().getFront_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getFront_view().getOriginalFilename()));
+            dto.getImage().getBack_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getBack_view().getOriginalFilename()));
+            dto.getImage().getSide_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getSide_view().getOriginalFilename()));
+            dto.getImage().getInterior_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getInterior_view().getOriginalFilename()));
 
-            car.setFront_view("uploads/" + dto.getFront_view().getOriginalFilename());
-            car.setBack_view("uploads/" + dto.getBack_view().getOriginalFilename());
-            car.setSide_view("uploads/" + dto.getSide_view().getOriginalFilename());
-            car.setInterior_view("uploads/" + dto.getInterior_view().getOriginalFilename());
+            car.getImage().setFront_view("uploads/" + dto.getImage().getFront_view().getOriginalFilename());
+            car.getImage().setBack_view("uploads/" + dto.getImage().getBack_view().getOriginalFilename());
+            car.getImage().setSide_view("uploads/" + dto.getImage().getSide_view().getOriginalFilename());
+            car.getImage().setInterior_view("uploads/" + dto.getImage().getInterior_view().getOriginalFilename());
 
 
         } catch (IOException | URISyntaxException e) {
@@ -79,7 +81,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void updateCar(CarDTO dto) {
-        Car car = new Car(dto.getRegNumber(), dto.getBrand(), dto.getModel(), dto.getType(), dto.getTransmission_type(), dto.getFuel_type(), "", "", "", "", dto.getNoOfPassengers(), dto.getColor(), dto.getDaily_Rate(), dto.getMonthly_Rate(), dto.getPriceExtraKM(),dto.getFreeMileage(),dto.getVehicleAvailabilityType());
+        Car car = new Car(dto.getRegNumber(), dto.getBrand(), dto.getModel(), dto.getType(), dto.getTransmission_type(), dto.getFuel_type(), new Image(), dto.getNoOfPassengers(), dto.getColor(), dto.getDaily_Rate(), dto.getMonthly_Rate(), dto.getPriceExtraKM(),dto.getFreeMileage(),dto.getVehicleAvailabilityType());
         if (!repo.existsById(dto.getRegNumber()))
             throw new RuntimeException(dto.getRegNumber() + " is not available, please insert a new ID");
 
@@ -90,15 +92,15 @@ public class CarServiceImpl implements CarService {
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            dto.getFront_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFront_view().getOriginalFilename()));
-            dto.getBack_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBack_view().getOriginalFilename()));
-            dto.getSide_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSide_view().getOriginalFilename()));
-            dto.getInterior_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInterior_view().getOriginalFilename()));
+            dto.getImage().getFront_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getFront_view().getOriginalFilename()));
+            dto.getImage().getBack_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getBack_view().getOriginalFilename()));
+            dto.getImage().getSide_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getSide_view().getOriginalFilename()));
+            dto.getImage().getInterior_view().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getImage().getInterior_view().getOriginalFilename()));
 
-            car.setFront_view("uploads/" + dto.getFront_view().getOriginalFilename());
-            car.setBack_view("uploads/" + dto.getBack_view().getOriginalFilename());
-            car.setSide_view("uploads/" + dto.getSide_view().getOriginalFilename());
-            car.setInterior_view("uploads/" + dto.getInterior_view().getOriginalFilename());
+            car.getImage().setFront_view("uploads/" + dto.getImage().getFront_view().getOriginalFilename());
+            car.getImage().setBack_view("uploads/" + dto.getImage().getBack_view().getOriginalFilename());
+            car.getImage().setSide_view("uploads/" + dto.getImage().getSide_view().getOriginalFilename());
+            car.getImage().setInterior_view("uploads/" + dto.getImage().getInterior_view().getOriginalFilename());
 
 
         } catch (IOException | URISyntaxException e) {

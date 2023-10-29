@@ -1,5 +1,6 @@
 package lk.ijse.spring.entity;
 
+import lk.ijse.spring.embeded.Image;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,10 +26,12 @@ public class Car {
     private String type;
     private String transmission_type;
     private String fuel_type;
-    private String front_view;
+    /*private String front_view;
     private String back_view;
     private String side_view;
-    private String interior_view;
+    private String interior_view;*/
+    @Embedded
+    private Image image;
     private int noOfPassengers;
     private String color;
     private double daily_Rate;

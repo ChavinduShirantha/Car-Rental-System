@@ -1,5 +1,6 @@
 package lk.ijse.spring.dto;
 
+import lk.ijse.spring.embeded.ImageDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,10 +22,11 @@ public class CarDTO {
     private String type;
     private String transmission_type;
     private String fuel_type;
-    private MultipartFile front_view;
+    private ImageDTO image;
+    /*private MultipartFile front_view;
     private MultipartFile back_view;
     private MultipartFile side_view;
-    private MultipartFile interior_view;
+    private MultipartFile interior_view;*/
     private int noOfPassengers;
     private String color;
     private double daily_Rate;

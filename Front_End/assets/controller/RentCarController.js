@@ -187,14 +187,18 @@ $("#regNumber").click(function () {
             $("#brand").val(brand);
             $("#model").val(model);
             $("#number_Of_Passengers").val(noOfPassengers);
-            let url1 = res.data.front_view;
-            let url2 = res.data.back_view;
-            let url3 = res.data.side_view;
-            let url4 = res.data.interior_view;
-            $("#image1").css({
-                "background": `url(${baseURL + url1})`, "background-size": "cover"
+
+            // let img =res.data.front_view;
+
+            /*let url1 = res.data.front_view;
+            let url2 = res.back_view;
+            let url3 = res.side_view;
+            let url4 = res.interior_view;*/
+
+            $("#imageCar").css({
+                "background": `url(${baseURL +"/uploads/2.png"})`, "background-size": "cover","background-position":"center"
             });
-            $("#image2").css({
+            /*$("#image2").css({
                 "background": `url(${baseURL + url2})`, "background-size": "cover"
             });
             $("#image3").css({
@@ -202,7 +206,7 @@ $("#regNumber").click(function () {
             });
             $("#image4").css({
                 "background": `url(${baseURL + url4})`, "background-size": "cover"
-            });
+            });*/
         },
         error: function (error) {
             alert(error.responseJSON.message);
