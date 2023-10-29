@@ -76,5 +76,20 @@ $.ajax({
     }
 });
 
+$("#unAvailableDriverCount").val("0");
+$.ajax({
+    url: baseUrl + "registerDriver/sumOfUnAvailableDriversCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#unAvailableDriverCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
+
 
 

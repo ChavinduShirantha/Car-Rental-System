@@ -124,4 +124,9 @@ public class DriverServiceImpl implements DriverService {
     public CustomDTO getSumOfAvailableDrivers() {
         return new CustomDTO(repo.getSumOfAvailableDrivers());
     }
+
+    @Override
+    public CustomDTO getSumOfUnAvailableDrivers() {
+        return new CustomDTO(repo.getSumOfUnAvailableDrivers());
+    }
 }

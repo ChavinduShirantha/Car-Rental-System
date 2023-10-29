@@ -20,4 +20,5 @@ public interface DriverService {
     ArrayList<DriverDTO> getAvailableDrivers();
     CustomDTO getSumDriver();
     CustomDTO getSumOfAvailableDrivers();
+    CustomDTO getSumOfUnAvailableDrivers();
 }
