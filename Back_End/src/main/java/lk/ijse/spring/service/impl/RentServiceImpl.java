@@ -63,7 +63,12 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
-    public CustomDTO getSumRents() {
-        return new CustomDTO(rentRepo.getSumRents());
+    public CustomDTO getSumBookings() {
+        return new CustomDTO(rentRepo.getSumBookings());
+    }
+
+    @Override
+    public CustomDTO getSumOfPendingBookings() {
+        return new CustomDTO(rentRepo.getSumOfPendingBookings());
     }
 }

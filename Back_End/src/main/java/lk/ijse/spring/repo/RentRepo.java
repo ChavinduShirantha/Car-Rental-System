@@ -11,5 +11,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface RentRepo extends JpaRepository<Rent,String> {
     @Query(value = "SELECT COUNT(rent_Id) FROM Rent", nativeQuery = true)
-    int getSumRents();
+    int getSumBookings();
+
+    @Query(value = "SELECT COUNT(rent_Id) FROM Rent WHERE rentStatus='PAYMENT_PENDING';", nativeQuery = true)
+    int getSumOfPendingBookings();
 }

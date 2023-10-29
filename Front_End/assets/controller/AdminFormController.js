@@ -122,3 +122,17 @@ $.ajax({
     }
 });
 
+$("#PendingBookingCount").val("0");
+$.ajax({
+    url: baseUrl + "rentCar/sumOfPendingBookingCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#PendingBookingCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});

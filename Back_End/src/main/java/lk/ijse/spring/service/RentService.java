@@ -12,5 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface RentService {
     void rentCars(RentDTO dto);
-    CustomDTO getSumRents();
+    CustomDTO getSumBookings();
+    CustomDTO getSumOfPendingBookings();
 }
