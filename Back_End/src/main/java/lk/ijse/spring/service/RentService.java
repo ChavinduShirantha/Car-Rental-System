@@ -1,5 +1,6 @@
 package lk.ijse.spring.service;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -11,4 +12,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface RentService {
     void rentCars(RentDTO dto);
+    CustomDTO getSumRents();
 }

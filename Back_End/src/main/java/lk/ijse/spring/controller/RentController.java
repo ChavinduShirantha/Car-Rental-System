@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RentDTO;
 import lk.ijse.spring.service.RentService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -21,5 +22,10 @@ public class RentController {
     public ResponseUtil rentCar(@RequestBody RentDTO dto) {
         service.rentCars(dto);
         return new ResponseUtil("Ok", "Successfully Purchased.!", null);
+    }
+
+    @GetMapping(path = "/sumOfRentsCount")
+    public CustomDTO getSumRents() {
+        return service.getSumRents();
     }
 }

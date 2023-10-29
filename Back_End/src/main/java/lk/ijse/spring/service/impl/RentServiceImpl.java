@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RentDTO;
 import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.entity.Driver;
@@ -14,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Random;
 
 
 /**
@@ -61,5 +60,10 @@ public class RentServiceImpl implements RentService {
         }
 
         rentRepo.save(rent);
+    }
+
+    @Override
+    public CustomDTO getSumRents() {
+        return new CustomDTO(rentRepo.getSumRents());
     }
 }
