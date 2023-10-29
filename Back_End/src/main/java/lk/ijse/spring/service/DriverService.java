@@ -19,4 +19,5 @@ public interface DriverService {
     void deleteDriver(String id);
     ArrayList<DriverDTO> getAvailableDrivers();
     CustomDTO getSumDriver();
+    CustomDTO getSumOfAvailableDrivers();
 }

@@ -60,4 +60,9 @@ public class DriverController {
     public CustomDTO getSumDriver() {
         return service.getSumDriver();
     }
+
+    @GetMapping(path = "/sumOfAvailableDriversCount")
+    public CustomDTO getSumOfAvailableDrivers() {
+        return service.getSumOfAvailableDrivers();
+    }
 }
