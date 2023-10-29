@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.service.DriverService;
@@ -53,5 +54,10 @@ public class DriverController {
     @GetMapping(path = "/loadAvailableDrivers")
     public ResponseUtil getAvailableDriver() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAvailableDrivers());
+    }
+
+    @GetMapping(path = "/sumOfDriversCount")
+    public CustomDTO getSumDriver() {
+        return service.getSumDriver();
     }
 }

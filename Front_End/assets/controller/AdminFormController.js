@@ -46,4 +46,19 @@ $.ajax({
     }
 });
 
+$("#driverCount").val("0");
+$.ajax({
+    url: baseUrl + "registerDriver/sumOfDriversCount",
+    method: "GET",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (res) {
+        let num = res.count;
+        $("#driverCount").text(num);
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
+});
+
 

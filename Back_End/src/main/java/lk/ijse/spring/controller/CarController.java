@@ -49,7 +49,7 @@ public class CarController {
     }
 
     @GetMapping(path = "/sumOfCarsCount")
-    public CustomDTO getSumCustomer() {
+    public CustomDTO getSumCar() {
         return service.getSumCar();
     }
 
