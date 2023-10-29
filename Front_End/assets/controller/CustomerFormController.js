@@ -29,6 +29,7 @@ $("#btnUpdateCustomerForm").click(function () {
         processData: false,
         success: function (res) {
             alert(res.message)
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -44,7 +45,6 @@ $("#btnDeleteCustomerForm").click(function () {
         dataType: "json",
         success: function (res) {
             alert(res.message)
-            getUserDetails();
         }, error: function (error) {
             alert(error.responseJSON.message);
         }
@@ -95,5 +95,10 @@ function loadUserDetails() {
         }
     });
 
+}
+
+function clearInputFields() {
+    $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").val("");
+    $("#user_Id").focus();
 }
 

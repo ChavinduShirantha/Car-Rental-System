@@ -13,6 +13,7 @@ $("#btnSaveCustomer").click(function () {
         success: function (res) {
             alert(res.message)
             getAllRegisterUsers();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -50,6 +51,7 @@ function getAllRegisterUsers() {
                 $("#customerTable").append(row);
             }
             bindTrEvents();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -149,6 +151,7 @@ $("#btnUpdateCustomer").click(function () {
         success: function (res) {
             alert(res.message)
             getAllRegisterUsers();
+            clearInputFields();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -165,8 +168,15 @@ $("#btnDeleteCustomer").click(function () {
         success: function (res) {
             alert(res.message)
             getAllRegisterUsers();
+            clearInputFields();
         }, error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 });
+
+function clearInputFields() {
+    $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").val("");
+    $("#user_Id").focus();
+}
+
