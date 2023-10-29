@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomDTO;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface CarService {
     CarDTO findCar(String id);
     void updateCar(CarDTO dto);
     void deleteCar(String id);
+    CustomDTO getSumCar();
 }

@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.service.CarService;
@@ -113,5 +114,10 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException(id + " Car is not available, please check the ID before delete.!");
         }
         repo.deleteById(id);
+    }
+
+    @Override
+    public CustomDTO getSumCar() {
+        return new CustomDTO(repo.getSumCar());
     }
 }

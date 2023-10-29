@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.service.CarService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,10 @@ public class CarController {
     public ResponseUtil deleteCar(String id){
         service.deleteCar(id);
         return new ResponseUtil("Ok","Successfully Deleted",null);
+    }
+
+    @GetMapping(path = "/sumOfCarsCount")
+    public CustomDTO getSumCustomer() {
+        return service.getSumCar();
     }
 }
