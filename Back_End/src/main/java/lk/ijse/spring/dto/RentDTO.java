@@ -25,6 +25,7 @@ public class RentDTO {
     private LocalTime returnTime;
     private String requestType;
     private String location;
+    private String rentStatus;
     private RegisterUserDTO user_Id;
     private List<RentDetailsDTO> rentDetails;
 }

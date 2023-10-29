@@ -34,6 +34,7 @@ $("#btnReservation").click(function () {
     let returnTime = $("#returnTime").val();
     let requestType = $("#requestType").val();
     let location = $("#location").val();
+    let rentStatus = "PAYMENT_PENDING";
     let user_Id=$("#user_Id").val();
     let rentDetails=getRentDetails();
 
@@ -45,6 +46,7 @@ $("#btnReservation").click(function () {
         returnTime: returnTime,
         requestType: requestType,
         location: location,
+        rentStatus:rentStatus,
         user_Id:{user_Id:user_Id},
         rentDetails:rentDetails
     }
