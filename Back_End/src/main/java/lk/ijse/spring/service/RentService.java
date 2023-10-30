@@ -19,4 +19,5 @@ public interface RentService {
     CustomDTO getSumOfActiveBookings();
     CustomDTO rentIdGenerate();
     ArrayList<RentDTO> getAllRent();
+    void deleteRent(String id);
 }

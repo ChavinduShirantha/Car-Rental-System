@@ -274,3 +274,18 @@ function bindTrEvents() {
         $("#rent_search_Id").val(rent_Id);
     });
 }
+
+$("#btnDeleteRent").click(function () {
+    let rent_Id = $("#rent_search_Id").val();
+    $.ajax({
+        url: baseURL + "rentCar?id=" + rent_Id,
+        method: "delete",
+        dataType: "json",
+        success: function (res) {
+            alert(res.message)
+            loadAllRent();
+        }, error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+});

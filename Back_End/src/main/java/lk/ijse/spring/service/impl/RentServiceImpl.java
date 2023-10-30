@@ -89,4 +89,12 @@ public class RentServiceImpl implements RentService {
         return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void deleteRent(String id) {
+        if (!rentRepo.existsById(id)) {
+            throw new RuntimeException(id + " Rent is not available, please check the ID before delete.!");
+        }
+        rentRepo.deleteById(id);
+    }
 }
