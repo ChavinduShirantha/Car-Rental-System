@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -111,5 +112,11 @@ public class RegisterUserServiceImpl implements RegisterUserService {
             throw new RuntimeException(id + " User is not available, please check the ID before delete.!");
         }
         repo.deleteById(id);
+    }
+
+    @Override
+    public ArrayList<RegisterUserDTO> searchUser(String user_id) {
+        return mapper.map(repo.searchRegUser(user_id), new TypeToken<ArrayList<RegisterUser>>() {
+        }.getType());
     }
 }

@@ -82,14 +82,25 @@ function loadUserDetails() {
                     $("#license_No").val(cus.license_No);
                     $("#user_Name").val(cus.user.user_Name);
                     $("#password").val(cus.user.password);
-                    /*let nicImg = cus.nic_Img;
-                    let licenseImg = cus.license_Img;
-                    $("#NICImage").css({
-                        "background": `url(${baseURL+ nicImg})`, "background-size": "cover"
+
+                    $.ajax({
+
+                        url: baseURL + "registerUser/searchRegUser/?user_id=" + cus.user_Id,
+                        method: "GET",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (res) {
+                            for (let i of res) {
+                                $("#NICImage").append(`<img  src="${baseURL+i.nic_Img}"  style="border: 1px solid black; height: 300px;width: 400px" alt="">`);
+                                $("#LicenseImage").append(`<img  src="${baseURL+i.license_Img}" style="border: 1px solid black; height: 300px;width: 400px"  alt="">`);
+
+                            }
+                        },
+                        error: function (error) {
+                            alert(error.responseJSON.message);
+                        }
                     });
-                    $("#LicenseImage").css({
-                        "background": `url(${baseURL +licenseImg})`, "background-size": "cover"
-                    });*/
+
                 }
             }
         }
@@ -101,4 +112,3 @@ function clearInputFields() {
     $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").val("");
     $("#user_Id").focus();
 }
-

@@ -1,7 +1,11 @@
 package lk.ijse.spring.repo;
 
 import lk.ijse.spring.entity.RegisterUser;
+import lk.ijse.spring.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -9,4 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface RegisterUserRepo extends JpaRepository<RegisterUser,String> {
+    @Query(value = "select * from RegisterUser where user_id=? ",nativeQuery = true)
+    ArrayList<RegisterUser> searchRegUser(String user_Id) throws RuntimeException;
 }

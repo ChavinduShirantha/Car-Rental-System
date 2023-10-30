@@ -2,6 +2,7 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.RegisterUserDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,4 +16,5 @@ public interface RegisterUserService {
     RegisterUserDTO findRegisterUser(String id);
     void updateRegisterUser(RegisterUserDTO dto);
     void deleteRegisterUser(String id);
+    ArrayList<RegisterUserDTO> searchUser(String user_id);
 }

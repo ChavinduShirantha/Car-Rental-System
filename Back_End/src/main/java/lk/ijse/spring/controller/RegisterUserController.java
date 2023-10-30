@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Chavindu
  * created : 10/24/2023-2:49 PM
@@ -48,5 +50,10 @@ public class RegisterUserController {
     public ResponseUtil deleteCustomer(String id){
         service.deleteRegisterUser(id);
         return new ResponseUtil("Ok","Successfully Deleted",null);
+    }
+
+    @GetMapping(path = "/searchRegUser", params = {"user_id"})
+    public ArrayList<RegisterUserDTO> searchRegUser(@RequestParam String user_id) {
+        return service.searchUser(user_id);
     }
 }

@@ -125,9 +125,9 @@ $("#btnSearchCustomer").click(function () {
             $("#address").val(address);
             $("#email").val(email);
             $("#nic").val(nic);
-            $("#nic_Img").val(nic_img);
+            $("#nic_Img").prop(nic_img);
             $("#license_No").val(licenseNo);
-            $("#license_Img").val(license_img);
+            $("#license_Img").prop(license_img);
             $("#role_Type").val(roleType);
             $("#user_Name").val(userName);
             $("#password").val(password);
