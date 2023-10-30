@@ -91,8 +91,8 @@ function loadUserDetails() {
                         dataType: "json",
                         success: function (res) {
                             for (let i of res) {
-                                $("#NICImage").append(`<img  src="${baseURL+i.nic_Img}"  style="border: 1px solid black; height: 300px;width: 400px" alt="">`);
-                                $("#LicenseImage").append(`<img  src="${baseURL+i.license_Img}" style="border: 1px solid black; height: 300px;width: 400px"  alt="">`);
+                                $("#NICImage").append(`<img  src="${"../../"+i.nic_Img}"  style="border: 1px solid black; height: 300px;width: 400px" alt="">`);
+                                $("#LicenseImage").append(`<img  src="${"../../"+i.license_Img}" style="border: 1px solid black; height: 300px;width: 400px"  alt="">`);
 
                             }
                         },

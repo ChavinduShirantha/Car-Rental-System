@@ -37,8 +37,8 @@ public class RegisterUserServiceImpl implements RegisterUserService {
             throw new RuntimeException(dto.getUser_Id() + " is already available, please insert a new ID");
 
         try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
+           // String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -51,8 +51,6 @@ public class RegisterUserServiceImpl implements RegisterUserService {
 
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
 
@@ -84,8 +82,9 @@ public class RegisterUserServiceImpl implements RegisterUserService {
             throw new RuntimeException(dto.getUser_Id() + " is not available, please insert a valid ID");
 
         try {
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
 
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
@@ -98,7 +97,7 @@ public class RegisterUserServiceImpl implements RegisterUserService {
             regUser.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

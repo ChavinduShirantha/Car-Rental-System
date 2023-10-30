@@ -181,10 +181,10 @@ $("#regNumber").click(function () {
         dataType: "json",
         success: function (res) {
             for (let i of res) {
-                $("#image1").append(`<img  src="${baseURL+i.image.front_view}" class="d-block w-100" alt="">`);
-                $("#image2").append(`<img  src="${baseURL+i.image.back_view}" class="d-block w-100" alt="">`);
-                $("#image3").append(`<img  src="${baseURL+i.image.side_view}" class="d-block w-100" alt="">`);
-                $("#image4").append(`<img  src="${baseURL+i.image.interior_view}" class="d-block w-100" alt="">`);
+                $("#image1").append(`<img  src="${"../../../"+i.image.front_view}" class="d-block w-100" alt="">`);
+                $("#image2").append(`<img  src="${"../../../"+i.image.back_view}" class="d-block w-100" alt="">`);
+                $("#image3").append(`<img  src="${"../../../"+i.image.side_view}" class="d-block w-100" alt="">`);
+                $("#image4").append(`<img  src="${"../../../"+i.image.interior_view}" class="d-block w-100" alt="">`);
 
                 let brand = i.brand;
                 let model = i.model;

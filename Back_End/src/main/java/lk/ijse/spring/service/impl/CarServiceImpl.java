@@ -38,8 +38,8 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException(dto.getRegNumber() + " is already available, please insert a new ID");
 
         try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
+            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -56,7 +56,7 @@ public class CarServiceImpl implements CarService {
 
             repo.save(car);
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -87,8 +87,8 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException(dto.getRegNumber() + " is not available, please insert a new ID");
 
         try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
+            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -104,7 +104,7 @@ public class CarServiceImpl implements CarService {
             car.getImage().setInterior_view("uploads/" + dto.getImage().getInterior_view().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
