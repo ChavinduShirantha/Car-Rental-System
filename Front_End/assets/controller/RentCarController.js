@@ -1,5 +1,7 @@
 let baseURL = "http://localhost:8080/Back_End_war/";
 
+generateRentID();
+
 let user;
 
 $.ajax({
@@ -60,6 +62,7 @@ $("#btnReservation").click(function () {
         success: function (res) {
             alert(res.message)
             clearInputFields();
+            generateRentID();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -215,3 +218,29 @@ $("#regNumber").click(function () {
         }
     })
 });
+
+function generateRentID() {
+    $("#rent_Id").val("R00-001");
+    $.ajax({
+        url: baseURL + "rentCar/rentIdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            let id = res.value;
+            console.log(id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#rent_Id").val("R00-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#rent_Id").val("R00-0" + tempId);
+            } else {
+                $("#rent_Id").val("R00-" + tempId);
+            }
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+}

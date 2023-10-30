@@ -18,4 +18,7 @@ public interface RentRepo extends JpaRepository<Rent,String> {
 
     @Query(value = "SELECT COUNT(rent_Id) FROM Rent WHERE rentStatus='PAYMENT_SUCCESS';", nativeQuery = true)
     int getSumOfActiveBookings();
+
+    @Query(value = "SELECT rent_Id FROM Rent ORDER BY rent_Id DESC LIMIT 1", nativeQuery = true)
+    String getLastID();
 }

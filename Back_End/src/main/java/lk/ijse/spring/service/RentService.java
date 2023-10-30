@@ -15,4 +15,5 @@ public interface RentService {
     CustomDTO getSumBookings();
     CustomDTO getSumOfPendingBookings();
     CustomDTO getSumOfActiveBookings();
+    CustomDTO rentIdGenerate();
 }

@@ -37,4 +37,9 @@ public class RentController {
     public CustomDTO getSumOfActiveBookings() {
         return service.getSumOfActiveBookings();
     }
+
+    @GetMapping(path = "/rentIdGenerate")
+    public @ResponseBody CustomDTO rentIdGenerate() {
+        return service.rentIdGenerate();
+    }
 }
