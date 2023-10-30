@@ -22,4 +22,5 @@ public interface DriverService {
     CustomDTO getSumOfAvailableDrivers();
     CustomDTO getSumOfUnAvailableDrivers();
     CustomDTO driverIdGenerate();
+    ArrayList<DriverDTO> searchDriver(String user_id);
 }

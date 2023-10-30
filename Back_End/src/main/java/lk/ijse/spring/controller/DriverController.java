@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Chavindu
  * created : 10/27/2023-9:25 AM
@@ -74,5 +76,10 @@ public class DriverController {
     @GetMapping(path = "/driverIdGenerate")
     public @ResponseBody CustomDTO driverIdGenerate() {
         return service.driverIdGenerate();
+    }
+
+    @GetMapping(path = "/searchDriver", params = {"user_id"})
+    public ArrayList<DriverDTO> searchDriver(@RequestParam String user_id) {
+        return service.searchDriver(user_id);
     }
 }

@@ -67,6 +67,24 @@ function loadDriverDetails() {
                     $("#license_No").val(d.license_No);
                     $("#user_Name").val(d.user.user_Name);
                     $("#password").val(d.user.password);
+
+                    $.ajax({
+
+                        url: baseURL + "registerDriver/searchDriver/?user_id=" + d.user_Id,
+                        method: "GET",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (res) {
+                            for (let i of res) {
+                                $("#NICImage").append(`<img  src="${"../../../"+i.nic_Img}"  style="border: 1px solid black; height: 300px;width: 400px" alt="">`);
+                                $("#LicenseImage").append(`<img  src="${"../../../"+i.license_Img}" style="border: 1px solid black; height: 300px;width: 400px"  alt="">`);
+                            }
+                        },
+                        error: function (error) {
+                            alert(error.responseJSON.message);
+                        }
+                    });
+
                 }
             }
         }

@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,5 +134,11 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public CustomDTO driverIdGenerate() {
         return new CustomDTO(repo.getLastID());
+    }
+
+    @Override
+    public ArrayList<DriverDTO> searchDriver(String user_id) {
+        return mapper.map(repo.searchDriver(user_id), new TypeToken<ArrayList<Driver>>() {
+        }.getType());
     }
 }
