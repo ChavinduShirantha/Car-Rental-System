@@ -173,18 +173,27 @@ $("#fuel_Type").click(function () {
 
 $("#regNumber").click(function () {
     var regNumber = $("#regNumber").val();
+    $("#image1>img").remove();
+    $("#image2>img").remove();
+    $("#image3>img").remove();
+    $("#image4>img").remove();
     $.ajax({
-        // url: baseURL + "registerCar/?id=" + regNumber,
         url: baseURL + "registerCar/searchCar/?regNumber=" + regNumber,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
+            let front;
+            let back;
+            let side;
+            let interior;
+
             for (let i of res) {
-                $("#image1").append(`<img  src="${"../../../"+i.image.front_view}" class="d-block w-100" alt="">`);
-                $("#image2").append(`<img  src="${"../../../"+i.image.back_view}" class="d-block w-100" alt="">`);
-                $("#image3").append(`<img  src="${"../../../"+i.image.side_view}" class="d-block w-100" alt="">`);
-                $("#image4").append(`<img  src="${"../../../"+i.image.interior_view}" class="d-block w-100" alt="">`);
+
+                front=i.image.front_view;
+                back=i.image.back_view;
+                side=i.image.side_view;
+                interior=i.image.interior_view;
 
                 let brand = i.brand;
                 let model = i.model;
@@ -194,6 +203,10 @@ $("#regNumber").click(function () {
                 $("#model").val(model);
                 $("#number_Of_Passengers").val(noOfPassengers);
              }
+            $("#image1").append(`<img  src="${"../../../"+front}" class="d-block w-100" alt="">`);
+            $("#image2").append(`<img  src="${"../../../"+back}" class="d-block w-100" alt="">`);
+            $("#image3").append(`<img  src="${"../../../"+side}" class="d-block w-100" alt="">`);
+            $("#image4").append(`<img  src="${"../../../"+interior}" class="d-block w-100" alt="">`);
             console.log(res);
 
         },
