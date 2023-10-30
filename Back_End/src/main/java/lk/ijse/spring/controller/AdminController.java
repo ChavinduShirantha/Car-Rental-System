@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.AdminDTO;
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.service.AdminService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -44,5 +45,10 @@ public class AdminController {
     public ResponseUtil deleteAdmin(String id) {
         service.deleteAdmin(id);
         return new ResponseUtil("Ok", "Successfully Deleted", null);
+    }
+
+    @GetMapping(path = "/adminIdGenerate")
+    public CustomDTO adminIdGenerate() {
+        return service.adminIdGenerate();
     }
 }

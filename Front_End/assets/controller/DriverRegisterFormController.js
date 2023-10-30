@@ -1,5 +1,6 @@
 let baseURL = "http://localhost:8080/Back_End_war/";
 
+generateDriverID();
 $("#btnRegisterDriver").click(function () {
     let adminFormData = new FormData($("#registerForm")[0]);
     $.ajax({
@@ -11,6 +12,8 @@ $("#btnRegisterDriver").click(function () {
         success: function (res) {
             alert(res.message)
             clearInputFields();
+            generateDriverID();
+
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -46,3 +49,29 @@ function loadSelectedImage(divId) {
 
 loadSelectedImage("#nic_Img");
 loadSelectedImage("#license_Img");
+
+function generateDriverID() {
+    $("#user_Id").val("D00-001");
+    $.ajax({
+        url: baseURL + "registerDriver/driverIdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            let id = res.value;
+            console.log(id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#user_Id").val("D00-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#user_Id").val("D00-0" + tempId);
+            } else {
+                $("#user_Id").val("D00-" + tempId);
+            }
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+}

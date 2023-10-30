@@ -1,6 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.AdminDTO;
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.AdminRepo;
@@ -66,5 +67,10 @@ public class AdminServiceImpl implements AdminService {
             throw new RuntimeException(id + " Admin is not available, please check the ID before delete.!");
         }
         repo.deleteById(id);
+    }
+
+    @Override
+    public CustomDTO adminIdGenerate() {
+        return new CustomDTO(repo.getLastID());
     }
 }
