@@ -1,4 +1,4 @@
-let regCusID = /^(C00-)[0-9]{3,4}$/;
+let regAdminID = /^(A00-)[0-9]{3,4}$/;
 const regFirstName = /^[A-z ]{3,20}$/;
 const regLastName = /^[A-z ]{3,20}$/;
 const regContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
@@ -9,54 +9,49 @@ const regDrivingNIC = /^[A-Z0-9-]+$/;
 const regUserName = /^[A-z0-9/ ]{4,30}$/;
 const regPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
-let customerValidations = [];
+let adminValidations = [];
 
-customerValidations.push({
-    reg: regCusID,
+adminValidations.push({
+    reg: regAdminID,
     field: $('#user_Id'),
     error: 'User ID Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regFirstName,
     field: $('#firstName'),
     error: 'User First Name Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regLastName,
     field: $('#lastName'),
     error: 'User Last Name Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regContactNum,
     field: $('#contact_No'),
     error: 'User Contact Number Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regCusAddress,
     field: $('#address'),
     error: 'User Address Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regEmailCusAddress,
     field: $('#email'),
     error: 'User Email Address Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regNIC,
     field: $('#nic'),
     error: 'User NIC Pattern is Wrong'
 });
-customerValidations.push({
-    reg: regDrivingNIC,
-    field: $('#license_No'),
-    error: 'User Driving License Pattern is Wrong'
-});
-customerValidations.push({
+adminValidations.push({
     reg: regUserName,
     field: $('#user_Name'),
     error: 'User User Name Pattern is Wrong'
 });
-customerValidations.push({
+adminValidations.push({
     reg: regPassword,
     field: $('#password'),
     error: 'User Password Pattern is Wrong'
@@ -71,18 +66,18 @@ function check(regex, txtField) {
     return regex.test(inputValue) ? true : false;
 }
 
-$("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keydown', function (event) {
+$("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#user_Name,#password").on('keydown', function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
     }
 });
 
-$("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keyup', function (event) {
-    checkValidity(customerValidations);
+$("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#user_Name,#password").on('keyup', function (event) {
+    checkValidity(adminValidations);
 });
 
 $("#user_Id").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regCusID, $("#user_Id"))) {
+    if (event.key === "Enter" && check(regAdminID, $("#user_Id"))) {
         $("#firstName").focus();
     } else {
         focusText($("#user_Id"));
@@ -119,15 +114,7 @@ $("#address").on('keydown', function (event) {
 
 $("#nic").on('keydown', function (event) {
     if (event.key === "Enter" && check(regNIC, $("#nic"))) {
-        focusText($("#license_No"));
-    }
-});
-
-$("#license_No").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regDrivingNIC, $("#license_No"))) {
-        if (event.which === 13) {
-            focusText($("#email"));
-        }
+        focusText($("#email"));
     }
 });
 
@@ -139,23 +126,19 @@ $("#email").on('keydown', function (event) {
 
 $("#user_Name").on('keydown', function (event) {
     if (event.key === "Enter" && check(regUserName, $("#user_Name"))) {
-        if (event.which === 13) {
             focusText($("#password"));
-        }
     }
 });
 
 $("#password").on('keydown', function (event) {
     if (event.key === "Enter" && check(regPassword, $("#password"))) {
-        if (event.which === 13) {
-            $('#btnRegisterCustomer').focus();
-        }
+            $('#btnRegisterAdmin').focus();
     }
 });
 
 function checkValidity() {
     let errorCount = 0;
-    for (let validation of customerValidations) {
+    for (let validation of adminValidations) {
         if (check(validation.reg, validation.field)) {
             textSuccess(validation.field, "");
         } else {
@@ -168,9 +151,9 @@ function checkValidity() {
 
 function setButtonState(value) {
     if (value > 0) {
-        $("#btnRegisterCustomer").attr('disabled', true);
+        $("#btnRegisterAdmin").attr('disabled', true);
     } else {
-        $("#btnRegisterCustomer").attr('disabled', false);
+        $("#btnRegisterAdmin").attr('disabled', false);
     }
 }
 

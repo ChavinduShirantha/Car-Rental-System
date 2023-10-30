@@ -1,4 +1,4 @@
-let regCusID = /^(C00-)[0-9]{3,4}$/;
+let regDriverID = /^(D00-)[0-9]{3,4}$/;
 const regFirstName = /^[A-z ]{3,20}$/;
 const regLastName = /^[A-z ]{3,20}$/;
 const regContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
@@ -9,54 +9,54 @@ const regDrivingNIC = /^[A-Z0-9-]+$/;
 const regUserName = /^[A-z0-9/ ]{4,30}$/;
 const regPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
-let customerValidations = [];
+let driverValidations = [];
 
-customerValidations.push({
-    reg: regCusID,
+driverValidations.push({
+    reg: regDriverID,
     field: $('#user_Id'),
     error: 'User ID Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regFirstName,
     field: $('#firstName'),
     error: 'User First Name Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regLastName,
     field: $('#lastName'),
     error: 'User Last Name Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regContactNum,
     field: $('#contact_No'),
     error: 'User Contact Number Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regCusAddress,
     field: $('#address'),
     error: 'User Address Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regEmailCusAddress,
     field: $('#email'),
     error: 'User Email Address Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regNIC,
     field: $('#nic'),
     error: 'User NIC Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regDrivingNIC,
     field: $('#license_No'),
     error: 'User Driving License Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regUserName,
     field: $('#user_Name'),
     error: 'User User Name Pattern is Wrong'
 });
-customerValidations.push({
+driverValidations.push({
     reg: regPassword,
     field: $('#password'),
     error: 'User Password Pattern is Wrong'
@@ -78,11 +78,11 @@ $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#u
 });
 
 $("#user_Id,#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keyup', function (event) {
-    checkValidity(customerValidations);
+    checkValidity(driverValidations);
 });
 
 $("#user_Id").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regCusID, $("#user_Id"))) {
+    if (event.key === "Enter" && check(regDriverID, $("#user_Id"))) {
         $("#firstName").focus();
     } else {
         focusText($("#user_Id"));
@@ -148,14 +148,14 @@ $("#user_Name").on('keydown', function (event) {
 $("#password").on('keydown', function (event) {
     if (event.key === "Enter" && check(regPassword, $("#password"))) {
         if (event.which === 13) {
-            $('#btnRegisterCustomer').focus();
+            $('#btnRegisterDriver').focus();
         }
     }
 });
 
 function checkValidity() {
     let errorCount = 0;
-    for (let validation of customerValidations) {
+    for (let validation of driverValidations) {
         if (check(validation.reg, validation.field)) {
             textSuccess(validation.field, "");
         } else {
@@ -168,9 +168,9 @@ function checkValidity() {
 
 function setButtonState(value) {
     if (value > 0) {
-        $("#btnRegisterCustomer").attr('disabled', true);
+        $("#btnRegisterDriver").attr('disabled', true);
     } else {
-        $("#btnRegisterCustomer").attr('disabled', false);
+        $("#btnRegisterDriver").attr('disabled', false);
     }
 }
 
