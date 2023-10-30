@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RegisterUserDTO;
 import lk.ijse.spring.entity.RegisterUser;
 import lk.ijse.spring.entity.User;
@@ -117,5 +118,10 @@ public class RegisterUserServiceImpl implements RegisterUserService {
     public ArrayList<RegisterUserDTO> searchUser(String user_id) {
         return mapper.map(repo.searchRegUser(user_id), new TypeToken<ArrayList<RegisterUser>>() {
         }.getType());
+    }
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(repo.getLastID());
     }
 }

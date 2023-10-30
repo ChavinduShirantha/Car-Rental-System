@@ -52,6 +52,7 @@ function getAllRegisterUsers() {
             }
             bindTrEvents();
             clearInputFields();
+            generateCustomerID();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -180,3 +181,28 @@ function clearInputFields() {
     $("#user_Id").focus();
 }
 
+function generateCustomerID() {
+    $("#user_Id").val("C00-001");
+    $.ajax({
+        url: baseURL + "registerUser/userIdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (res) {
+            let id = res.value;
+            console.log(id);
+            let tempId = parseInt(id.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#user_Id").val("C00-00" + tempId);
+            } else if (tempId <= 99) {
+                $("#user_Id").val("C00-0" + tempId);
+            } else {
+                $("#user_Id").val("C00-" + tempId);
+            }
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+}

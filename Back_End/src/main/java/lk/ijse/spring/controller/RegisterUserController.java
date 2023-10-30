@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RegisterUserDTO;
 import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.service.RegisterUserService;
@@ -55,5 +56,10 @@ public class RegisterUserController {
     @GetMapping(path = "/searchRegUser", params = {"user_id"})
     public ArrayList<RegisterUserDTO> searchRegUser(@RequestParam String user_id) {
         return service.searchUser(user_id);
+    }
+
+    @GetMapping(path = "/userIdGenerate")
+    public @ResponseBody CustomDTO userIdGenerate() {
+        return service.userIdGenerate();
     }
 }
