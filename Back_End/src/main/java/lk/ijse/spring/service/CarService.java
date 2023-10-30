@@ -21,4 +21,5 @@ public interface CarService {
     CustomDTO getSumOfAvailableCar();
     CustomDTO getSumOfUnAvailableCar();
     ArrayList<CarDTO> getFilerCar(String type, String fuel_type);
+    ArrayList<CarDTO> searchCar(String regNumber);
 }

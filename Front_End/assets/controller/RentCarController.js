@@ -174,39 +174,28 @@ $("#fuel_Type").click(function () {
 $("#regNumber").click(function () {
     var regNumber = $("#regNumber").val();
     $.ajax({
-        url: baseURL + "registerCar/?id=" + regNumber,
+        // url: baseURL + "registerCar/?id=" + regNumber,
+        url: baseURL + "registerCar/searchCar/?regNumber=" + regNumber,
         method: "GET",
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
+            for (let i of res) {
+                $("#image1").append(`<img  src="${baseURL+i.image.front_view}" class="d-block w-100" alt="">`);
+                $("#image2").append(`<img  src="${baseURL+i.image.back_view}" class="d-block w-100" alt="">`);
+                $("#image3").append(`<img  src="${baseURL+i.image.side_view}" class="d-block w-100" alt="">`);
+                $("#image4").append(`<img  src="${baseURL+i.image.interior_view}" class="d-block w-100" alt="">`);
+
+                let brand = i.brand;
+                let model = i.model;
+                let noOfPassengers = i.noOfPassengers;
+
+                $("#brand").val(brand);
+                $("#model").val(model);
+                $("#number_Of_Passengers").val(noOfPassengers);
+             }
             console.log(res);
-            let brand = res.data.brand;
-            let model = res.data.model;
-            let noOfPassengers = res.data.noOfPassengers;
 
-            $("#brand").val(brand);
-            $("#model").val(model);
-            $("#number_Of_Passengers").val(noOfPassengers);
-
-            // let img =res.data.front_view;
-
-            /*let url1 = res.data.front_view;
-            let url2 = res.back_view;
-            let url3 = res.side_view;
-            let url4 = res.interior_view;*/
-
-            $("#imageCar").css({
-                "background": `url(${baseURL +"/uploads/2.png"})`, "background-size": "cover","background-position":"center"
-            });
-            /*$("#image2").css({
-                "background": `url(${baseURL + url2})`, "background-size": "cover"
-            });
-            $("#image3").css({
-                "background": `url(${baseURL + url3})`, "background-size": "cover"
-            });
-            $("#image4").css({
-                "background": `url(${baseURL + url4})`, "background-size": "cover"
-            });*/
         },
         error: function (error) {
             alert(error.responseJSON.message);

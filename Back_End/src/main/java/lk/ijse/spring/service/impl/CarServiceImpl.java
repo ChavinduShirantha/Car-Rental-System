@@ -54,13 +54,14 @@ public class CarServiceImpl implements CarService {
             car.getImage().setSide_view("uploads/" + dto.getImage().getSide_view().getOriginalFilename());
             car.getImage().setInterior_view("uploads/" + dto.getImage().getInterior_view().getOriginalFilename());
 
+            repo.save(car);
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
 
         System.out.println(car);
-        repo.save(car);
+
     }
 
     @Override
@@ -137,6 +138,12 @@ public class CarServiceImpl implements CarService {
     @Override
     public ArrayList<CarDTO> getFilerCar(String type, String fuel_type) {
         return mapper.map(repo.filterCar(type,fuel_type), new TypeToken<ArrayList<Car>>() {
+        }.getType());
+    }
+
+    @Override
+    public ArrayList<CarDTO> searchCar(String regNumber) {
+        return mapper.map(repo.searchCar(regNumber), new TypeToken<ArrayList<Car>>() {
         }.getType());
     }
 }

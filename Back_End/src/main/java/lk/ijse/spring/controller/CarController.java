@@ -73,4 +73,9 @@ public class CarController {
     public ArrayList<CarDTO> getFilerCar(@RequestParam String type, @RequestParam String fuel_type) {
         return service.getFilerCar(type, fuel_type);
     }
+
+    @GetMapping(path = "/searchCar", params = {"regNumber"})
+    public ArrayList<CarDTO> searchCar(@RequestParam String regNumber) {
+        return service.searchCar(regNumber);
+    }
 }
