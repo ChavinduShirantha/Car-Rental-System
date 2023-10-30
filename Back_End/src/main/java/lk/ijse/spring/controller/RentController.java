@@ -42,4 +42,9 @@ public class RentController {
     public @ResponseBody CustomDTO rentIdGenerate() {
         return service.rentIdGenerate();
     }
+
+    @GetMapping
+    public ResponseUtil getAllRents() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
+    }
 }

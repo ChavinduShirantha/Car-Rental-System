@@ -11,10 +11,12 @@ import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.RentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 
 
 /**
@@ -80,5 +82,11 @@ public class RentServiceImpl implements RentService {
     @Override
     public CustomDTO rentIdGenerate() {
         return new CustomDTO(rentRepo.getLastID());
+    }
+
+    @Override
+    public ArrayList<RentDTO> getAllRent() {
+        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
     }
 }
