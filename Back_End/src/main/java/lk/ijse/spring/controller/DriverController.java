@@ -70,4 +70,9 @@ public class DriverController {
     public CustomDTO getSumOfUnAvailableDrivers() {
         return service.getSumOfUnAvailableDrivers();
     }
+
+    @GetMapping(path = "/driverIdGenerate")
+    public @ResponseBody CustomDTO driverIdGenerate() {
+        return service.driverIdGenerate();
+    }
 }
