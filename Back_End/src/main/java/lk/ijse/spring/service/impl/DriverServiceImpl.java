@@ -37,7 +37,8 @@ public class DriverServiceImpl implements DriverService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -49,7 +50,7 @@ public class DriverServiceImpl implements DriverService {
             driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -81,7 +82,8 @@ public class DriverServiceImpl implements DriverService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            String projectPath="D:\\Car_Rental_System\\Car_Rental_System";
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
@@ -93,7 +95,7 @@ public class DriverServiceImpl implements DriverService {
             driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

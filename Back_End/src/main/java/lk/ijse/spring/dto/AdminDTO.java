@@ -22,9 +22,6 @@ public class AdminDTO {
     private String address;
     private String email;
     private String nic;
-    private MultipartFile nic_Img;
-    private String license_No;
-    private MultipartFile license_Img;
 
     private UserDTO user;
 }

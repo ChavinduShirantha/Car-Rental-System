@@ -28,9 +28,6 @@ public class Admin {
     private String address;
     private String email;
     private String nic;
-    private String nic_Img;
-    private String license_No;
-    private String license_Img;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
