@@ -35,9 +35,8 @@ $("#btnDeleteDriverForm").click(function () {
     });
 });
 
-
+let driver;
 function loadDriverDetails() {
-    let driver;
 
     $.ajax({
         url: baseURL + "login/current",
@@ -98,3 +97,22 @@ function clearInputFields() {
 }
 
 
+loadAllRent();
+function loadAllRent() {
+    $.ajax({
+        url: baseURL + "rentCar",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            for (var i of res.data) {
+                console.log(i.rentDetails.at().driverID)
+                if (driver === i.rentDetails.at().driverID) {
+                    let row = "<tr><td>" + i.rent_Id + "</td><td>" + i.rentDetails.at().regNumber + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnDate + "</td><td>" + i.returnTime + "</td><td>" + i.location + "</td></tr>";
+                    $("#tblDriverForm").append(row);
+                }
+            }
+        }
+    });
+}
