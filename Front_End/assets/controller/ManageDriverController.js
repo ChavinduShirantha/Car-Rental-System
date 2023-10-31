@@ -211,3 +211,8 @@ function generateDriverID() {
         }
     });
 }
+
+$("#btnAdd").click(function () {
+    clearInputFields();
+    generateDriverID();
+});

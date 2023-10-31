@@ -2,12 +2,12 @@
     position: relative;
     top: 3rem;
     left: 2rem;
-    width: 27rem;
 }
 
 #driverHeader {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
+    width: max-content;
 }
 
 #driverNav {
@@ -17,7 +17,7 @@
 
 .driverSection {
     position: relative;
-    left: -10rem;
+    left: -8rem;
 }
 
 .driverDetails {

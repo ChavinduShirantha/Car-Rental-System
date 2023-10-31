@@ -2,12 +2,12 @@
     position: relative;
     top: 3rem;
     left: 2rem;
-    width: 27rem;
 }
 
 #customerHeader {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
+    width: max-content;
 }
 
 #customerNav {

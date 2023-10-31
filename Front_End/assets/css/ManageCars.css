@@ -5,14 +5,16 @@
     width: 27rem;
 }
 
-#carHeader {
+#dashboardHeader {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 24px;
+    width: max-content;
 }
 
-#carNav {
+#dashboardNav {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
+    width: max-content;
 }
 
 .carSection {
