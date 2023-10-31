@@ -30,6 +30,7 @@ $("#btnUpdateCustomerForm").click(function () {
         success: function (res) {
             alert(res.message)
             clearInputFields();
+            loadUserDetails();
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -45,6 +46,7 @@ $("#btnDeleteCustomerForm").click(function () {
         dataType: "json",
         success: function (res) {
             alert(res.message)
+            window.location.href = '../../index.html';
         }, error: function (error) {
             alert(error.responseJSON.message);
         }

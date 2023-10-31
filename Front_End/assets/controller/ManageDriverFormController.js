@@ -28,6 +28,7 @@ $("#btnDeleteDriverForm").click(function () {
         dataType: "json",
         success: function (res) {
             alert(res.message)
+            window.location.href = '../../index.html';
             clearInputFields();
         }, error: function (error) {
             alert(error.responseJSON.message);
