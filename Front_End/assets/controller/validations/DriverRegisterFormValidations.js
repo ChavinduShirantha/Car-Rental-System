@@ -112,8 +112,14 @@ $("#contact_No").on('keydown', function (event) {
 $("#address").on('keydown', function (event) {
     if (event.key === "Enter" && check(regCusAddress, $("#address"))) {
         if (event.which === 13) {
-            focusText($("#nic"));
+            focusText($("#email"));
         }
+    }
+});
+
+$("#email").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regEmailCusAddress, $("#email"))) {
+        focusText($("#nic"));
     }
 });
 
@@ -126,16 +132,12 @@ $("#nic").on('keydown', function (event) {
 $("#license_No").on('keydown', function (event) {
     if (event.key === "Enter" && check(regDrivingNIC, $("#license_No"))) {
         if (event.which === 13) {
-            focusText($("#email"));
+            focusText($("#user_Name"));
         }
     }
 });
 
-$("#email").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regEmailCusAddress, $("#email"))) {
-        focusText($("#user_Name"));
-    }
-});
+
 
 $("#user_Name").on('keydown', function (event) {
     if (event.key === "Enter" && check(regUserName, $("#user_Name"))) {
