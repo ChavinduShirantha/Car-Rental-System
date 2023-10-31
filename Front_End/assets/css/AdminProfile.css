@@ -1,0 +1,12 @@
+
+.adminProfileFormSection {
+    position: relative;
+    left: -10rem;
+}
+
+.adminProfileFormDetails {
+    position: relative;
+    top: 8rem;
+    margin-bottom: 30px;
+    border: none;
+}
