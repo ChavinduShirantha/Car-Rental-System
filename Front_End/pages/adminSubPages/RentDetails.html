@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/RentDetails.css">
 </head>
 <body>
 <header class="header fixed-top" id="header">
@@ -124,6 +125,36 @@
                 <h3 id="dashboardHeader">Rent Details</h3>
                 <p id="dashboardNav">Home > Details > Rent Details</p>
             </div>
+            <section class="container-fluid" id="rent_details_container">
+
+                <div class="row mt-3">
+                    <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                        <div class="col-11 justify-content-around sectionBorder"
+                             style="height: 290px; background: white">
+                            <div class="table-responsive customerTableDiv overflow-auto "
+                                 style="height: 300px;width: 1000px">
+                                <table class="table table-light table-striped table-bordered table-hover">
+                                    <thead class="text-dark table-info text-nowrap text-center  table-bordered">
+                                    <tr>
+                                        <th scope="col">Rent ID</th>
+                                        <th scope="col">Registration Number</th>
+                                        <th scope="col">User ID</th>
+                                        <th scope="col">Driver ID</th>
+                                        <th scope="col">PickUp Date</th>
+                                        <th scope="col">PickUp Time</th>
+                                        <th scope="col">Return Date</th>
+                                        <th scope="col">Return Time</th>
+                                        <th scope="col">Driver or not</th>
+                                        <th scope="col">Location</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="rentDetailsTable"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>
