@@ -206,3 +206,8 @@ function generateCustomerID() {
         }
     });
 }
+
+$("#btnAdd").click(function () {
+    clearInputFields();
+    generateCustomerID();
+});

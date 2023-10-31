@@ -136,12 +136,25 @@
                         <div class="col-12 m-3 p-1">
                             <form class="row" id="customerForm">
                                 <section id="sec1Customer" class="col-4 mt-3">
-                                    <div class="mb-sm-0">
+                                    <div class="mb-sm-0 d-flex">
+                                        <div class="mb-sm-0 me-md-3 col-9">
+                                            <label class="form-label" for="user_Id">User Id</label>
+                                            <input type="text" readonly name="user_Id"  class="form-control" id="user_Id"
+                                                   placeholder="C00-001">
+                                            <small class="control-error text-danger"></small>
+                                        </div>
+                                        <div class="mb-sm-0 col-2 mt-4">
+                                            <button class="btn btn-outline-primary mt-2" id="btnAdd" type="button">
+                                                ADD
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--<div class="mb-sm-0">
                                         <label class="form-label" for="user_Id">User Id</label>
                                         <input type="text" readonly name="user_Id"  class="form-control" id="user_Id"
                                                placeholder="C00-001">
                                         <small class="control-error text-danger"></small>
-                                    </div>
+                                    </div>-->
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="firstName">First Name</label>
                                         <input type="text" name="firstName" class="form-control" id="firstName"
