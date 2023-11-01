@@ -17,6 +17,9 @@ $("#btnSearchCarDetails").click(function () {
         dataType: "json",
         success: function (res) {
             console.log(res);
+            if (res.length === 0){
+                alert("No Results Found")
+            }
             for (let i of res) {
                 $("#carDetailsPreview").append(
                     `<div class="col-lg-4 col-md-6 ">
