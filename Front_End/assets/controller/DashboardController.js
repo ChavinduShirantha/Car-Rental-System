@@ -22,10 +22,23 @@ $("#btnSearchCarDetails").click(function () {
                     `<div class="col-lg-4 col-md-6">
                         <div class="detailBox">
                             <div class="detailBox-body">
-                                <h5 class="detailBox-title">${i.brand}</h5>
+                                <h2>${i.type}</h2>
                                 <img src="${"../../../" + i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
                             </div>
-                          
+                          <div class=" justify-content-center">
+                                <h4 >${i.brand}</h4>
+                                <h4 >${i.model}</h4>
+                                <h4 >${i.regNumber}</h4>
+                                <h4 >${i.transmission_type}</h4>
+                                <h4 >${i.fuel_type}</h4>
+                                <h4 >${i.regNumber}</h4>
+                                <h4 >${i.daily_Rate}</h4>
+                                <h4 >${i.monthly_Rate}</h4>
+                                <h4 >${i.freeMileage}</h4>
+                                <h4 >${i.noOfPassengers}</h4>
+                                <h4 >${i.priceExtraKM}</h4>
+                                <h4 >${i.color}</h4>
+                          </div>
                         </div>
                     </div>`
                 )
