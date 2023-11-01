@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/RentRequest.css">
 </head>
 <body>
 <header class="header fixed-top" id="header">
@@ -124,6 +125,97 @@
                 <h3 id="dashboardHeader">Rent Request </h3>
                 <p id="dashboardNav">Home > Rent Request </p>
             </div>
+
+            <div class="section-rent-request" id="section-rent-request" >
+                <div class="row ms-0 me-0">
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="rent_Id" class="form-label mb-0">Rent ID</label>
+                            <input type="text" class="form-control" id="rent_Id"
+                                   name="rent_Id" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="pickupDate" class="form-label mb-0">Pickup Date</label>
+                            <input type="text" class="form-control" id="pickupDate"
+                                   name="pickupDate" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="returnDate" class="form-label mb-0">Return Date</label>
+                            <input type="text" class="form-control" id="returnDate"
+                                   name="returnDate" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="registrationNumber" class="form-label mb-0">Registration Number</label>
+                            <input type="text" class="form-control" id="registrationNumber"
+                                   name="registrationNumber" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ms-0 me-0">
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="cusId" class="form-label mb-0">Customer ID</label>
+                            <input type="text" class="form-control" id="cusId"
+                                   name="cusId" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="licenceNo" class="form-label mb-0">Licence No</label>
+                            <input type="text" class="form-control" id="licenceNo"
+                                   name="licenceNo" disabled>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3">
+                            <label for="rentStatus" class="form-label mb-0">Status</label>
+                            <input type="text" class="form-control" id="rentStatus"
+                                   name="rentStatus" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="button" class="btn btn-outline-success mt-3 " id="btnRentAccept">Accept</button>
+                        <button type="button" class="btn btn-outline-danger mt-3" id="btnRentReject">Reject</button>
+                    </div>
+                </div>
+                <div class="search-bar mt-4 mb-3">
+                    <div class="search-form d-flex align-items-center">
+                        <input type="search" class="me-md-1" name="car_Id" id="searchRentalRequest"
+                               placeholder="Search">
+                        <button type="button" class="btn btn-outline-primary me-md-1 col-1"
+                                id="btnSearchRentRequest">Search
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-light row overflow-scroll" style="height: 200px">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead class="bg-info-subtle">
+                        <tr>
+                            <th>Rent ID</th>
+                            <th>Pickup Date</th>
+                            <th>Return Date</th>
+                            <th>Registration Number</th>
+                            <th>Customer ID</th>
+                            <th>Licence No</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblRentRequest">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>

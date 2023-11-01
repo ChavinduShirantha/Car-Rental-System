@@ -1,0 +1,23 @@
+.section-rent-request{
+    position: relative;
+    top: 10rem;
+    left: -12rem;
+}
+
+#searchRentalRequest{
+    font-size: 1em;
+    color: #012970;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    width: 15rem;
+    height: 2.5rem;
+    margin-left: 18rem;
+}
+
+.search-form input:focus{
+    outline: none;
+}
+
+.search-form input:hover{
+    outline: 1px solid #0b5ed7;
+}
