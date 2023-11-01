@@ -66,6 +66,16 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
+    public void updateRentCars(RentDTO dto) {
+        Rent rent = mapper.map(dto, Rent.class);
+
+        if (!rentRepo.existsById(dto.getRent_Id())) {
+            throw new RuntimeException(dto.getRent_Id() + " is not available, please insert a new ID");
+        }
+        rentRepo.save(rent);
+    }
+
+    @Override
     public CustomDTO getSumBookings() {
         return new CustomDTO(rentRepo.getSumBookings());
     }

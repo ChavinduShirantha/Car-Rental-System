@@ -24,6 +24,12 @@ public class RentController {
         return new ResponseUtil("Ok", "Successfully Purchased.!", null);
     }
 
+    @PostMapping(path = "/updateRent")
+    public ResponseUtil updateRentCar(@RequestBody RentDTO dto) {
+        service.updateRentCars(dto);
+        return new ResponseUtil("Ok", "Request Accepted.!", null);
+    }
+
     @GetMapping(path = "/sumOfRentsCount")
     public CustomDTO getSumBookings() {
         return service.getSumBookings();

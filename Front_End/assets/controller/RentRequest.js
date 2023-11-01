@@ -4,6 +4,7 @@ let baseURL = "http://localhost:8080/Back_End_war/";
 loadAllRent();
 
 function loadAllRent() {
+    $("#tblRentRequest").empty();
     clearInputFields();
     $.ajax({
         url: baseURL + "rentCar",
@@ -91,3 +92,44 @@ $("#btnSearchRentRequest").click(function () {
 function clearInputFields() {
     $("#rent_Id,#pickupDate,#returnDate,#registrationNumber,#cusId,#licenceNo,#rentStatus").val("");
 }
+
+$("#btnRentAccept").click(function () {
+    let rentId = $("#searchRentalRequest").val();
+    $.ajax({
+        url: baseURL + "rentCar/?id=" + rentId,
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res.data)
+
+            var carRent = {
+                rent_Id: res.data.rent_Id,
+                pickUpDate: res.data.pickUpDate,
+                pickUpTime: res.data.pickUpTime,
+                returnDate: res.data.returnDate,
+                returnTime: res.data.returnTime,
+                requestType: res.data.requestType,
+                location: res.data.location,
+                rentStatus: "REQUEST_ACCEPTED",
+                user_Id: res.data.user_Id,
+                rentDetails: res.data.rentDetails
+            }
+            $.ajax({
+                url: baseURL + "rentCar/updateRent",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(carRent),
+                success: function (res) {
+                    alert(res.message)
+                    clearInputFields();
+                    loadAllRent();
+                },
+                error: function (error) {
+                    alert(error.responseJSON.message);
+                }
+            })
+        }
+    });
+});

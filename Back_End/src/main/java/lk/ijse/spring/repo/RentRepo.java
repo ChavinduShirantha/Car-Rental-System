@@ -3,6 +3,7 @@ package lk.ijse.spring.repo;
 import lk.ijse.spring.entity.Rent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  * @author : Chavindu
@@ -13,7 +14,7 @@ public interface RentRepo extends JpaRepository<Rent,String> {
     @Query(value = "SELECT COUNT(rent_Id) FROM Rent", nativeQuery = true)
     int getSumBookings();
 
-    @Query(value = "SELECT COUNT(rent_Id) FROM Rent WHERE rentStatus='PAYMENT_PENDING';", nativeQuery = true)
+    @Query(value = "SELECT COUNT(rent_Id) FROM Rent WHERE rentStatus='REQUEST_PENDING';", nativeQuery = true)
     int getSumOfPendingBookings();
 
     @Query(value = "SELECT COUNT(rent_Id) FROM Rent WHERE rentStatus='PAYMENT_SUCCESS';", nativeQuery = true)

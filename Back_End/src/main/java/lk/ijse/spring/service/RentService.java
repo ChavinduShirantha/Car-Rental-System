@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public interface RentService {
     void rentCars(RentDTO dto);
+    void updateRentCars(RentDTO dto);
     CustomDTO getSumBookings();
     CustomDTO getSumOfPendingBookings();
     CustomDTO getSumOfActiveBookings();
