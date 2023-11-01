@@ -20,7 +20,7 @@
 <body>
 <!-- ---------------------------Header------------------------------------- -->
 <header class="header fixed-top" id="header">
-    <nav class="navbar navbar-expand-lg bg-transparent border-bottom shadow-lg ">
+    <nav class="navbar navbar-expand-lg bg-body border-bottom shadow-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="favicon.png" alt="Logo" width="40px" height="40px"
@@ -41,7 +41,7 @@
                         <a class="nav-link" aria-current="page" href="#aboutSection"> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"> Cars</a>
+                        <a class="nav-link" aria-current="page" href="#carSection"> Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#contactSection"> Contact</a>
@@ -173,7 +173,50 @@
         </div>
     </div>
 </section>
+<!-- -----------------------------------------------Cars Section -------------------------------------------------- -->
+<section class="carSection" id="carSection">
+    <div class="container-fluid" data-aos="fade-up">
+        <div class="section-header mb-5">
+            <h2>Cars</h2>
+            <p>From the best car rental service in Sri Lanka</p>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="search-bar mt-5 mb-5 col-12">
+                <div class="search-form d-flex align-items-center justify-content-evenly mt-3 mb-5 col-12">
+                    <div class="me-md-5 col-3">
+                        <label for="type" class="form-label name-headers">Type</label>
+                        <select class="form-select" id="type" name="type">
+                            <option value="GENERAL">GENERAL</option>
+                            <option value="LUXURY">LUXURY</option>
+                            <option value="PREMIUM">PREMIUM</option>
+                        </select>
+                        <small class="control-error text-danger"></small></div>
+                    <div class="me-md-5 col-3">
+                        <label for="transmission_type" class="form-label name-headers">Transmission Type</label>
+                        <select class="form-select" id="transmission_type" name="transmission_type">
+                            <option value="AUTO">AUTO</option>
+                            <option value="MANUAL">MANUAL</option>
+                        </select>
+                        <small class="control-error text-danger"></small></div>
+                    <div class=" me-md-5 col-3">
+                        <label for="fuel_type" class="form-label name-headers">Fuel Type</label>
+                        <select class="form-select" id="fuel_type" name="fuel_type">
+                            <option value="PETROL">PETROL</option>
+                            <option value="DIESEL">DIESEL</option>
+                        </select></div>
+                    <button type="button" class="btn btn-outline-primary me-md-5 mt-4 "
+                            id="btnSearchCarDetails">Search
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 mt-5 mb-5">
+                <div class="row" id="carDetailsPreview">
 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- -----------------------------------------------Contact Section------------------------------------------------ -->
 
@@ -255,7 +298,9 @@
     </div>
     <div class="container ">
         <hr>
-        <div class="copyright">&copy; Copyright <strong><span>Easy Car Rental Pvt Ltd.</span></strong> All Rights Reserved.</div>
+        <div class="copyright">&copy; Copyright <strong><span>Easy Car Rental Pvt Ltd.</span></strong> All Rights
+            Reserved.
+        </div>
         <div class="designer">
             Designed by Chavindu Shirantha.
         </div>

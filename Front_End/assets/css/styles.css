@@ -128,6 +128,74 @@
     font-size: 24px;
 }
 
+/*Car Section*/
+
+.carSection {
+    position: relative;
+    top: 10rem;
+}
+
+.section-header p {
+    position: relative;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.detailBox {
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.detailBox-title {
+    text-align: center;
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2626a4;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.detailBox-body {
+    padding: 0 20px 20px 20px;
+}
+
+.detailBox-icon {
+    font-size: 2em;
+    color: #2626a4;
+}
+
+.detailBox-count > h6 {
+    margin-left: 6rem;
+    font-size: 2em;
+}
+
+.search-bar {
+    /*background: linear-gradient(to right, #d9d9d9, #f5f5f5);*/
+    height: max-content;
+    background: linear-gradient(to right, #2626a4, #020246);
+    border-radius: 20px;
+}
+
+.name-headers {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#btnSearchCarDetails {
+    font-weight: bolder;
+    border-width: 3px;
+    color: white;
+    border-color: white;
+}
+
 /*Contact Section*/
 
 #contactSection {
@@ -276,7 +344,7 @@
     text-align: center;
 }
 
-.footer_social_media>a{
+.footer_social_media > a {
     text-decoration: none;
     display: inline-flex;
     justify-content: center;
@@ -291,7 +359,7 @@
     margin: 1rem 1rem 1rem 1rem;
 }
 
-.footer_social_media>a:hover{
+.footer_social_media > a:hover {
     background: #0AD9F5;
     color: #323946;
     box-shadow: 0 0 1rem #0AD9F5;
