@@ -20,14 +20,11 @@ $("#btnSearchCarDetails").click(function () {
             for (let i of res) {
                 $("#carDetailsPreview").append(
                     `<div class="col-lg-4 col-md-6">
-
-                        <div class="detailBox">
-                        
+                        <div class="detailBox">                        
                             <div class="detailBox-body">
                                 <h2>${i.type}</h2>
                                 <img src="${"../../../" + i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
-                            </div>
-                            
+                            </div>                           
                             <div class=" justify-content-center">
                                 <h4 >${"Brand : " + i.brand}</h4>
                                 <h4 >${"Model : " + i.model}</h4>
@@ -40,10 +37,8 @@ $("#btnSearchCarDetails").click(function () {
                                 <h4 >${"No.of passengers : " + i.noOfPassengers}</h4>
                                 <h4 >${"Price for extra KM. : " + i.priceExtraKM}</h4>
                                 <h4 >${"Color : " + i.color}</h4>
-                          </div>
-                          
-                        </div>
-                        
+                          </div>                          
+                        </div>           
                     </div>`
                 )
             }
