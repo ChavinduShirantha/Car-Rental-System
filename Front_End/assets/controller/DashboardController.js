@@ -19,12 +19,13 @@ $("#btnSearchCarDetails").click(function () {
             console.log(res);
             for (let i of res) {
                 $("#carDetailsPreview").append(
-                    `<div class="col-4">
+                    `<div class="col-lg-4 col-md-6">
                         <div class="detailBox">
                             <div class="detailBox-body">
                                 <h5 class="detailBox-title">${i.brand}</h5>
-                                <img src="${"../../../"+i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
+                                <img src="${"../../../" + i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
                             </div>
+                          
                         </div>
                     </div>`
                 )
