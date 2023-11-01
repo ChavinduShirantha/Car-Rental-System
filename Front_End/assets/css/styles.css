@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Merriweather:wght@700&display=swap');
 
 /*Home Section*/
 
@@ -194,6 +195,25 @@
     border-width: 3px;
     color: white;
     border-color: white;
+}
+
+.detailBox-new{
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px rgba(2, 2, 44, 0.5);
+    padding: 20px;
+}
+
+.detailBox-subtitle{
+    font-family: 'Bitter', serif;
+    text-align: center;
+    font-size: 1em;
+}
+
+.detailBox-subtitle-header{
+    font-family: 'Merriweather', serif;
+    text-align: center;
 }
 
 /*Contact Section*/

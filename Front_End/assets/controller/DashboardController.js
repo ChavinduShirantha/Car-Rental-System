@@ -19,24 +19,24 @@ $("#btnSearchCarDetails").click(function () {
             console.log(res);
             for (let i of res) {
                 $("#carDetailsPreview").append(
-                    `<div class="col-lg-4 col-md-6">
-                        <div class="detailBox">                        
+                    `<div class="col-lg-4 col-md-6 ">
+                        <div class="detailBox-new ">                        
                             <div class="detailBox-body">
-                                <h2>${i.type}</h2>
+                                <h2 class="detailBox-subtitle-header" >${i.type }</h2>
                                 <img src="${"../../../" + i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
                             </div>                           
                             <div class=" justify-content-center">
-                                <h4>${"Brand : " + i.brand}</h4>
-                                <h4>${"Model : " + i.model}</h4>
-                                <h4>${"Register Number : " + i.regNumber}</h4>
-                                <h4>${"Transmission Type : " + i.transmission_type}</h4>
-                                <h4>${"Fuel Type : " + i.fuel_type}</h4>
-                                <h4>${"Daily Rate : " + i.daily_Rate}</h4>
-                                <h4>${"Monthly Rate : " + i.monthly_Rate}</h4>
-                                <h4>${"Free Mileage : " + i.freeMileage}</h4>
-                                <h4>${"No.of passengers : " + i.noOfPassengers}</h4>
-                                <h4>${"Price for extra KM. : " + i.priceExtraKM}</h4>
-                                <h4>${"Color : " + i.color}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Brand : " + i.brand}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Model : " + i.model}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Register Number : " + i.regNumber}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Transmission Type : " + i.transmission_type}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Fuel Type : " + i.fuel_type}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Daily Rate : " + i.daily_Rate}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Monthly Rate : " + i.monthly_Rate}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Free Mileage : " + i.freeMileage}</h4>
+                                <h4 class="detailBox-subtitle" > ${"No.of passengers : " + i.noOfPassengers}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Price for extra KM. : " + i.priceExtraKM}</h4>
+                                <h4 class="detailBox-subtitle" > ${"Color : " + i.color}</h4>
                           </div>                          
                         </div>           
                     </div>`
