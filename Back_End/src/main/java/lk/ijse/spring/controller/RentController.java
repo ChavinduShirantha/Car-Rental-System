@@ -53,4 +53,9 @@ public class RentController {
         service.deleteRent(id);
         return new ResponseUtil("Ok","Successfully Deleted",null);
     }
+
+    @GetMapping(params = {"id"})
+    public ResponseUtil findRent(String id) {
+        return new ResponseUtil("Ok", "Successfully Loaded", service.findRent(id));
+    }
 }

@@ -1,5 +1,6 @@
 package lk.ijse.spring.service;
 
+import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RentDTO;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,4 +21,5 @@ public interface RentService {
     CustomDTO rentIdGenerate();
     ArrayList<RentDTO> getAllRent();
     void deleteRent(String id);
+    RentDTO findRent(String id);
 }

@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.RentDTO;
 import lk.ijse.spring.entity.Car;
@@ -96,5 +97,14 @@ public class RentServiceImpl implements RentService {
             throw new RuntimeException(id + " Rent is not available, please check the ID before delete.!");
         }
         rentRepo.deleteById(id);
+    }
+
+    @Override
+    public RentDTO findRent(String id) {
+        if (!rentRepo.existsById(id)) {
+            throw new RuntimeException(id + " Rent is not available, please check the ID.!");
+        }
+        Rent rent = rentRepo.findById(id).get();
+        return mapper.map(rent, RentDTO.class);
     }
 }
