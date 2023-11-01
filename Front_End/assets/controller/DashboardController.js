@@ -26,17 +26,17 @@ $("#btnSearchCarDetails").click(function () {
                                 <img src="${"../../../" + i.image.front_view}" class="d-block w-100" style="height: 300px" alt="">
                             </div>                           
                             <div class=" justify-content-center">
-                                <h4 >${"Brand : " + i.brand}</h4>
-                                <h4 >${"Model : " + i.model}</h4>
-                                <h4 >${"Register Number : " + i.regNumber}</h4>
-                                <h4 >${"Transmission Type : " + i.transmission_type}</h4>
-                                <h4 >${"Fuel Type : " + i.fuel_type}</h4>
-                                <h4 >${"Daily Rate : " + i.daily_Rate}</h4>
-                                <h4 >${"Monthly Rate : " + i.monthly_Rate}</h4>
-                                <h4 >${"Free Mileage : " + i.freeMileage}</h4>
-                                <h4 >${"No.of passengers : " + i.noOfPassengers}</h4>
-                                <h4 >${"Price for extra KM. : " + i.priceExtraKM}</h4>
-                                <h4 >${"Color : " + i.color}</h4>
+                                <h4>${"Brand : " + i.brand}</h4>
+                                <h4>${"Model : " + i.model}</h4>
+                                <h4>${"Register Number : " + i.regNumber}</h4>
+                                <h4>${"Transmission Type : " + i.transmission_type}</h4>
+                                <h4>${"Fuel Type : " + i.fuel_type}</h4>
+                                <h4>${"Daily Rate : " + i.daily_Rate}</h4>
+                                <h4>${"Monthly Rate : " + i.monthly_Rate}</h4>
+                                <h4>${"Free Mileage : " + i.freeMileage}</h4>
+                                <h4>${"No.of passengers : " + i.noOfPassengers}</h4>
+                                <h4>${"Price for extra KM. : " + i.priceExtraKM}</h4>
+                                <h4>${"Color : " + i.color}</h4>
                           </div>                          
                         </div>           
                     </div>`
