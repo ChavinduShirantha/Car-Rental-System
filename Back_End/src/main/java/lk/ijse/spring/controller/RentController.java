@@ -30,6 +30,13 @@ public class RentController {
         return new ResponseUtil("Ok", "Request Accepted.!", null);
     }
 
+    @PostMapping(path = "/rejectRent")
+    public ResponseUtil rejectRentCar(@RequestBody RentDTO dto) {
+        service.rejectRentCars(dto);
+        return new ResponseUtil("Ok", "Request Rejected.!", null);
+    }
+
+
     @GetMapping(path = "/sumOfRentsCount")
     public CustomDTO getSumBookings() {
         return service.getSumBookings();

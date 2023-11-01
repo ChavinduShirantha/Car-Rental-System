@@ -133,3 +133,45 @@ $("#btnRentAccept").click(function () {
         }
     });
 });
+
+$("#btnRentReject").click(function () {
+    let rentId = $("#searchRentalRequest").val();
+    $.ajax({
+        url: baseURL + "rentCar/?id=" + rentId,
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res.data)
+
+            var carRent = {
+                rent_Id: res.data.rent_Id,
+                pickUpDate: res.data.pickUpDate,
+                pickUpTime: res.data.pickUpTime,
+                returnDate: res.data.returnDate,
+                returnTime: res.data.returnTime,
+                requestType: res.data.requestType,
+                location: res.data.location,
+                rentStatus: "REQUEST_REJECTED",
+                user_Id: res.data.user_Id,
+                rentDetails: res.data.rentDetails
+            }
+            $.ajax({
+                url: baseURL + "rentCar/rejectRent",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(carRent),
+                success: function (res) {
+                    alert(res.message)
+                    clearInputFields();
+                    loadAllRent();
+                },
+                error: function (error) {
+                    alert(error.responseJSON.message);
+                }
+            })
+        }
+    });
+});
+
