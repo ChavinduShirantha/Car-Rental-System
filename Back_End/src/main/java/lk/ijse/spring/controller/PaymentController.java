@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.PaymentDTO;
 import lk.ijse.spring.service.PaymentService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -22,5 +23,10 @@ public class PaymentController {
         System.out.println(dto);
         service.savePayment(dto);
         return new ResponseUtil("OK", "Successfully Payment.!", null);
+    }
+
+    @GetMapping(path = "/paymentIdGenerate")
+    public CustomDTO paymentIdGenerate() {
+        return service.paymentIdGenerate();
     }
 }
