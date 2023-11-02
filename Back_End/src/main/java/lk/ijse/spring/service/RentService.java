@@ -24,4 +24,5 @@ public interface RentService {
     ArrayList<RentDTO> getAllRent();
     void deleteRent(String id);
     RentDTO findRent(String id);
+    ArrayList<RentDTO> getAcceptedRequest();
 }

@@ -127,4 +127,10 @@ public class RentServiceImpl implements RentService {
         Rent rent = rentRepo.findById(id).get();
         return mapper.map(rent, RentDTO.class);
     }
+
+    @Override
+    public ArrayList<RentDTO> getAcceptedRequest() {
+        return mapper.map(rentRepo.getAcceptedRequest(), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
+    }
 }

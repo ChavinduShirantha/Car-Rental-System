@@ -1,6 +1,5 @@
 let baseUrl = "http://localhost:8080/Back_End_war/";
 
-updateClock();
 generatePaymentID();
 
 function generatePaymentID() {
@@ -16,11 +15,11 @@ function generatePaymentID() {
             let tempId = parseInt(id.split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
-                $("#user_Id").val("P00-00" + tempId);
+                $("#payment_Id").val("P00-00" + tempId);
             } else if (tempId <= 99) {
-                $("#user_Id").val("P00-0" + tempId);
+                $("#payment_Id").val("P00-0" + tempId);
             } else {
-                $("#user_Id").val("P00-" + tempId);
+                $("#payment_Id").val("P00-" + tempId);
             }
         },
         error: function (error) {
@@ -47,7 +46,7 @@ $("#btnSavePayment").on("click", function () {
     var paymentOb = {
         payment_Id: payment_Id,
         rent_Id: {
-            rent_Id: rent_Id
+            rent_Id: rent_Id,
         },
         paymentType: paymentType,
         payment_date: payment_date,
@@ -69,9 +68,62 @@ $("#btnSavePayment").on("click", function () {
             console.log(res)
             alert(res.message);
             generatePaymentID();
+
+            $.ajax({
+                url: baseUrl + "rentCar/?id=" + rent_Id,
+                method: "get",
+                contentType: "application/json",
+                dataType: "json",
+                async: true,
+                success: function (res) {
+                    console.log(res.data)
+
+                    var carRent = {
+                        rent_Id: res.data.rent_Id,
+                        pickUpDate: res.data.pickUpDate,
+                        pickUpTime: res.data.pickUpTime,
+                        returnDate: res.data.returnDate,
+                        returnTime: res.data.returnTime,
+                        requestType: res.data.requestType,
+                        location: res.data.location,
+                        rentStatus: "PAYMENT_SUCCESSFUL",
+                        user_Id: res.data.user_Id,
+                        rentDetails: res.data.rentDetails
+                    }
+                    $.ajax({
+                        url: baseUrl + "rentCar/updateRent",
+                        method: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(carRent),
+                        success: function (res) {
+                        },
+                        error: function (error) {
+                            alert(error.responseJSON.message);
+                        }
+                    })
+                }
+            });
+
+
         },
         error: function (error) {
             alert(error.responseJSON.message);
         }
     });
+});
+
+$.ajax({
+    url: baseUrl + 'rentCar/getAcceptedRequest',
+    method: "get",
+    dataType: "json",
+    success: function (resp) {
+        console.log(resp)
+        for (let i in resp) {
+            let rent_Id = resp[i].rent_Id;
+            $("#rent_Id").append(`<option>${rent_Id}</option>`);
+        }
+    },
+    error: function (error) {
+        alert(error.responseJSON.message);
+    }
 });

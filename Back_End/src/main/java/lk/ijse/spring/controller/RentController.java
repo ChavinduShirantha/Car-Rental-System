@@ -7,6 +7,8 @@ import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @author : Chavindu
  * created : 10/28/2023-5:52 PM
@@ -70,5 +72,10 @@ public class RentController {
     @GetMapping(params = {"id"})
     public ResponseUtil findRent(String id) {
         return new ResponseUtil("Ok", "Successfully Loaded", service.findRent(id));
+    }
+
+    @GetMapping(path = "/getAcceptedRequest")
+    public @ResponseBody ArrayList<RentDTO> getAcceptedRequest() {
+        return service.getAcceptedRequest();
     }
 }
