@@ -20,8 +20,8 @@ import java.time.LocalTime;
 public class PaymentDTO {
     private String payment_Id;
     private String paymentType;
-    private LocalDate date;
-    private LocalTime time;
+    private LocalDate payment_date;
+    private LocalTime payment_time;
     private Double lostDamage;
     private Double rentCost;
     private Double driverCost;

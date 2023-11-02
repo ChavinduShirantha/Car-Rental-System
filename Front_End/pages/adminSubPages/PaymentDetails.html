@@ -139,7 +139,7 @@
                         </div>
 
                         <div class="col-12 m-3 p-1">
-                            <form class="row" id="customerForm">
+                            <form class="row" id="paymentForm">
                                 <section id="sec1Customer" class="col-4 mt-3">
                                     <div class="mb-sm-0 d-flex">
                                         <div class="mb-sm-0 me-md-3 col-9">
@@ -161,8 +161,8 @@
                                         <small class="control-error text-danger"></small>
                                     </div>
                                     <div class="mb-sm-0 mt-3">
-                                        <label for="payment_Type" class="form-label">Payment Type</label>
-                                        <select class="form-select" id="payment_Type" name="payment_Type">
+                                        <label for="paymentType" class="form-label">Payment Type</label>
+                                        <select class="form-select" id="paymentType" name="paymentType">
                                             <option value="NORMAL">NORMAL</option>
                                             <option value="LOSS_DAMAGE">LOSS_DAMAGE</option>
                                         </select>
@@ -170,7 +170,7 @@
                                     </div>
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="payment_date">Payment Date</label>
-                                        <input type="text" name="payment_date" class="form-control" id="payment_date"
+                                        <input type="date" name="payment_date" class="form-control" id="payment_date"
                                                placeholder="Payment Date">
                                         <small class="control-error text-danger"></small>
                                     </div>
@@ -179,37 +179,37 @@
                                 <section id="sec2Customer" class="col-4 mt-3">
                                     <div class="mb-sm-0 ">
                                         <label class="form-label" for="payment_time">Payment Time</label>
-                                        <input type="text" name="payment_time" class="form-control" id="payment_time"
+                                        <input type="time" name="payment_time" class="form-control" id="payment_time"
                                                placeholder="Payment Time">
                                         <small class="control-error text-danger"></small>
                                     </div>
                                     <div class="mb-sm-0 mt-3">
-                                        <label class="form-label" for="carCost">Car Cost</label>
-                                        <input type="text" name="carCost" class="form-control" id="carCost"
+                                        <label class="form-label" for="rentCost">Car Cost</label>
+                                        <input type="text" name="rentCost" class="form-control" id="rentCost"
                                                placeholder="Car Cost">
                                         <small class="control-error text-danger"></small>
                                     </div>
-                                    <div class="mb-sm-0 mt-3">
+                                    <!--<div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="days">Days</label>
                                         <input type="text" name="days" class="form-control" id="days"
                                                placeholder="Days">
                                         <small class="control-error text-danger"></small>
-                                    </div>
+                                    </div>-->
                                     <div class="mb-sm-0 mt-3">
-                                        <label class="form-label" for="damageCost">Damage Cost</label>
-                                        <input type="text" name="damageCost" class="form-control" id="damageCost"
+                                        <label class="form-label" for="lostDamage">Damage Cost</label>
+                                        <input type="text" name="lostDamage" class="form-control" id="lostDamage"
                                                placeholder="Damage Cost">
                                         <small class="control-error text-danger"></small>
                                     </div>
                                 </section>
 
                                 <section id="sec3" class="col-4 mt-3">
-                                    <div class="mb-sm-0 ">
+                                    <!--<div class="mb-sm-0 ">
                                         <label class="form-label" for="mileage">Mileage</label>
                                         <input type="text" name="mileage" class="form-control" id="mileage"
                                                placeholder="Mileage">
                                         <small class="control-error text-danger"></small>
-                                    </div>
+                                    </div>-->
                                     <div class="mb-sm-0 mt-3">
                                         <label class="form-label" for="driverCost">Driver Cost</label>
                                         <input type="text" name="driverCost" class="form-control" id="driverCost"

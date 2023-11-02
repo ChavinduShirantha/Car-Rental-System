@@ -19,7 +19,7 @@ public class PaymentController {
     PaymentService service;
 
     @PostMapping
-    public ResponseUtil savePayment(PaymentDTO dto) {
+    public ResponseUtil savePayment(@RequestBody PaymentDTO dto) {
         System.out.println(dto);
         service.savePayment(dto);
         return new ResponseUtil("OK", "Successfully Payment.!", null);

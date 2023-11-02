@@ -1,5 +1,6 @@
 let baseUrl = "http://localhost:8080/Back_End_war/";
 
+updateClock();
 generatePaymentID();
 
 function generatePaymentID() {
@@ -30,4 +31,47 @@ function generatePaymentID() {
 
 $("#btnAdd").click(function () {
     generatePaymentID();
+});
+
+$("#btnSavePayment").on("click", function () {
+    let payment_Id = $("#payment_Id").val();
+    let rent_Id = $("#rent_Id").val();
+    let paymentType = $("#paymentType").val();
+    let payment_date = $("#payment_date").val();
+    let payment_time = $("#payment_time").val();
+    let lostDamage = $("#lostDamage").val();
+    let rentCost = $("#rentCost").val();
+    let driverCost = $("#driverCost").val();
+    let total = $("#total").val();
+
+    var paymentOb = {
+        payment_Id: payment_Id,
+        rent_Id: {
+            rent_Id: rent_Id
+        },
+        paymentType: paymentType,
+        payment_date: payment_date,
+        payment_time: payment_time,
+        lostDamage: lostDamage,
+        rentCost: rentCost,
+        driverCost: driverCost,
+        total: total,
+    }
+
+
+    $.ajax({
+        url: baseUrl + "payment",
+        method: "POST",
+        data: JSON.stringify(paymentOb),
+        dataType: "json",
+        contentType: "application/json",
+        success: function (res) {
+            console.log(res)
+            alert(res.message);
+            generatePaymentID();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
 });
