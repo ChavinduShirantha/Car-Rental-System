@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="../../assets/aos/aos.css">
     <link rel="stylesheet" href="../../assets/css/adminFormStyles.css">
+    <link rel="stylesheet" href="../../assets/css/paymentDetails.css">
 </head>
 <body>
 <header class="header fixed-top" id="header">
@@ -120,10 +121,160 @@
             </div>
         </div>
         <div class="col-10 d-flex mt-5 position-relative">
-            <div class="content ps-0 ps-lg-5" id="dashboardContents">
-                <h3 id="dashboardHeader">Payment Details</h3>
-                <p id="dashboardNav">Home > Details > Payment Details</p>
+            <div class="content ps-0 ps-lg-5" id="paymentContents">
+                <h3 id="paymentHeader">Payment Details</h3>
+                <p id="paymentNav">Home > Details > Payment Details</p>
             </div>
+            <section class="paymentSection">
+                <div class="row mt-3">
+                    <div class="customerDetails">
+                        <div class="search-bar mt-4">
+                            <div class="search-form d-flex align-items-center">
+                                <input type="search" class="me-md-1" name="payment_search_Id" id="payment_search_Id"
+                                       placeholder="Search">
+                                <button type="button" class="btn btn-outline-primary me-md-1 col-1"
+                                        id="btnSearchPayment">Search
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 m-3 p-1">
+                            <form class="row" id="customerForm">
+                                <section id="sec1Customer" class="col-4 mt-3">
+                                    <div class="mb-sm-0 d-flex">
+                                        <div class="mb-sm-0 me-md-3 col-9">
+                                            <label class="form-label" for="payment_Id">Payment Id</label>
+                                            <input type="text" readonly name="payment_Id"  class="form-control" id="payment_Id"
+                                                   placeholder="P00-001">
+                                            <small class="control-error text-danger"></small>
+                                        </div>
+                                        <div class="mb-sm-0 col-2 mt-4">
+                                            <button class="btn btn-outline-primary mt-2" id="btnAdd" type="button">
+                                                ADD
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="rent_Id">Rent ID</label>
+                                        <input type="text" name="rent_Id" class="form-control" id="rent_Id"
+                                               placeholder="Rent ID">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="payment_Type" class="form-label">Payment Type</label>
+                                        <select class="form-select" id="payment_Type" name="payment_Type">
+                                            <option value="NORMAL">NORMAL</option>
+                                            <option value="LOSS_DAMAGE">LOSS_DAMAGE</option>
+                                        </select>
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="payment_date">Payment Date</label>
+                                        <input type="text" name="payment_date" class="form-control" id="payment_date"
+                                               placeholder="Payment Date">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                </section>
+
+                                <section id="sec2Customer" class="col-4 mt-3">
+                                    <div class="mb-sm-0 ">
+                                        <label class="form-label" for="payment_time">Payment Time</label>
+                                        <input type="text" name="payment_time" class="form-control" id="payment_time"
+                                               placeholder="Payment Time">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="carCost">Car Cost</label>
+                                        <input type="text" name="carCost" class="form-control" id="carCost"
+                                               placeholder="Car Cost">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="days">Days</label>
+                                        <input type="text" name="days" class="form-control" id="days"
+                                               placeholder="Days">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="damageCost">Damage Cost</label>
+                                        <input type="text" name="damageCost" class="form-control" id="damageCost"
+                                               placeholder="Damage Cost">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                </section>
+
+                                <section id="sec3" class="col-4 mt-3">
+                                    <div class="mb-sm-0 ">
+                                        <label class="form-label" for="mileage">Mileage</label>
+                                        <input type="text" name="mileage" class="form-control" id="mileage"
+                                               placeholder="Mileage">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label class="form-label" for="driverCost">Driver Cost</label>
+                                        <input type="text" name="driverCost" class="form-control" id="driverCost"
+                                               placeholder="Driver Cost">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mb-sm-0 mt-3">
+                                        <label for="total" class="form-label">Total</label>
+                                        <input type="text" name="total" class="form-control" id="total"
+                                               placeholder="Total">
+                                        <small class="control-error text-danger"></small>
+                                    </div>
+                                    <div class="mt-5 mb-2 d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                        <button class="btn btn-outline-success me-md-1 col-4" id="btnSavePayment"
+                                                type="button">
+                                            Save
+                                        </button>
+                                        <button class="btn btn-outline-warning me-md-1 col-4" id="btnUpdatePayment"
+                                                type="button">
+                                            Update
+                                        </button>
+                                    </div>
+                                    <div class="mt-2 mb-auto d-grid gap-2 d-sm-flex justify-content-md-center ">
+                                        <button type="button" class="btn btn-outline-danger me-md-1 col-4"
+                                                id="btnDeletePayment">Delete
+                                        </button>
+                                        <button class="btn btn-outline-info me-md-1 col-4" id="btnGetAllPayment"
+                                                type="button">
+                                            Get All
+                                        </button>
+                                    </div>
+                                </section>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="paymentTableDetails">
+                        <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 200px;">
+                            <div class="col-11 justify-content-around sectionBorder"
+                                 style="height: 250px; background: white">
+                                <div class="table-responsive overflow-auto " style="height: 200px;">
+                                    <table class="table table-light table-striped table-bordered table-hover">
+                                        <thead class="text-dark table-info text-center  table-bordered sticky-top">
+                                        <tr>
+                                            <th scope="col">Payment ID</th>
+                                            <th scope="col">Rent ID</th>
+                                            <th scope="col">Payment Type</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Car Cost</th>
+                                            <th scope="col">Days</th>
+                                            <th scope="col">Damage Cost</th>
+                                            <th scope="col">Mileage</th>
+                                            <th scope="col">Driver Cost</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblPayment"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

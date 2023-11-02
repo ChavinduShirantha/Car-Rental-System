@@ -1,0 +1,52 @@
+#paymentContents {
+    position: relative;
+    top: 3rem;
+    left: 2rem;
+}
+
+#paymentHeader {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+    width: max-content;
+}
+
+#paymentNav {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    width: max-content;
+}
+
+.paymentSection {
+    position: relative;
+    left: -10rem;
+}
+
+.customerDetails {
+    position: relative;
+    top: 8rem;
+    margin-bottom: 30px;
+    border: none;
+}
+
+#payment_search_Id{
+    font-size: 1em;
+    color: #012970;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    width: 15rem;
+    height: 2.5rem;
+    margin-left: 18rem;
+}
+
+.search-form input:focus{
+    outline: none;
+}
+
+.search-form input:hover{
+    outline: 1px solid #0b5ed7;
+}
+
+.paymentTableDetails{
+    position: relative;
+    top: 5rem;
+}
