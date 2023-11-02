@@ -207,8 +207,10 @@
 
 .detailBox-subtitle{
     font-family: 'Bitter', serif;
-    text-align: center;
+    text-align: left;
+    margin-left: 5rem;
     font-size: 1em;
+    text-decoration: none;
 }
 
 .detailBox-subtitle-header{
