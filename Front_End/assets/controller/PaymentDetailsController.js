@@ -133,14 +133,30 @@ loadAllPayment();
 function loadAllPayment() {
     $("#tblPayment").empty();
     $.ajax({
-        url: baseUrl + "payment/getPayments",
+        url: baseUrl + 'payment',
         method: "get",
-        contentType: "application/json",
         dataType: "json",
-        async: true,
-        success: function (res) {
-            console.log(res[0].data.payment_Id)
-
+        success: function (response) {
+            let payment = response.data;
+            console.log(payment)
+            for (let i in payment) {
+                let pay = payment[i];
+                let payment_Id = pay.payment_Id;
+                let rent_Id = pay.rent_Id.rent_Id;
+                let paymentType = pay.paymentType;
+                let payment_date = pay.payment_date;
+                let payment_time = pay.payment_time;
+                let lostDamage = pay.lostDamage;
+                let rentCost = pay.rentCost;
+                let driverCost = pay.driverCost;
+                let total = pay.total;
+                let row = `<tr><td>${payment_Id}</td><td>${rent_Id}</td><td>${paymentType}</td><td>${payment_date}</td><td>${payment_time}</td><td>${lostDamage}</td><td>${rentCost}</td><td>${driverCost}</td><td>${total}</td></tr>`;
+                $("#tblPayment").append(row);
+            }
+            generatePaymentID();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
         }
     });
 }
