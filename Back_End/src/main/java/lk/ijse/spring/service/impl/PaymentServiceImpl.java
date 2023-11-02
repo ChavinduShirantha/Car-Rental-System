@@ -6,9 +6,12 @@ import lk.ijse.spring.entity.Payment;
 import lk.ijse.spring.repo.PaymentRepo;
 import lk.ijse.spring.service.PaymentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -35,5 +38,11 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public CustomDTO paymentIdGenerate() {
         return new CustomDTO(repo.getLastID());
+    }
+
+    @Override
+    public ArrayList<PaymentDTO> getAllPayments() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<PaymentDTO>>() {
+        }.getType());
     }
 }

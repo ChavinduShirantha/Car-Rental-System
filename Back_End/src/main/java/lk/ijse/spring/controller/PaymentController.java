@@ -29,4 +29,10 @@ public class PaymentController {
     public CustomDTO paymentIdGenerate() {
         return service.paymentIdGenerate();
     }
+
+    @GetMapping
+    public ResponseUtil getAllPayments() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllPayments());
+    }
+
 }
