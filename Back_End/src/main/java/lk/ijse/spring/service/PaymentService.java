@@ -1,5 +1,6 @@
 package lk.ijse.spring.service;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.PaymentDTO;
 
 /**
@@ -9,5 +10,5 @@ import lk.ijse.spring.dto.PaymentDTO;
 
 public interface PaymentService {
     void savePayment(PaymentDTO dto);
-    PaymentDTO paymentIdGenerate();
+    CustomDTO paymentIdGenerate();
 }

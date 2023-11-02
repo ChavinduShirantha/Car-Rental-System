@@ -1,7 +1,7 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.PaymentDTO;
-import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.Payment;
 import lk.ijse.spring.repo.PaymentRepo;
 import lk.ijse.spring.service.PaymentService;
@@ -33,7 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public PaymentDTO paymentIdGenerate() {
-        return null;
+    public CustomDTO paymentIdGenerate() {
+        return new CustomDTO(repo.getLastID());
     }
 }
