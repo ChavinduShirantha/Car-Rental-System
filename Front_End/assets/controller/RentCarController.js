@@ -121,6 +121,15 @@ $.ajax({
     }
 });
 
+$("#requestType").change(function (){
+   let requestType=$("#requestType").val();
+   if (requestType == "YES"){
+       $("#driverId").attr('disabled', false);
+   }else if (requestType == "NO"){
+       $("#driverId").attr('disabled', true);
+   }
+});
+
 /*function searchCar(regNumber) {
     let response = "";
     $.ajax({
