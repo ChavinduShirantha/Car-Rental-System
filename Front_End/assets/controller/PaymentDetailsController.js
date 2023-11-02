@@ -127,3 +127,24 @@ $.ajax({
         alert(error.responseJSON.message);
     }
 });
+
+loadAllPayment();
+
+function loadAllPayment() {
+    $("#tblPayment").empty();
+    $.ajax({
+        url: baseUrl + "payment/getPayments",
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        async: true,
+        success: function (res) {
+            console.log(res[0].data.payment_Id)
+
+        }
+    });
+}
+
+$("#btnGetAllPayment").click(function () {
+    loadAllPayment();
+});
