@@ -31,4 +31,9 @@ public class PaymentServiceImpl implements PaymentService {
         System.out.println(payment);
         repo.save(payment);
     }
+
+    @Override
+    public PaymentDTO paymentIdGenerate() {
+        return null;
+    }
 }
