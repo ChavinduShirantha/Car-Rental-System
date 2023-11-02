@@ -1,10 +1,10 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.PaymentDTO;
 import lk.ijse.spring.service.PaymentService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : Chavindu
@@ -16,4 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
     @Autowired
     PaymentService service;
+
+    @PostMapping
+    public ResponseUtil savePayment(PaymentDTO dto) {
+        System.out.println(dto);
+        service.savePayment(dto);
+        return new ResponseUtil("OK", "Successfully Payment.!", null);
+    }
 }
