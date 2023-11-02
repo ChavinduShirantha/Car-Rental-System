@@ -78,9 +78,18 @@ function getRentDetails() {
     for (let i = 0; i < rows; i++) {
         let regNumber = $("#rentCarTable").children().eq(i).children(":eq(0)").text();
         let rent_Id = $("#rent_Id").val();
-        let driverID = $("#driverId").val();
+        let driverID;
+        let requestType=$("#requestType").val();
+        if (requestType == "YES"){
+            driverID = $("#driverId").val();
+            array.push({regNumber: regNumber,rent_Id:rent_Id,driverID:driverID});
+        }else if (requestType == "NO"){
+            driverID= null;
+            array.push({regNumber: regNumber,rent_Id:rent_Id,driverID:driverID});
+        }
 
-        array.push({regNumber: regNumber,rent_Id:rent_Id,driverID:driverID});
+
+
     }
     return array;
 }
