@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.PaymentDTO;
 import lk.ijse.spring.service.PaymentService;
 
 /**
@@ -8,4 +9,8 @@ import lk.ijse.spring.service.PaymentService;
  **/
 
 public class PaymentServiceImpl implements PaymentService {
+    @Override
+    public void savePayment(PaymentDTO dto) {
+
+    }
 }
