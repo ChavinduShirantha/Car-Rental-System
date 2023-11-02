@@ -9,4 +9,5 @@ import lk.ijse.spring.dto.PaymentDTO;
 
 public interface PaymentService {
     void savePayment(PaymentDTO dto);
+    PaymentDTO paymentIdGenerate();
 }
