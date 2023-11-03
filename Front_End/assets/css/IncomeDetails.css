@@ -1,0 +1,11 @@
+.incomeDetailsSection{
+    position: relative;
+    top: 5em;
+    left: -5em;
+}
+
+.card{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 17, 49, 0.4);
+}
