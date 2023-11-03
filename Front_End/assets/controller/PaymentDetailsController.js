@@ -78,6 +78,18 @@ $("#btnSavePayment").on("click", function () {
                 success: function (res) {
                     console.log(res.data)
 
+                    function getDetails() {
+                        var array = [];
+
+                        let regNumbers = res.data.rentDetails.regNumber;
+                        let rent_Ids = res.data.rentDetails.rent_Id;
+                        let driverIDs= res.data.rentDetails.driverID;
+
+                        array.push({regNumber: regNumbers,rent_Id:rent_Ids,driverID:driverIDs});
+                    }
+
+                    let details=getDetails();
+
                     var carRent = {
                         rent_Id: res.data.rent_Id,
                         pickUpDate: res.data.pickUpDate,
@@ -88,7 +100,7 @@ $("#btnSavePayment").on("click", function () {
                         location: res.data.location,
                         rentStatus: "PAYMENT_SUCCESSFUL",
                         user_Id: res.data.user_Id,
-                        rentDetails: res.data.rentDetails
+                        rentDetails:details
                     }
                     $.ajax({
                         url: baseUrl + "rentCar/updateRent",
@@ -117,7 +129,7 @@ $.ajax({
     method: "get",
     dataType: "json",
     success: function (resp) {
-        console.log(resp)
+        console.log(resp);
         for (let i in resp) {
             let rent_Id = resp[i].rent_Id;
             $("#rent_Id").append(`<option>${rent_Id}</option>`);
@@ -128,19 +140,25 @@ $.ajax({
     }
 });
 
-loadAllPayment();
+
+
+$("#btnGetAllPayment").click(function () {
+    loadAllPayment();
+});
 
 function loadAllPayment() {
     $("#tblPayment").empty();
+
     $.ajax({
         url: baseUrl + 'payment',
         method: "get",
+        contentType: "application/json",
         dataType: "json",
-        success: function (response) {
-            let payment = response.data;
-            console.log(payment)
-            for (let i in payment) {
-                let pay = payment[i];
+        success: function (resp) {
+            let details = resp.data;
+            console.log(details);
+            for (let i in details) {
+                let pay = details[i];
                 let payment_Id = pay.payment_Id;
                 let rent_Id = pay.rent_Id.rent_Id;
                 let paymentType = pay.paymentType;
@@ -153,14 +171,9 @@ function loadAllPayment() {
                 let row = `<tr><td>${payment_Id}</td><td>${rent_Id}</td><td>${paymentType}</td><td>${payment_date}</td><td>${payment_time}</td><td>${lostDamage}</td><td>${rentCost}</td><td>${driverCost}</td><td>${total}</td></tr>`;
                 $("#tblPayment").append(row);
             }
-            generatePaymentID();
         },
         error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 }
-
-$("#btnGetAllPayment").click(function () {
-    loadAllPayment();
-});
