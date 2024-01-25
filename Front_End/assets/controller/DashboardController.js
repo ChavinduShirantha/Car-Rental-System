@@ -42,9 +42,9 @@ $("#btnSearchCarDetails").click(function () {
                                     <li class="detailBox-subtitle" > ${"Price for extra KM : " + i.priceExtraKM}</li>
                                     <li class="detailBox-subtitle" > ${"Color : " + i.color}</li>
                                 </ul>
-                                <div class="text-center">
+                                <!--<div class="text-center">
                                     <button class="btn btn-outline-success mt-3" type="button">Rent Now</button>
-                                </div>
+                                </div>-->
                           </div>                          
                         </div>           
                     </div>`
